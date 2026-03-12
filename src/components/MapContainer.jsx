@@ -94,7 +94,7 @@ export default function MapContainer({
 
     const volumeLayers    = buildVolumeLayers(stations, hour, activeLayer === 'volume', maxRidership)
     const entryExitLayer  = buildEntryExitLayer(stations, hour, activeLayer === 'entryExit')
-    const odLayer         = buildOdFlowLayer(stations, odFlows, activeLayer === 'odFlow', flowOffsetRef.current)
+    const odLayers        = buildOdFlowLayer(stations, odFlows, activeLayer === 'odFlow', flowOffsetRef.current)
     const wdwLayer        = buildWeekdayWeekendLayer(stations, weekday, weekend, weekdayWeekendMode, activeLayer === 'weekdayWeekend')
     const coverageLayers  = buildCoverageGapLayers(stations, populationGrid, activeLayer === 'coverageGap')
 
@@ -102,7 +102,7 @@ export default function MapContainer({
       metroLinesLayer,
       ...volumeLayers,
       entryExitLayer,
-      odLayer,
+      ...odLayers,
       wdwLayer,
       ...coverageLayers,
     ].filter(Boolean)
