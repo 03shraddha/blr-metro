@@ -8,8 +8,7 @@ import { buildOdFlowLayer } from '../layers/odFlowLayer'
 import { buildWeekdayWeekendLayer } from '../layers/weekdayWeekendLayer'
 import { buildCoverageGapLayers } from '../layers/coverageGapLayer'
 import { buildMetroLinesLayer } from '../layers/metroLinesLayer'
-
-const MAP_STYLE = 'https://tiles.openfreemap.org/styles/dark'
+import { useTheme } from '../context/ThemeContext'
 
 export default function MapContainer({
   data,
@@ -19,10 +18,14 @@ export default function MapContainer({
   playing,
   zoom,
   odTopN,
+  wdwTopN,
+  catchmentRadius,
   onHover,
   onStationClick,
   onZoomChange,
+  mapStyle,
 }) {
+  const { theme } = useTheme()
   const mapContainerRef = useRef(null)
   const mapRef          = useRef(null)
   const overlayRef      = useRef(null)
@@ -36,7 +39,7 @@ export default function MapContainer({
 
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: MAP_STYLE,
+      style: mapStyle,
       center: [77.5946, 12.9716],
       zoom: 11.2,
       pitch: 0,
@@ -60,7 +63,13 @@ export default function MapContainer({
       mapRef.current   = null
       overlayRef.current = null
     }
-  }, [onZoomChange])
+  }, [onZoomChange]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Update map style when theme changes
+  useEffect(() => {
+    if (!mapRef.current) return
+    mapRef.current.setStyle(mapStyle)
+  }, [mapStyle])
 
   // Directional arc animation — runs rAF loop when playing, stops when paused
   useEffect(() => {
@@ -106,8 +115,8 @@ export default function MapContainer({
     const entryExitLayer  = buildEntryExitLayer(stations, hour, activeLayer === 'entryExit')
     const odLayers        = buildOdFlowLayer(stations, odFlows, activeLayer === 'odFlow', flowOffsetRef.current, effectiveTopN)
     // buildWeekdayWeekendLayer now returns an array; flatten with concat
-    const wdwLayers       = [].concat(buildWeekdayWeekendLayer(stations, weekday, weekend, weekdayWeekendMode, activeLayer === 'weekdayWeekend'))
-    const coverageLayers  = buildCoverageGapLayers(stations, populationGrid, activeLayer === 'coverageGap')
+    const wdwLayers       = [].concat(buildWeekdayWeekendLayer(stations, weekday, weekend, weekdayWeekendMode, activeLayer === 'weekdayWeekend', wdwTopN))
+    const coverageLayers  = buildCoverageGapLayers(stations, populationGrid, activeLayer === 'coverageGap', catchmentRadius)
 
     const allLayers = [
       metroLinesLayer,
@@ -126,7 +135,20 @@ export default function MapContainer({
     )
 
     overlayRef.current.setProps({ layers: withCallbacks })
-  }, [data, activeLayer, hour, weekdayWeekendMode, maxRidership, effectiveTopN, onHover, onStationClick])
+  }, [data, activeLayer, hour, weekdayWeekendMode, maxRidership, effectiveTopN, wdwTopN, catchmentRadius, onHover, onStationClick])
 
-  return <div ref={mapContainerRef} className="absolute inset-0" />
+  return (
+    <div className="absolute inset-0" style={{ position: 'relative' }}>
+      <div ref={mapContainerRef} className="absolute inset-0" />
+      {/* Light mode: subtle white veil to push basemap further into background */}
+      {theme === 'light' && (
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'rgba(255,255,255,0.12)',
+          pointerEvents: 'none',
+          zIndex: 1,
+        }} />
+      )}
+    </div>
+  )
 }

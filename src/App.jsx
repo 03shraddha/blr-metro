@@ -1,15 +1,20 @@
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import MapContainer from './components/MapContainer'
 import LayerTabs from './components/LayerTabs'
 import TimeSlider from './components/TimeSlider'
 import WeekdayToggle from './components/WeekdayToggle'
 import OdFlowControls from './components/OdFlowControls'
+import WeekdayControls from './components/WeekdayControls'
+import CoverageControls from './components/CoverageControls'
 import DataTable from './components/DataTable'
 import Tooltip from './components/Tooltip'
 import Legend from './components/Legend'
 import StationPanel from './components/StationPanel'
+import OdFlowHeadline from './components/OdFlowHeadline'
+import CoverageHeadline from './components/CoverageHeadline'
 import { useMetroData } from './hooks/useMetroData'
 import { useTimeSlider } from './hooks/useTimeSlider'
+import { useTheme } from './context/ThemeContext'
 
 export default function App() {
   const { data, loading, error } = useMetroData()
@@ -18,9 +23,35 @@ export default function App() {
   const [activeLayer, setActiveLayer] = useState('volume')
   const [weekdayWeekendMode, setWeekdayWeekendMode] = useState('weekday')
   const [odTopN, setOdTopN] = useState(15)
+  const [wdwTopN, setWdwTopN] = useState(20)
+  const [catchmentRadius, setCatchmentRadius] = useState(500)
   const [tooltipInfo, setTooltipInfo] = useState(null)
   const [selectedStation, setSelectedStation] = useState(null)
   const [zoom, setZoom] = useState(11.2)
+
+  const { theme, toggleTheme } = useTheme()
+  const mapStyle = theme === 'dark'
+    ? 'https://tiles.openfreemap.org/styles/dark'
+    : 'https://tiles.openfreemap.org/styles/positron'
+
+  // Compute % of dense population within catchmentRadius of any station
+  const coveragePct = useMemo(() => {
+    if (!data?.stations || !data?.populationGrid) return null
+    const positions = data.stations.map(s => s.geometry.coordinates)
+    const haverDist = ([lng1, lat1], [lng2, lat2]) => {
+      const R = 6371000, toRad = d => d * Math.PI / 180
+      const dLat = toRad(lat2 - lat1), dLng = toRad(lng2 - lng1)
+      const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2
+      return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+    }
+    let total = 0, covered = 0
+    for (const cell of data.populationGrid) {
+      if (cell.weight < 0.12) continue
+      total += cell.weight
+      if (positions.some(pos => haverDist(pos, cell.position) <= catchmentRadius)) covered += cell.weight
+    }
+    return total > 0 ? Math.round((covered / total) * 100) : null
+  }, [data?.stations, data?.populationGrid, catchmentRadius])
 
   const handleZoomChange = useCallback(z => setZoom(z), [])
 
@@ -52,7 +83,7 @@ export default function App() {
   }
 
   return (
-    <div className="relative w-full h-full overflow-hidden bg-[#0a0a0f]">
+    <div className="relative w-full h-full overflow-hidden" style={{ background: 'var(--app-bg)' }}>
       {/* Base map + deck.gl layers */}
       {!loading && data && (
         <MapContainer
@@ -63,23 +94,26 @@ export default function App() {
           weekdayWeekendMode={weekdayWeekendMode}
           zoom={zoom}
           odTopN={odTopN}
+          wdwTopN={wdwTopN}
+          catchmentRadius={catchmentRadius}
           onHover={handleHover}
           onStationClick={handleStationClick}
           onZoomChange={handleZoomChange}
+          mapStyle={mapStyle}
         />
       )}
 
       {/* Loading overlay when data is still fetching */}
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-white/20 text-xs tracking-widest uppercase">
+          <div style={{ fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-micro)' }}>
             Loading data…
           </div>
         </div>
       )}
 
       {/* Layer story chapter tabs */}
-      <LayerTabs activeLayer={activeLayer} setActiveLayer={setActiveLayer} />
+      <LayerTabs activeLayer={activeLayer} setActiveLayer={setActiveLayer} toggleTheme={toggleTheme} theme={theme} />
 
       {/* Weekday / weekend / delta / compare sub-toggle */}
       <WeekdayToggle
@@ -95,6 +129,7 @@ export default function App() {
         hour={hour}
         weekdayWeekendMode={weekdayWeekendMode}
         odTopN={odTopN}
+        catchmentRadius={catchmentRadius}
         selectedStation={selectedStation}
         onStationClick={handleStationClick}
       />
@@ -104,6 +139,21 @@ export default function App() {
         topN={odTopN}
         setTopN={setOdTopN}
         activeLayer={activeLayer}
+      />
+
+      {/* Weekday/weekend top-N stations slider */}
+      <WeekdayControls
+        topN={wdwTopN}
+        setTopN={setWdwTopN}
+        activeLayer={activeLayer}
+      />
+
+      {/* Coverage gap catchment radius slider */}
+      <CoverageControls
+        radius={catchmentRadius}
+        setRadius={setCatchmentRadius}
+        activeLayer={activeLayer}
+        coveragePct={coveragePct}
       />
 
       {/* Time slider (only for hourly layers) */}
@@ -116,7 +166,7 @@ export default function App() {
       />
 
       {/* Legend */}
-      <Legend activeLayer={activeLayer} weekdayWeekendMode={weekdayWeekendMode} />
+      <Legend activeLayer={activeLayer} weekdayWeekendMode={weekdayWeekendMode} catchmentRadius={catchmentRadius} />
 
       {/* Hover tooltip */}
       <Tooltip info={tooltipInfo} hour={hour} />
@@ -124,13 +174,21 @@ export default function App() {
       {/* Station detail panel */}
       <StationPanel station={selectedStation} onClose={handleClosePanel} />
 
+      {/* OD flow headline stat */}
+      <OdFlowHeadline
+        odFlows={data?.odFlows}
+        topN={odTopN}
+        isActive={activeLayer === 'odFlow'}
+      />
+
+
       {/* Title watermark — hidden behind weekday toggle */}
       {activeLayer !== 'weekdayWeekend' && (
         <div className="absolute top-4 right-4 z-10 text-right pointer-events-none">
-          <div className="text-white/20 text-[10px] tracking-widest uppercase">
+          <div style={{ fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--watermark-title)' }}>
             Bengaluru Metro
           </div>
-          <div className="text-white/10 text-[9px]">Intelligence Map</div>
+          <div style={{ fontSize: 9, color: 'var(--watermark-sub)' }}>Intelligence Map</div>
         </div>
       )}
     </div>

@@ -1,7 +1,7 @@
 const IOS_FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
 
-export default function OdFlowControls({ topN, setTopN, activeLayer }) {
-  if (activeLayer !== 'odFlow') return null
+export default function WeekdayControls({ topN, setTopN, activeLayer }) {
+  if (activeLayer !== 'weekdayWeekend') return null
 
   return (
     <div
@@ -18,11 +18,11 @@ export default function OdFlowControls({ topN, setTopN, activeLayer }) {
     >
       {/* Label */}
       <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.06em', color: 'var(--text-label)', textTransform: 'uppercase', flexShrink: 0 }}>
-        Flows shown
+        Stations shown
       </span>
 
       {/* Value */}
-      <span style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.03em', color: 'rgba(251,191,36,0.95)', width: 52, textAlign: 'right', flexShrink: 0 }}>
+      <span style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.03em', color: 'rgba(120,160,255,0.95)', width: 52, textAlign: 'right', flexShrink: 0 }}>
         {topN}
       </span>
 
@@ -34,14 +34,14 @@ export default function OdFlowControls({ topN, setTopN, activeLayer }) {
         step={5}
         value={topN}
         onChange={e => setTopN(Number(e.target.value))}
-        className="accent-amber-400 cursor-pointer"
-        style={{ width: 300 }}
+        className="cursor-pointer"
+        style={{ width: 300, accentColor: 'rgba(80,140,255,0.9)' }}
       />
 
       {/* Min / Max labels */}
       <div className="flex gap-3 flex-shrink-0">
         <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>5</span>
-        <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>50</span>
+        <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>top 50</span>
       </div>
     </div>
   )

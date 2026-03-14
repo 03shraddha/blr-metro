@@ -1,7 +1,6 @@
-import { ArcLayer, ScatterplotLayer } from '@deck.gl/layers'
-import { scaleLinear, scalePow } from 'd3-scale'
+import { ArcLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers'
+import { scalePow } from 'd3-scale'
 
-// Returns [anchorLayer, corridorArcLayer, regularArcLayer]
 export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, topN = 15) {
   const posMap = {}
   const stationMap = {}
@@ -14,60 +13,61 @@ export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, to
     .filter(f => posMap[f.from] && posMap[f.to])
     .slice(0, topN)
 
+  if (validFlows.length === 0) return []
+
   const maxVol = Math.max(...validFlows.map(f => f.volume), 1)
 
-  const widthScale = scalePow().exponent(0.6).domain([0, maxVol]).range([1.5, 14]).clamp(true)
-  const heightScale = scaleLinear().domain([0, maxVol]).range([0.04, 0.18]).clamp(true)
-  const opacityScale = scalePow().exponent(0.7).domain([0, maxVol]).range([50, 220]).clamp(true)
+  // Dramatic width contrast: smallest flow 2px, biggest 28px
+  const widthScale = scalePow().exponent(1.8).domain([0, maxVol]).range([2, 28]).clamp(true)
+  // Nearly flat arcs — stays on map surface, looks like a real transit path
+  const heightScale = scalePow().exponent(0.5).domain([0, maxVol]).range([0.005, 0.025]).clamp(true)
+  const opacityScale = scalePow().exponent(0.6).domain([0, maxVol]).range([40, 200]).clamp(true)
 
-  // Top 3 flows by volume are "corridors" — rendered distinctly in gold
-  const corridorSet = new Set(
-    [...validFlows]
-      .sort((a, b) => b.volume - a.volume)
-      .slice(0, 3)
-      .map((_, i) => i) // indices within validFlows after sort
-  )
-  // Instead mark by volume threshold: top-3 volumes
+  // Top 3 corridors by volume
   const sortedVols = [...validFlows].sort((a, b) => b.volume - a.volume).map(f => f.volume)
   const corridorThreshold = sortedVols[Math.min(2, sortedVols.length - 1)] ?? 0
 
   const corridorFlows = validFlows.filter(f => f.volume >= corridorThreshold)
   const regularFlows  = validFlows.filter(f => f.volume < corridorThreshold)
 
-  // Collect unique station IDs that appear in all flows
+  // Unique stations in all flows
   const anchorIds = new Set()
-  for (const f of validFlows) {
-    anchorIds.add(f.from)
-    anchorIds.add(f.to)
-  }
-  const anchorStations = [...anchorIds]
-    .map(id => stationMap[id])
-    .filter(Boolean)
+  for (const f of validFlows) { anchorIds.add(f.from); anchorIds.add(f.to) }
+  const anchorStations = [...anchorIds].map(id => stationMap[id]).filter(Boolean)
 
-  // Count how many flows pass through each station (for anchor sizing)
   const flowCount = {}
   for (const f of validFlows) {
     flowCount[f.from] = (flowCount[f.from] || 0) + 1
-    flowCount[f.to] = (flowCount[f.to] || 0) + 1
+    flowCount[f.to]   = (flowCount[f.to]   || 0) + 1
   }
 
-  // Station anchor dots — clear origin/destination markers
+  // Short station name for inline labels
+  function shortName(id) {
+    const name = stationMap[id]?.properties?.name || id
+    if (name.length <= 10) return name
+    const parts = name.split(' ')
+    if (parts.length >= 2) return parts.slice(0, 2).join(' ')
+    return name.slice(0, 10)
+  }
+
+  // Anchor dots — white with gold ring
   const anchorLayer = new ScatterplotLayer({
     id: 'od-anchors',
     data: anchorStations,
     opacity: isActive ? 1.0 : 0,
     transitions: { opacity: { duration: 600 } },
     getPosition: d => d.geometry.coordinates,
-    getRadius: d => 120 + (flowCount[d.properties.id] || 1) * 60,
-    getFillColor: [255, 255, 255, 220],
+    getRadius: d => 100 + (flowCount[d.properties.id] || 1) * 55,
+    getFillColor: [255, 255, 255, 230],
     stroked: true,
-    getLineColor: [255, 200, 100, 160],
-    lineWidthMinPixels: 1,
+    getLineColor: [255, 190, 50, 180],
+    lineWidthMinPixels: 1.5,
     radiusUnits: 'meters',
     pickable: true,
   })
 
-  // Corridor arcs — top-3 flows in bright gold to highlight dominant routes
+  // Corridor arcs (top 3) — rich gold gradient, source dim → target bright
+  // Direction is clear: dark at origin, bright at destination
   const corridorArcLayer = new ArcLayer({
     id: 'od-corridors',
     data: corridorFlows,
@@ -75,60 +75,72 @@ export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, to
     transitions: { opacity: { duration: 600 } },
     getSourcePosition: d => posMap[d.from],
     getTargetPosition: d => posMap[d.to],
-    getSourceColor: d => {
-      const a = Math.min(opacityScale(d.volume) + 30, 255)
-      const pulse = Math.round(flowOffset) % 2 === 0 ? 20 : 0
-      return [255, Math.min(215 + pulse, 255), Math.min(0 + pulse, 60), a]
-    },
-    getTargetColor: d => {
-      const a = Math.min(opacityScale(d.volume) + 30, 255)
-      const pulse = Math.round(flowOffset) % 2 === 1 ? 20 : 0
-      return [255, Math.min(255, 255), Math.min(120 + pulse, 200), a]
-    },
-    // Corridors are 40% wider than regular flows for visual dominance
-    getWidth: d => widthScale(d.volume) * 1.4,
+    // Source: dark amber (origin)
+    getSourceColor: d => [200, 100, 10, Math.round(opacityScale(d.volume) * 0.5)],
+    // Target: bright gold (destination) — makes direction obvious
+    getTargetColor: d => [255, 215, 0, Math.round(opacityScale(d.volume) + 55)],
+    getWidth: d => widthScale(d.volume),
     getHeight: d => heightScale(d.volume),
     widthUnits: 'pixels',
-    widthMinPixels: 2,
-    widthMaxPixels: 20,
+    widthMinPixels: 4,
+    widthMaxPixels: 28,
     greatCircle: false,
     pickable: true,
-    updateTriggers: {
-      getSourceColor: [flowOffset],
-      getTargetColor: [flowOffset],
-    },
+    updateTriggers: { getSourceColor: [flowOffset], getTargetColor: [flowOffset] },
   })
 
-  // Regular flow arcs — amber palette, lower visual weight
+  // Regular arcs — muted amber, clearly subordinate to corridors
   const regularArcLayer = new ArcLayer({
     id: 'od-flows-rest',
     data: regularFlows,
-    opacity: isActive ? 1.0 : 0,
+    opacity: isActive ? 0.75 : 0,
     transitions: { opacity: { duration: 600 } },
     getSourcePosition: d => posMap[d.from],
     getTargetPosition: d => posMap[d.to],
-    getSourceColor: d => {
-      const a = opacityScale(d.volume)
-      const pulse = Math.round(flowOffset) % 2 === 0 ? 30 : 0
-      return [255, Math.min(160 + pulse, 255), 40, a]
-    },
-    getTargetColor: d => {
-      const a = opacityScale(d.volume)
-      const pulse = Math.round(flowOffset) % 2 === 1 ? 30 : 0
-      return [255, Math.min(220 + pulse, 255), Math.min(120 + pulse, 255), a]
-    },
+    getSourceColor: d => [180, 80, 10, Math.round(opacityScale(d.volume) * 0.4)],
+    getTargetColor: d => [255, 180, 60, Math.round(opacityScale(d.volume))],
     getWidth: d => widthScale(d.volume),
     getHeight: d => heightScale(d.volume),
     widthUnits: 'pixels',
     widthMinPixels: 1.5,
-    widthMaxPixels: 14,
+    widthMaxPixels: 12,
     greatCircle: false,
     pickable: true,
-    updateTriggers: {
-      getSourceColor: [flowOffset],
-      getTargetColor: [flowOffset],
-    },
+    updateTriggers: { getSourceColor: [flowOffset], getTargetColor: [flowOffset] },
   })
 
-  return [anchorLayer, corridorArcLayer, regularArcLayer]
+  // Inline labels for top 3 corridors — placed at arc midpoint
+  const labelData = corridorFlows.slice(0, 3).map((f, i) => {
+    const [x1, y1] = posMap[f.from]
+    const [x2, y2] = posMap[f.to]
+    // Midpoint with slight upward offset so label clears the arc
+    return {
+      position: [(x1 + x2) / 2, (y1 + y2) / 2 + 0.006],
+      text: `${shortName(f.from)} → ${shortName(f.to)}`,
+      rank: i + 1,
+    }
+  })
+
+  const labelLayer = new TextLayer({
+    id: 'od-flow-labels',
+    data: labelData,
+    opacity: isActive ? 1 : 0,
+    transitions: { opacity: { duration: 600 } },
+    getPosition: d => d.position,
+    getText: d => d.text,
+    getSize: 13,
+    getColor: d => d.rank === 1 ? [255, 230, 80, 240] : [255, 200, 80, 200],
+    getAngle: 0,
+    getTextAnchor: 'middle',
+    getAlignmentBaseline: 'center',
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif",
+    fontWeight: 600,
+    outlineWidth: 2,
+    outlineColor: [0, 0, 0, 200],
+    sizeUnits: 'pixels',
+    pickable: false,
+    parameters: { depthTest: false },
+  })
+
+  return [anchorLayer, regularArcLayer, corridorArcLayer, labelLayer]
 }

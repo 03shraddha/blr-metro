@@ -28,20 +28,20 @@ export default function StationPanel({ station, onClose }) {
         width: 288,
         backdropFilter: 'blur(28px) saturate(1.6)',
         WebkitBackdropFilter: 'blur(28px) saturate(1.6)',
-        background: 'rgba(15,15,20,0.84)',
-        boxShadow: '-1px 0 0 0 rgba(255,255,255,0.07)',
+        background: 'var(--station-panel-bg)',
+        boxShadow: '-1px 0 0 0 var(--station-panel-border)',
         fontFamily: IOS_FONT,
       }}
     >
       {/* Header */}
-      <div style={{ padding: '24px 20px 16px', borderBottom: '0.5px solid rgba(255,255,255,0.08)' }}>
+      <div style={{ padding: '24px 20px 16px', borderBottom: '0.5px solid var(--border)' }}>
         <div className="flex items-start justify-between">
           <div>
-            <h2 style={{ fontSize: 20, fontWeight: 700, letterSpacing: '-0.03em', color: 'rgba(255,255,255,0.95)', lineHeight: 1.2, margin: 0 }}>
+            <h2 style={{ fontSize: 20, fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--text-primary)', lineHeight: 1.2, margin: 0 }}>
               {props.name || 'Station'}
             </h2>
             {props.line && (
-              <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.38)', marginTop: 4, display: 'block' }}>
+              <span style={{ fontSize: 13, color: 'var(--text-label)', marginTop: 4, display: 'block' }}>
                 {capitalize(props.line)} Line
               </span>
             )}
@@ -53,12 +53,12 @@ export default function StationPanel({ station, onClose }) {
               width: 28,
               height: 28,
               borderRadius: '50%',
-              background: 'rgba(255,255,255,0.08)',
+              background: 'var(--btn-close-bg)',
               border: 'none',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: 'rgba(255,255,255,0.5)',
+              color: 'var(--btn-close-color)',
               flexShrink: 0,
               marginTop: 2,
             }}
@@ -73,12 +73,12 @@ export default function StationPanel({ station, onClose }) {
 
       {/* Sparkline */}
       <div style={{ padding: '18px 20px 0' }}>
-        <p style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.32)', marginBottom: 10 }}>
+        <p style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 10 }}>
           Daily ridership pattern
         </p>
         <svg viewBox={`0 0 ${W} ${H}`} style={{ width: '100%', height: H }}>
           {[0.25, 0.5, 0.75].map(f => (
-            <line key={f} x1={0} y1={H * (1 - f)} x2={W} y2={H * (1 - f)} stroke="rgba(255,255,255,0.04)" strokeWidth={1} />
+            <line key={f} x1={0} y1={H * (1 - f)} x2={W} y2={H * (1 - f)} stroke="var(--sparkline-grid)" strokeWidth={1} />
           ))}
           <polyline
             points={`0,${H} ${points} ${W},${H}`}
@@ -103,11 +103,11 @@ export default function StationPanel({ station, onClose }) {
         </svg>
         <div className="flex justify-between" style={{ marginTop: 4 }}>
           {[0, 6, 12, 18, 23].map(h => (
-            <span key={h} style={{ fontSize: 10, color: 'rgba(255,255,255,0.22)' }}>{formatHour(h)}</span>
+            <span key={h} style={{ fontSize: 10, color: 'var(--text-micro)' }}>{formatHour(h)}</span>
           ))}
         </div>
         {sparkline.length > 0 && (
-          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginTop: 10 }}>
+          <p style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 10 }}>
             Peak: <span style={{ color: 'rgba(251,146,60,0.9)', fontWeight: 600 }}>{formatHour(peakHour)}</span>
           </p>
         )}
@@ -116,7 +116,7 @@ export default function StationPanel({ station, onClose }) {
       {/* Stats */}
       {station?.ridership && (
         <div style={{ padding: '16px 20px 0' }}>
-          <p style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.32)', marginBottom: 10 }}>
+          <p style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 10 }}>
             Daily totals
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
@@ -124,9 +124,9 @@ export default function StationPanel({ station, onClose }) {
               { label: 'Total boardings', value: sparkline.reduce((a, b) => a + b, 0) },
               { label: 'Peak hour', value: formatHour(peakHour) },
             ].map(({ label, value }) => (
-              <div key={label} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 12, padding: '10px 12px' }}>
-                <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 17, fontWeight: 700, letterSpacing: '-0.02em', color: 'rgba(255,255,255,0.92)' }}>
+              <div key={label} style={{ background: 'var(--stat-bg)', borderRadius: 12, padding: '10px 12px' }}>
+                <div style={{ fontSize: 11, color: 'var(--text-muted)', marginBottom: 4 }}>{label}</div>
+                <div style={{ fontSize: 17, fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
                   {typeof value === 'number' ? fmt(value) : value}
                 </div>
               </div>
@@ -136,8 +136,8 @@ export default function StationPanel({ station, onClose }) {
       )}
 
       {/* Footer */}
-      <div style={{ marginTop: 'auto', padding: '16px 20px', borderTop: '0.5px solid rgba(255,255,255,0.07)' }}>
-        <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.2)', margin: 0 }}>Data: BMRCL August 2025 (RTI)</p>
+      <div style={{ marginTop: 'auto', padding: '16px 20px', borderTop: '0.5px solid var(--station-panel-border)' }}>
+        <p style={{ fontSize: 11, color: 'var(--text-micro)', margin: 0 }}>Data: BMRCL August 2025 (RTI)</p>
       </div>
     </div>
   )

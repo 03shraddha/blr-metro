@@ -20,7 +20,19 @@ const ZONES = [
 const RING_MAX_RADIUS = 800   // metres — keeps stations visually distinct
 const RING_MIN_RADIUS = 80
 
-export function buildWeekdayWeekendLayer(stations, weekdayData, weekendData, mode, isActive) {
+// Filter stations to top-N by total ridership for the given mode
+function filterTopN(stations, weekdayData, weekendData, mode, topN) {
+  const getTotal = s => {
+    const data = mode === 'weekend' ? weekendData : weekdayData
+    return getDailyRidership(data, s.properties.id).total
+  }
+  return [...stations]
+    .sort((a, b) => getTotal(b) - getTotal(a))
+    .slice(0, topN)
+}
+
+export function buildWeekdayWeekendLayer(stations, weekdayData, weekendData, mode, isActive, topN = 50) {
+  const filteredStations = filterTopN(stations, weekdayData, weekendData, mode, topN)
   const zoneLabels = new TextLayer({
     id: 'wdw-zone-labels',
     data: ZONES,
@@ -39,15 +51,15 @@ export function buildWeekdayWeekendLayer(stations, weekdayData, weekendData, mod
     pickable: false,
   })
 
-  if (mode === 'delta')   return [buildDeltaLayer(stations, weekdayData, weekendData, isActive), zoneLabels]
-  if (mode === 'compare') return [...buildCompareLayers(stations, weekdayData, weekendData, isActive), zoneLabels]
+  if (mode === 'delta')   return [buildDeltaLayer(filteredStations, weekdayData, weekendData, isActive), zoneLabels]
+  if (mode === 'compare') return [...buildCompareLayers(filteredStations, weekdayData, weekendData, isActive), zoneLabels]
 
   // ── Single mode (weekday / weekend) ──────────────────────────────────────────
   const data    = mode === 'weekday' ? weekdayData : weekendData
   const palette = mode === 'weekday' ? [30, 120, 255] : [200, 50, 220]
 
   let maxTotal = 1
-  for (const s of stations) {
+  for (const s of filteredStations) {
     const d = getDailyRidership(data, s.properties.id)
     if (d.total > maxTotal) maxTotal = d.total
   }
@@ -59,7 +71,7 @@ export function buildWeekdayWeekendLayer(stations, weekdayData, weekendData, mod
   // Glow halo layer — very faint fill for the outer radius (visual "weight")
   const haloLayer = new ScatterplotLayer({
     id: 'wdw-halo',
-    data: stations,
+    data: filteredStations,
     opacity: isActive ? 1.0 : 0,
     transitions: {
       opacity:      { duration: 600 },
@@ -78,13 +90,13 @@ export function buildWeekdayWeekendLayer(stations, weekdayData, weekendData, mod
     radiusUnits: 'meters',
     stroked: false,
     pickable: false,
-    updateTriggers: { getRadius: [mode], getFillColor: [mode] },
+    updateTriggers: { getRadius: [mode, topN], getFillColor: [mode, topN] },
   })
 
   // Ring layer — the proportional circle outline
   const ringLayer = new ScatterplotLayer({
     id: 'weekday-weekend',
-    data: stations,
+    data: filteredStations,
     opacity: isActive ? 1.0 : 0,
     transitions: {
       opacity:        { duration: 600 },
@@ -106,13 +118,13 @@ export function buildWeekdayWeekendLayer(stations, weekdayData, weekendData, mod
     lineWidthMaxPixels: 3,
     radiusUnits: 'meters',
     pickable: true,
-    updateTriggers: { getRadius: [mode], getLineColor: [mode] },
+    updateTriggers: { getRadius: [mode, topN], getLineColor: [mode, topN] },
   })
 
   // Station dot — small solid dot at centre so you can see exact station location
   const dotLayer = new ScatterplotLayer({
     id: 'wdw-dots',
-    data: stations,
+    data: filteredStations,
     opacity: isActive ? 1.0 : 0,
     transitions: { opacity: { duration: 600 } },
     getPosition:  d => d.geometry.coordinates,

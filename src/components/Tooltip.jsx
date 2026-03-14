@@ -23,14 +23,14 @@ export default function Tooltip({ info, hour }) {
           borderRadius: 14,
           backdropFilter: 'blur(28px) saturate(1.6)',
           WebkitBackdropFilter: 'blur(28px) saturate(1.6)',
-          background: 'rgba(18,18,22,0.82)',
-          boxShadow: '0 2px 20px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.09)',
+          background: 'var(--panel-bg)',
+          boxShadow: 'var(--panel-shadow-sm)',
           fontFamily: IOS_FONT,
           minWidth: 160,
           maxWidth: 240,
         }}
       >
-        <div style={{ fontSize: 15, fontWeight: 600, letterSpacing: '-0.02em', color: 'rgba(255,255,255,0.92)', marginBottom: 4, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        <div style={{ fontSize: 15, fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', marginBottom: 4, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           {props.name || 'Station'}
         </div>
         {props.line && (
@@ -56,7 +56,7 @@ export default function Tooltip({ info, hour }) {
             <span style={{ color: 'rgba(253,186,116,0.9)' }}>{fmt(exits)} out</span>
           </div>
         )}
-        <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.28)', marginTop: 4, letterSpacing: '0.01em' }}>
+        <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 4, letterSpacing: '0.01em' }}>
           {formatHour(hour)}
         </div>
       </div>

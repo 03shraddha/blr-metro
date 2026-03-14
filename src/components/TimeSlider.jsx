@@ -8,47 +8,45 @@ export default function TimeSlider({ hour, playing, togglePlay, setHourManual, a
 
   return (
     <div
-      className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-5"
+      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-6"
       style={{
-        padding: '12px 22px',
-        borderRadius: 28,
+        padding: '16px 28px',
+        borderRadius: 32,
         backdropFilter: 'blur(28px) saturate(1.6)',
         WebkitBackdropFilter: 'blur(28px) saturate(1.6)',
-        background: 'rgba(18,18,22,0.78)',
-        boxShadow: '0 2px 24px rgba(0,0,0,0.45), 0 0 0 0.5px rgba(255,255,255,0.08)',
+        background: 'var(--panel-bg)',
+        boxShadow: 'var(--panel-shadow)',
         fontFamily: IOS_FONT,
       }}
     >
       {/* Play / Pause */}
       <button
         onClick={togglePlay}
-        className="transition-colors cursor-pointer flex items-center justify-center"
-        style={{ width: 38, height: 38, color: playing ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.65)' }}
+        className="transition-colors cursor-pointer flex items-center justify-center flex-shrink-0"
+        style={{ width: 44, height: 44, color: playing ? 'var(--text-primary)' : 'var(--text-secondary)' }}
         title={playing ? 'Pause' : 'Play'}
       >
         {playing ? (
-          <svg viewBox="0 0 24 24" fill="currentColor" width={26} height={26}>
+          <svg viewBox="0 0 24 24" fill="currentColor" width={30} height={30}>
             <rect x="6" y="4" width="4" height="16" rx="1.5" />
             <rect x="14" y="4" width="4" height="16" rx="1.5" />
           </svg>
         ) : (
-          <svg viewBox="0 0 24 24" fill="currentColor" width={26} height={26}>
+          <svg viewBox="0 0 24 24" fill="currentColor" width={30} height={30}>
             <polygon points="5,3 19,12 5,21" />
           </svg>
         )}
       </button>
 
-      {/* Hour label */}
+      {/* Label */}
+      <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.06em', color: 'var(--text-label)', textTransform: 'uppercase', flexShrink: 0 }}>
+        Time
+      </span>
+
+      {/* Hour value */}
       <span
-        className="tabular-nums select-none"
-        style={{
-          fontSize: 20,
-          fontWeight: 600,
-          letterSpacing: '-0.02em',
-          color: 'rgba(255,255,255,0.80)',
-          width: 70,
-          textAlign: 'right',
-        }}
+        className="tabular-nums select-none flex-shrink-0"
+        style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.03em', color: 'rgba(251,146,60,0.95)', width: 90, textAlign: 'right' }}
       >
         {formatHour(hour)}
       </span>
@@ -61,16 +59,14 @@ export default function TimeSlider({ hour, playing, togglePlay, setHourManual, a
         value={hour}
         onChange={e => setHourManual(e.target.value)}
         className="accent-orange-400 cursor-pointer"
-        style={{ width: 240 }}
+        style={{ width: 300 }}
       />
 
-      {/* Attribution */}
-      <span
-        className="select-none hidden sm:block"
-        style={{ fontSize: 13, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.01em' }}
-      >
-        BMRCL Aug 2025
-      </span>
+      {/* Min / Max labels */}
+      <div className="flex gap-3 flex-shrink-0">
+        <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>12am</span>
+        <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>11pm</span>
+      </div>
     </div>
   )
 }

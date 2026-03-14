@@ -2,8 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles/index.css'
 import App from './App.jsx'
+import { ThemeProvider } from './context/ThemeContext.jsx'
 
-// Fade out the pre-React loading screen
 const loadingScreen = document.getElementById('loading-screen')
 if (loadingScreen) {
   loadingScreen.classList.add('fade-out')
@@ -12,6 +12,8 @@ if (loadingScreen) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </StrictMode>,
 )

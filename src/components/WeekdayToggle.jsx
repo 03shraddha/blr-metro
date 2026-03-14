@@ -23,8 +23,8 @@ export default function WeekdayToggle({ mode, setMode, activeLayer }) {
       style={{
         backdropFilter: 'blur(28px) saturate(1.6)',
         WebkitBackdropFilter: 'blur(28px) saturate(1.6)',
-        background: 'rgba(18,18,22,0.78)',
-        boxShadow: '0 2px 24px rgba(0,0,0,0.45), 0 0 0 0.5px rgba(255,255,255,0.08)',
+        background: 'var(--panel-bg)',
+        boxShadow: 'var(--panel-shadow-sm)',
         fontFamily: IOS_FONT,
       }}
     >
@@ -39,7 +39,7 @@ export default function WeekdayToggle({ mode, setMode, activeLayer }) {
             style={{
               padding: '9px 18px',
               background: isActive ? style.bg : 'transparent',
-              color: isActive ? style.text : 'rgba(255,255,255,0.35)',
+              color: isActive ? style.text : 'var(--segment-inactive)',
               fontSize: 16,
               fontWeight: isActive ? 600 : 400,
               letterSpacing: '-0.01em',

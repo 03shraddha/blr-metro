@@ -1,5 +1,73 @@
 @import "tailwindcss";
 
+/* ── Theme tokens ──────────────────────────────────────────────────────────── */
+:root {
+  /* Light mode (default) */
+  --app-bg: #f0f0f5;
+  --panel-bg: rgba(255,255,255,0.92);
+  --panel-shadow: 0 4px 32px rgba(0,0,0,0.12), 0 0 0 0.5px rgba(0,0,0,0.07);
+  --panel-shadow-sm: 0 2px 24px rgba(0,0,0,0.10), 0 0 0 0.5px rgba(0,0,0,0.07);
+  --border: rgba(0,0,0,0.08);
+  --border-row: rgba(0,0,0,0.055);
+  --text-primary: rgba(12,12,20,0.88);
+  --text-secondary: rgba(12,12,20,0.62);
+  --text-label: rgba(12,12,20,0.50);
+  --text-muted: rgba(12,12,20,0.38);
+  --text-micro: rgba(12,12,20,0.25);
+  --input-bg: rgba(0,0,0,0.06);
+  --input-text: rgba(12,12,20,0.88);
+  --input-icon: rgba(12,12,20,0.38);
+  --row-hover: rgba(0,0,0,0.04);
+  --row-selected: rgba(0,0,0,0.07);
+  --stat-bg: rgba(0,0,0,0.05);
+  --tab-active-bg: rgba(0,0,0,0.09);
+  --tab-active-text: rgba(12,12,20,0.95);
+  --tab-inactive-text: rgba(12,12,20,0.45);
+  --tab-active-bar: rgba(12,12,20,0.55);
+  --tab-divider: rgba(0,0,0,0.06);
+  --segment-inactive: rgba(12,12,20,0.42);
+  --station-panel-bg: rgba(248,248,252,0.96);
+  --station-panel-border: rgba(0,0,0,0.07);
+  --sparkline-grid: rgba(0,0,0,0.05);
+  --btn-close-bg: rgba(0,0,0,0.08);
+  --btn-close-color: rgba(12,12,20,0.50);
+  --watermark-title: rgba(12,12,20,0.18);
+  --watermark-sub: rgba(12,12,20,0.10);
+}
+
+[data-theme="dark"] {
+  --app-bg: #0a0a0f;
+  --panel-bg: rgba(18,18,22,0.82);
+  --panel-shadow: 0 4px 32px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.08);
+  --panel-shadow-sm: 0 2px 24px rgba(0,0,0,0.45), 0 0 0 0.5px rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.08);
+  --border-row: rgba(255,255,255,0.045);
+  --text-primary: rgba(255,255,255,0.88);
+  --text-secondary: rgba(255,255,255,0.55);
+  --text-label: rgba(255,255,255,0.40);
+  --text-muted: rgba(255,255,255,0.28);
+  --text-micro: rgba(255,255,255,0.20);
+  --input-bg: rgba(255,255,255,0.06);
+  --input-text: rgba(255,255,255,0.80);
+  --input-icon: rgba(255,255,255,0.30);
+  --row-hover: rgba(255,255,255,0.055);
+  --row-selected: rgba(255,255,255,0.09);
+  --stat-bg: rgba(255,255,255,0.05);
+  --tab-active-bg: rgba(255,255,255,0.10);
+  --tab-active-text: rgba(255,255,255,0.95);
+  --tab-inactive-text: rgba(255,255,255,0.42);
+  --tab-active-bar: rgba(255,255,255,0.55);
+  --tab-divider: rgba(255,255,255,0.06);
+  --segment-inactive: rgba(255,255,255,0.35);
+  --station-panel-bg: rgba(15,15,20,0.84);
+  --station-panel-border: rgba(255,255,255,0.07);
+  --sparkline-grid: rgba(255,255,255,0.04);
+  --btn-close-bg: rgba(255,255,255,0.08);
+  --btn-close-color: rgba(255,255,255,0.50);
+  --watermark-title: rgba(255,255,255,0.20);
+  --watermark-sub: rgba(255,255,255,0.10);
+}
+
 /* Kill all focus outlines — custom components handle focus states themselves */
 button:focus { outline: none; }
 button:focus-visible { outline: none; }
@@ -11,7 +79,7 @@ html, body, #root {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #0a0a0f;
+  background: var(--app-bg);
 }
 
 /* MapLibre canvas */
@@ -60,6 +128,12 @@ html, body, #root {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* Subtle scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.10); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.20); }
 
 /* Station panel slide-in */
 .station-panel {

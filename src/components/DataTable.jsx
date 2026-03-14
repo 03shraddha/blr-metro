@@ -28,10 +28,10 @@ function MiniSparkline({ station, accentColor }) {
       </svg>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 2 }}>
         {[0, 6, 12, 18, 23].map(h => (
-          <span key={h} style={{ fontSize: 10, color: 'rgba(255,255,255,0.22)' }}>{formatHour(h)}</span>
+          <span key={h} style={{ fontSize: 10, color: 'var(--text-micro)' }}>{formatHour(h)}</span>
         ))}
       </div>
-      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginTop: 6 }}>
+      <div style={{ fontSize: 14, color: 'var(--text-secondary)', marginTop: 6 }}>
         Peak: <span style={{ color: accentColor, fontWeight: 600 }}>{formatHour(peakH)}</span>
       </div>
     </div>
@@ -69,19 +69,19 @@ function SelectedCard({ station, accentColor, onClose, weekday, weekend, hour, a
   const type = stationType(station)
 
   return (
-    <div style={{ padding: '12px 18px', borderBottom: '0.5px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.04)' }}>
+    <div style={{ padding: '12px 18px', borderBottom: '0.5px solid var(--border)', background: 'var(--stat-bg)' }}>
       {/* Station header */}
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 10 }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 3 }}>
             <span style={{ width: 8, height: 8, borderRadius: '50%', background: lineColor, display: 'inline-block', flexShrink: 0 }} />
-            <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.02em', color: 'rgba(255,255,255,0.95)' }}>
+            <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
               {props.name || 'Station'}
             </span>
           </div>
           <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
             {props.line && (
-              <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.38)' }}>{capitalize(props.line)} Line</span>
+              <span style={{ fontSize: 11, color: 'var(--text-label)' }}>{capitalize(props.line)} Line</span>
             )}
             {type && (
               <span style={{ fontSize: 11, fontWeight: 600, padding: '1px 6px', borderRadius: 5, color: type.color, background: type.color + '22' }}>
@@ -92,7 +92,7 @@ function SelectedCard({ station, accentColor, onClose, weekday, weekend, hour, a
         </div>
         <button
           onClick={onClose}
-          style={{ color: 'rgba(255,255,255,0.30)', cursor: 'pointer', background: 'none', border: 'none', padding: 2, lineHeight: 0 }}
+          style={{ color: 'var(--text-muted)', cursor: 'pointer', background: 'none', border: 'none', padding: 2, lineHeight: 0 }}
         >
           <svg viewBox="0 0 12 12" width={12} height={12} fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round">
             <line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" />
@@ -104,9 +104,9 @@ function SelectedCard({ station, accentColor, onClose, weekday, weekend, hour, a
       {stats.length > 0 && (
         <div style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: 8, marginBottom: 10 }}>
           {stats.map(({ label, value }) => (
-            <div key={label} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 10, padding: '7px 10px' }}>
-              <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.30)', marginBottom: 2 }}>{label}</div>
-              <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.02em', color: 'rgba(255,255,255,0.92)' }} className="tabular-nums">{value}</div>
+            <div key={label} style={{ background: 'var(--stat-bg)', borderRadius: 10, padding: '7px 10px' }}>
+              <div style={{ fontSize: 11, color: 'var(--text-muted)', marginBottom: 2 }}>{label}</div>
+              <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }} className="tabular-nums">{value}</div>
             </div>
           ))}
         </div>
@@ -152,17 +152,17 @@ function peakHour(station) {
   return peak
 }
 
-export default function DataTable({ data, activeLayer, hour, weekdayWeekendMode, odTopN, onStationClick, selectedStation }) {
+export default function DataTable({ data, activeLayer, hour, weekdayWeekendMode, odTopN, catchmentRadius = 500, onStationClick, selectedStation }) {
   const [collapsed, setCollapsed] = useState(false)
   const [search, setSearch] = useState('')
   if (!data) return null
 
   const { stations, weekday, weekend, odFlows } = data
-  const config = buildConfig(activeLayer, weekdayWeekendMode, stations, weekday, weekend, odFlows, hour, odTopN)
+  const config = buildConfig(activeLayer, weekdayWeekendMode, stations, weekday, weekend, odFlows, hour, odTopN, catchmentRadius)
   if (!config) return null
 
   const { title, insight, rows, accentColor } = config
-  const topOffset = activeLayer === 'weekdayWeekend' ? 62 : 16
+  const topOffset = activeLayer === 'weekdayWeekend' ? 80 : 16
 
   // Filter rows by search term
   const term = search.trim().toLowerCase()
@@ -188,8 +188,8 @@ export default function DataTable({ data, activeLayer, hour, weekdayWeekendMode,
       style={{
         backdropFilter: 'blur(28px) saturate(1.6)',
         WebkitBackdropFilter: 'blur(28px) saturate(1.6)',
-        background: 'rgba(18,18,22,0.80)',
-        boxShadow: '0 2px 24px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.08)',
+        background: 'var(--panel-bg)',
+        boxShadow: 'var(--panel-shadow-sm)',
         borderRadius: 20,
         top: topOffset,
         width: 370,
@@ -200,19 +200,19 @@ export default function DataTable({ data, activeLayer, hour, weekdayWeekendMode,
       {/* Header */}
       <div
         className="flex items-center justify-between cursor-pointer select-none flex-shrink-0"
-        style={{ padding: '14px 18px', borderBottom: '0.5px solid rgba(255,255,255,0.07)' }}
+        style={{ padding: '14px 18px', borderBottom: '0.5px solid var(--border)' }}
         onClick={() => setCollapsed(v => !v)}
       >
         <div className="flex items-center gap-2.5">
           <div style={{ width: 8, height: 8, borderRadius: '50%', background: accentColor, flexShrink: 0 }} />
-          <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.07em', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: 14, fontWeight: 600, letterSpacing: '0.07em', color: 'var(--text-label)', textTransform: 'uppercase' }}>
             {title}
           </span>
         </div>
         <svg
-          viewBox="0 0 10 6" width={11} height={11}
+          viewBox="0 0 10 6" width={13} height={13}
           style={{
-            fill: 'none', stroke: 'rgba(255,255,255,0.28)', strokeWidth: 1.6, strokeLinecap: 'round',
+            fill: 'none', stroke: 'var(--text-muted)', strokeWidth: 1.6, strokeLinecap: 'round',
             transform: collapsed ? 'rotate(180deg)' : 'none',
             transition: 'transform 200ms ease',
           }}
@@ -236,22 +236,22 @@ export default function DataTable({ data, activeLayer, hour, weekdayWeekendMode,
               weekdayWeekendMode={weekdayWeekendMode}
             />
           ) : insight && (
-            <div className="flex-shrink-0" style={{ padding: '12px 18px', borderBottom: '0.5px solid rgba(255,255,255,0.06)' }}>
-              <p style={{ fontSize: 15, lineHeight: 1.55, color: 'rgba(255,255,255,0.65)', margin: 0 }}>{insight}</p>
+            <div className="flex-shrink-0" style={{ padding: '12px 18px', borderBottom: '0.5px solid var(--border)' }}>
+              <p style={{ fontSize: 17, lineHeight: 1.55, color: 'var(--text-secondary)', margin: 0 }}>{insight}</p>
             </div>
           )}
 
           {/* Search box */}
-          <div className="flex-shrink-0" style={{ padding: '10px 18px', borderBottom: '0.5px solid rgba(255,255,255,0.06)' }}>
+          <div className="flex-shrink-0" style={{ padding: '10px 18px', borderBottom: '0.5px solid var(--border)' }}>
             <div
               className="flex items-center gap-2"
               style={{
-                background: 'rgba(255,255,255,0.06)',
+                background: 'var(--input-bg)',
                 borderRadius: 10,
                 padding: '7px 12px',
               }}
             >
-              <span style={{ color: 'rgba(255,255,255,0.30)', lineHeight: 0 }}><SearchIcon /></span>
+              <span style={{ color: 'var(--input-icon)', lineHeight: 0 }}><SearchIcon /></span>
               <input
                 type="text"
                 placeholder="Filter stations..."
@@ -263,15 +263,15 @@ export default function DataTable({ data, activeLayer, hour, weekdayWeekendMode,
                   border: 'none',
                   outline: 'none',
                   flex: 1,
-                  fontSize: 15,
-                  color: 'rgba(255,255,255,0.80)',
+                  fontSize: 16,
+                  color: 'var(--input-text)',
                   fontFamily: IOS_FONT,
                 }}
               />
               {search && (
                 <button
                   onClick={e => { e.stopPropagation(); setSearch('') }}
-                  style={{ color: 'rgba(255,255,255,0.30)', lineHeight: 0, cursor: 'pointer', background: 'none', border: 'none', padding: 0 }}
+                  style={{ color: 'var(--input-icon)', lineHeight: 0, cursor: 'pointer', background: 'none', border: 'none', padding: 0 }}
                 >
                   <svg viewBox="0 0 12 12" width={12} height={12} fill="currentColor">
                     <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" fill="none"/>
@@ -284,7 +284,7 @@ export default function DataTable({ data, activeLayer, hour, weekdayWeekendMode,
           {/* Rows - scrollable */}
           <div className="overflow-y-auto overflow-x-hidden flex-1" style={{ minHeight: 0 }}>
             {filteredRows.length === 0 ? (
-              <div style={{ padding: '24px 18px', textAlign: 'center', fontSize: 15, color: 'rgba(255,255,255,0.25)' }}>
+              <div style={{ padding: '24px 18px', textAlign: 'center', fontSize: 16, color: 'var(--text-muted)' }}>
                 No results for "{search}"
               </div>
             ) : (
@@ -312,10 +312,11 @@ export default function DataTable({ data, activeLayer, hour, weekdayWeekendMode,
 function Row({ rank, label, sub, value, value2, barPct, accentColor, labelColor, dot, badge, isSelected, isClickable, onClick }) {
   const [hovered, setHovered] = useState(false)
 
+  // Use CSS vars for selection/hover; keep the bar gradient with the accent colour
   const bg = isSelected
-    ? `rgba(255,255,255,0.09)`
+    ? 'var(--row-selected)'
     : hovered && isClickable
-      ? `rgba(255,255,255,0.055)`
+      ? 'var(--row-hover)'
       : barPct > 0
         ? `linear-gradient(to right, ${accentColor}14 ${barPct}%, transparent ${barPct}%)`
         : 'transparent'
@@ -325,7 +326,7 @@ function Row({ rank, label, sub, value, value2, barPct, accentColor, labelColor,
       className="relative flex items-center gap-2.5"
       style={{
         padding: '10px 18px',
-        borderBottom: '0.5px solid rgba(255,255,255,0.045)',
+        borderBottom: '0.5px solid var(--border-row)',
         background: bg,
         cursor: isClickable ? 'pointer' : 'default',
         transition: 'background 120ms ease',
@@ -338,7 +339,7 @@ function Row({ rank, label, sub, value, value2, barPct, accentColor, labelColor,
       {/* Rank */}
       <span
         className="tabular-nums text-right flex-shrink-0"
-        style={{ fontSize: 13, color: 'rgba(255,255,255,0.25)', width: 20 }}
+        style={{ fontSize: 14, color: 'var(--text-muted)', width: 20 }}
       >
         {rank}
       </span>
@@ -356,10 +357,10 @@ function Row({ rank, label, sub, value, value2, barPct, accentColor, labelColor,
         <div
           className="truncate"
           style={{
-            fontSize: 16,
+            fontSize: 17,
             fontWeight: 500,
             letterSpacing: '-0.01em',
-            color: labelColor || 'rgba(255,255,255,0.88)',
+            color: labelColor || 'var(--text-primary)',
             lineHeight: 1.3,
           }}
           title={typeof label === 'string' ? label : undefined}
@@ -371,7 +372,7 @@ function Row({ rank, label, sub, value, value2, barPct, accentColor, labelColor,
             {badge && (
               <span
                 style={{
-                  fontSize: 12,
+                  fontSize: 13,
                   fontWeight: 600,
                   padding: '2px 7px',
                   borderRadius: 6,
@@ -385,7 +386,7 @@ function Row({ rank, label, sub, value, value2, barPct, accentColor, labelColor,
               </span>
             )}
             {sub && (
-              <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.32)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              <span style={{ fontSize: 14, color: 'var(--text-muted)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 {sub}
               </span>
             )}
@@ -395,11 +396,11 @@ function Row({ rank, label, sub, value, value2, barPct, accentColor, labelColor,
 
       {/* Value */}
       <div className="flex flex-col items-end flex-shrink-0">
-        <span style={{ fontSize: 16, fontWeight: 600, letterSpacing: '-0.01em', color: 'rgba(255,255,255,0.90)' }} className="tabular-nums">
+        <span style={{ fontSize: 17, fontWeight: 600, letterSpacing: '-0.01em', color: 'var(--text-primary)' }} className="tabular-nums">
           {value}
         </span>
         {value2 && (
-          <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.36)' }} className="tabular-nums">
+          <span style={{ fontSize: 14, color: 'var(--text-label)' }} className="tabular-nums">
             {value2}
           </span>
         )}
@@ -410,7 +411,18 @@ function Row({ rank, label, sub, value, value2, barPct, accentColor, labelColor,
 
 // ── Config builders ───────────────────────────────────────────────────────────
 
-function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hour, odTopN) {
+// Haversine distance in metres between two [lon, lat] points
+function haverDist([lon1, lat1], [lon2, lat2]) {
+  const R = 6371000
+  const dφ = (lat2 - lat1) * Math.PI / 180
+  const dλ = (lon2 - lon1) * Math.PI / 180
+  const φ1 = lat1 * Math.PI / 180
+  const φ2 = lat2 * Math.PI / 180
+  const a = Math.sin(dφ / 2) ** 2 + Math.cos(φ1) * Math.cos(φ2) * Math.sin(dλ / 2) ** 2
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+}
+
+function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hour, odTopN, catchmentRadius = 500) {
 
   // ── Volume ──────────────────────────────────────────────────────────────────
   if (activeLayer === 'volume') {
@@ -429,18 +441,19 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
     const totalSystem = sorted.reduce((sum, r) => sum + r.total, 0)
     const topShare    = totalSystem > 0 ? Math.round((top?.total / totalSystem) * 100) : 0
 
-    const hourMood = hour >= 7  && hour <= 10 ? 'The morning wave is rolling in from the suburbs.'
-                   : hour >= 17 && hour <= 20 ? 'Evening tide turning. The CBD is emptying back out.'
-                   : hour >= 21 || hour <= 5  ? 'Night-owl hours. The city runs on skeleton crew.'
-                   : hour >= 11 && hour <= 14 ? 'Off-peak lull. The network catches its breath.'
-                   : 'Mid-morning drift. Stragglers and flex workers.'
+    const hourMood =
+      hour >= 7  && hour <= 10 ? "Bengaluru's suburbs are draining into the centre. Whitefield, Banashankari, Yelahanka, all emptying in sync. This is what a 9 AM commuter tide looks like when you map it." :
+      hour >= 17 && hour <= 20 ? "The city is running in reverse. Every person who flooded in this morning is now flowing back out. The CBD empties, the suburbs refill. Watch the direction flip." :
+      hour >= 21 || hour <= 5  ? "Ghost hours. Bengaluru has gone home. Whatever is still on the network is a night-shift worker, an airport run, or someone who badly miscalculated the traffic." :
+      hour >= 11 && hour <= 14 ? "The lunchtime plateau. Office workers are at their desks, not their seats. The network coasts at maybe 30% of peak capacity. This is what breathing room looks like on a transit system." :
+                                 "The irregular crowd. Late starters, bank errands, doctor appointments, flex workers with no alarm. No commute wave here, just a city doing things at its own pace."
 
     return {
       title:       `Ridership · ${fmtHour(hour)}`,
       accentColor: '#ff8c00',
       insight:     top?.total > 0
-        ? `${hourMood} ${top.name} leads with ${fmtN(top.total)} riders, ${topShare}% of top-15 load.`
-        : `Network quiet at ${fmtHour(hour)}.`,
+        ? `${hourMood} ${top.name} is absorbing ${fmtN(top.total)} riders right now. That's ${topShare}% of the top-15 load concentrated at one stop.`
+        : `Nothing moving at ${fmtHour(hour)}. The metro is basically a scheduled ghost train.`,
       rows: sorted.map(r => ({
         stationId: r.id,
         label:  r.name,
@@ -469,14 +482,13 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
     const top    = sorted[0]
     const bottom = sorted[sorted.length - 1]
     const maxR   = sorted[0]?.ratio || 1
-    const hubCount = sorted.filter(r => r.ratio > 1.35).length
 
     return {
       title:       `Entry / Exit · ${fmtHour(hour)}`,
       accentColor: '#f87171',
       insight:     top && bottom
-        ? `${top.name} is the top job sink (${top.ratio.toFixed(1)}× exits); ${bottom.name} (${bottom.ratio.toFixed(2)}×) is the top residential departure.`
-        : `Not enough movement at ${fmtHour(hour)} yet.`,
+        ? `${top.name} has a ${top.ratio.toFixed(1)}x exit ratio, meaning far more people arriving than leaving. Not a transit stop, an office magnet. ${bottom.name} (${bottom.ratio.toFixed(2)}x) sits at the other end: a pure origin zone where residents leave in the morning and the station stays quiet until evening.`
+        : `Not enough movement at ${fmtHour(hour)} yet to read the pattern.`,
       rows: sorted.map(r => ({
         stationId:  r.id,
         label:      r.name,
@@ -507,7 +519,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       title:       `Top ${topN} flows`,
       accentColor: '#fde047',
       insight:     top
-        ? `${shorten(nameMap[top.from])} → ${shorten(nameMap[top.to])} dominates with ${fmtN(top.volume)} trips; top 3 routes = ${top3share}% of all flow.`
+        ? `${shorten(nameMap[top.from])} to ${shorten(nameMap[top.to])} is the single busiest route: ${fmtN(top.volume)} trips. Think of it as a packed bus that runs all day. The top 3 routes between them handle ${top3share}% of everything shown here. Every other route on this map moves significantly fewer people.`
         : 'No flow data.',
       rows: flows.map((f, i) => ({
         label:      `${shorten(nameMap[f.from] || f.from)} → ${shorten(nameMap[f.to] || f.to)}`,
@@ -535,13 +547,12 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       const top      = sorted[0]
       const maxAbs   = Math.abs(sorted[0]?.delta) || 1
       const commuter = sorted.filter(r => r.delta > 0).length
-      const leisure  = sorted.filter(r => r.delta < 0).length
 
       return {
         title:       'Weekday vs Weekend Δ',
         accentColor: '#60a5fa',
         insight:     top
-          ? `${commuter} commuter stations, ${leisure} leisure hubs. ${top.name} has the widest gap at ${top.delta > 0 ? '+' : ''}${fmtN(top.delta)}.`
+          ? `Commuter stations that roar on Monday go completely silent on Saturday. Strip away the office gravity and what's left looks like a ghost network. ${top.name} has the starkest split: a ${top.delta > 0 ? '+' : ''}${fmtN(top.delta)}-rider weekly gap that maps almost exactly where Bengaluru goes to clock in.`
           : '',
         rows: sorted.map(r => ({
           stationId:  r.id,
@@ -572,7 +583,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
         title:       'Weekday vs Weekend',
         accentColor: '#60a5fa',
         insight:     top
-          ? `${top.name} shrinks ${shrinkBy}% on weekends. Office blocks empty out when Friday ends.`
+          ? `${top.name} drops ${shrinkBy}% the moment Friday ends. Not a metro hub, a corporate shuttle stop that happens to have a BMRCL logo. The weekend crowd went to MG Road. Saturday's riders are mostly catching onward autos.`
           : '',
         rows: sorted.map(r => ({
           stationId: r.id,
@@ -584,7 +595,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       }
     }
 
-    // Single mode
+    // Single mode (weekday or weekend)
     const isWeekday = mode !== 'weekend'
     const modeData  = isWeekday ? weekday : weekend
     const sorted = stations
@@ -606,8 +617,10 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       accentColor: isWeekday ? '#3b82f6' : '#a855f7',
       insight:     top
         ? isWeekday
-          ? `${top.name} leads at ${fmtN(top.total)} daily riders. ${hubs} of the top 15 are job-destination stations.`
-          : `${top.name} tops the weekend at ${fmtN(top.total)}. Switch to Weekday to see the leisure shift.`
+          ? hubs > 0
+            ? `${hubs} of the top 15 stations are job-destination hubs — the network is an office-delivery system. ${top.name} leads at ${fmtN(top.total)} daily riders.`
+            : `${top.name} leads at ${fmtN(top.total)} daily riders. The top stations are mostly interchange hubs where people transfer between lines, not single employment destinations. The network is a connector, not a commuter funnel.`
+          : `The weekend rankings show a different city entirely. ${top.name} leads at ${fmtN(top.total)}, but watch which stations climb the list. Leisure geography has replaced commuter geography. Bengaluru on Saturday means brunch, shopping, and an inexplicable trip to Lulu Mall.`
         : '',
       rows: sorted.map(r => ({
         stationId: r.id,
@@ -626,27 +639,48 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       .map(s => {
         const dot  = LINE_COLOR[s.properties.line?.toLowerCase()]
         const { total } = getDailyRidership(weekday, s.properties.id)
-        return { id: s.properties.id, name: s.properties.name, dot, total }
+        return { id: s.properties.id, name: s.properties.name, dot, total, coords: s.geometry.coordinates }
       })
       .sort((a, b) => a.total - b.total)
       .slice(0, 15)
 
-    const bottom   = sorted[0]
-    const lowCount = sorted.filter(r => r.total < 1000).length
+    // Count station pairs whose catchment circles overlap (dist < 2 * radius)
+    const allCoords = stations.map(s => s.geometry.coordinates)
+    let overlappingPairs = 0
+    for (let i = 0; i < allCoords.length; i++) {
+      for (let j = i + 1; j < allCoords.length; j++) {
+        if (haverDist(allCoords[i], allCoords[j]) < 2 * catchmentRadius) overlappingPairs++
+      }
+    }
+
+    // Rough coverage area (naive circles, no dedup — gives a feel for scale)
+    const coverageKm2 = Math.round(stations.length * Math.PI * (catchmentRadius / 1000) ** 2)
+
+    const mood =
+      catchmentRadius <= 250 ? "Three minutes on foot. You'd need the station in your backyard, and knowing Bengaluru traffic, you'd still be late." :
+      catchmentRadius <= 350 ? "Fit-commuter territory. Fast walkers with good shoes and no groceries. Half the city simply does not operate at this pace." :
+      catchmentRadius <= 450 ? "Just under the planning standard. Technically walkable. Practically, most people are already eyeing the nearest auto." :
+      catchmentRadius <= 550 ? "The 500m planning benchmark, roughly 6 minutes at a normal pace. The number every transit planner defends and every Bengalurean quietly ignores." :
+      catchmentRadius <= 700 ? "Getting generous. Most of the neighbourhood technically qualifies. Some of these people are definitely taking an auto and just saying they walked." :
+      catchmentRadius <= 850 ? "Auto-rickshaw range now counts as walkable. Bengaluru rewrites the definition of accessibility one trip at a time." :
+                               "A full kilometre. Half the city calls this nearby. The other half calls an Ola. Both end up at the same station."
+
+    const bottom = sorted[0]
 
     return {
       title:       'Least-served stations',
-      accentColor: '#94a3b8',
+      accentColor: '#34d399',
       insight:     bottom
-        ? `${lowCount} stations under 1k daily riders. ${bottom.name} is the quietest at ${fmtN(bottom.total)}.`
+        ? `${mood} At ${catchmentRadius}m, ${overlappingPairs} station pairs share catchment. Rings cover roughly ${coverageKm2} km², tightly overlapping in the core and thinning out fast where the network has not reached yet.`
         : '',
       rows: sorted.map(r => ({
         stationId:  r.id,
         label:      r.name,
         dot:        r.dot,
         value:      fmtN(r.total),
+        sub:        r.total < 1000 ? 'low ridership' : null,
         barPct:     0,
-        labelColor: 'rgba(255,255,255,0.55)',
+        labelColor: r.total < 1000 ? 'rgba(52,211,153,0.75)' : undefined,
       })),
     }
   }
