@@ -173,76 +173,81 @@ export default function App() {
             onBusyOpen={() => setBusyOpen(true)}
           />
 
-          {/* Weekday / weekend / delta / compare sub-toggle */}
-          <WeekdayToggle
-            mode={weekdayWeekendMode}
-            setMode={setWeekdayWeekendMode}
-            activeLayer={activeLayer}
-          />
+          {/* All layer-specific UI — hidden while BusynessLookup is open */}
+          {!busyOpen && (
+            <>
+              {/* Weekday / weekend / delta / compare sub-toggle */}
+              <WeekdayToggle
+                mode={weekdayWeekendMode}
+                setMode={setWeekdayWeekendMode}
+                activeLayer={activeLayer}
+              />
 
-          {/* Data table — adapts to whichever layer is active */}
-          <DataTable
-            data={data}
-            activeLayer={activeLayer}
-            hour={hour}
-            weekdayWeekendMode={weekdayWeekendMode}
-            odTopN={odTopN}
-            catchmentRadius={catchmentRadius}
-            selectedStation={selectedStation}
-            onStationClick={handleStationClick}
-            partialLoad={partialLoad}
-          />
+              {/* Data table — adapts to whichever layer is active */}
+              <DataTable
+                data={data}
+                activeLayer={activeLayer}
+                hour={hour}
+                weekdayWeekendMode={weekdayWeekendMode}
+                odTopN={odTopN}
+                catchmentRadius={catchmentRadius}
+                selectedStation={selectedStation}
+                onStationClick={handleStationClick}
+                partialLoad={partialLoad}
+              />
 
-          {/* OD flow top-N slider + headline stat */}
-          <OdFlowControls
-            topN={odTopN}
-            setTopN={setOdTopN}
-            activeLayer={activeLayer}
-            odFlows={data?.odFlows}
-          />
+              {/* OD flow top-N slider + headline stat */}
+              <OdFlowControls
+                topN={odTopN}
+                setTopN={setOdTopN}
+                activeLayer={activeLayer}
+                odFlows={data?.odFlows}
+              />
 
-          {/* Dynamic OD flow narrative headline */}
-          <OdFlowHeadline
-            odFlows={data?.odFlows}
-            topN={odTopN}
-            isActive={activeLayer === 'odFlow'}
-            hour={hour}
-          />
+              {/* Dynamic OD flow narrative headline */}
+              <OdFlowHeadline
+                odFlows={data?.odFlows}
+                topN={odTopN}
+                isActive={activeLayer === 'odFlow'}
+                hour={hour}
+              />
 
-          {/* Dynamic coverage gap narrative headline */}
-          <CoverageHeadline
-            stations={data?.stations}
-            populationGrid={data?.populationGrid}
-            catchmentRadius={catchmentRadius}
-            isActive={activeLayer === 'coverageGap'}
-          />
+              {/* Dynamic coverage gap narrative headline */}
+              <CoverageHeadline
+                stations={data?.stations}
+                populationGrid={data?.populationGrid}
+                catchmentRadius={catchmentRadius}
+                isActive={activeLayer === 'coverageGap'}
+              />
 
-          {/* Weekday/weekend top-N stations slider */}
-          <WeekdayControls
-            topN={wdwTopN}
-            setTopN={setWdwTopN}
-            activeLayer={activeLayer}
-          />
+              {/* Weekday/weekend top-N stations slider */}
+              <WeekdayControls
+                topN={wdwTopN}
+                setTopN={setWdwTopN}
+                activeLayer={activeLayer}
+              />
 
-          {/* Coverage gap catchment radius slider */}
-          <CoverageControls
-            radius={catchmentRadius}
-            setRadius={setCatchmentRadius}
-            activeLayer={activeLayer}
-            coveragePct={coveragePct}
-          />
+              {/* Coverage gap catchment radius slider */}
+              <CoverageControls
+                radius={catchmentRadius}
+                setRadius={setCatchmentRadius}
+                activeLayer={activeLayer}
+                coveragePct={coveragePct}
+              />
 
-          {/* Time slider (only for hourly layers) */}
-          <TimeSlider
-            hour={hour}
-            playing={playing}
-            togglePlay={togglePlay}
-            setHourManual={setHourManual}
-            activeLayer={activeLayer}
-          />
+              {/* Time slider (only for hourly layers) */}
+              <TimeSlider
+                hour={hour}
+                playing={playing}
+                togglePlay={togglePlay}
+                setHourManual={setHourManual}
+                activeLayer={activeLayer}
+              />
 
-          {/* Legend */}
-          <Legend activeLayer={activeLayer} weekdayWeekendMode={weekdayWeekendMode} catchmentRadius={catchmentRadius} />
+              {/* Legend */}
+              <Legend activeLayer={activeLayer} weekdayWeekendMode={weekdayWeekendMode} catchmentRadius={catchmentRadius} />
+            </>
+          )}
 
           {/* Hover tooltip */}
           <Tooltip info={tooltipInfo} hour={hour} />
