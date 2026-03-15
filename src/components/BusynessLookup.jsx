@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { getStationBusyness, formatHour } from '../utils/dataTransforms'
 
 const LINE_COLOR = {
@@ -14,21 +14,33 @@ const LEVEL_ORDER = { packed: 0, busy: 1, moderate: 2, quiet: 3, unknown: 4 }
 export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState(null)
+  const [localHour, setLocalHour] = useState(hour)
+
+  // Sync to global hour each time the panel opens
+  useEffect(() => {
+    if (isOpen) setLocalHour(hour)
+  }, [isOpen]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // All stations ranked by busyness for the current hour
   // Must be called before any early return (Rules of Hooks)
   const ranked = useMemo(() => {
     return [...stations]
-      .map(s => ({ station: s, result: getStationBusyness(s, hour) }))
+      .map(s => ({ station: s, result: getStationBusyness(s, localHour) }))
       .filter(({ result }) => result.level !== 'unknown')
       .sort((a, b) => {
         const lo = LEVEL_ORDER[a.result.level] - LEVEL_ORDER[b.result.level]
         if (lo !== 0) return lo
         return b.result.current - a.result.current
       })
-  }, [stations, hour])
+  }, [stations, localHour])
 
   if (!isOpen) return null
+
+  // Dynamic slider color based on time-of-day context
+  const sliderColor = localHour >= 7 && localHour <= 10 ? '#f97316'  // morning rush - orange
+    : localHour >= 17 && localHour <= 20 ? '#ef4444'                  // evening rush - red
+    : localHour >= 22 || localHour <= 5  ? '#6366f1'                  // night - indigo
+    : '#22c55e'                                                         // off-peak - green
 
   const filtered = query.trim()
     ? ranked.filter(({ station }) =>
@@ -36,7 +48,7 @@ export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
       )
     : ranked
 
-  const result = selected ? getStationBusyness(selected, hour) : null
+  const result = selected ? getStationBusyness(selected, localHour) : null
 
   return (
     <>
@@ -54,14 +66,14 @@ export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
           zIndex: 1001,
           width: '92vw',
           maxWidth: 380,
-          maxHeight: '80vh',
+          maxHeight: '85vh',
           display: 'flex',
           flexDirection: 'column',
           background: 'var(--panel-bg)',
-          borderRadius: 20,
+          borderRadius: 24,
           boxShadow: '0 8px 40px rgba(0,0,0,0.3)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
+          backdropFilter: 'blur(32px) saturate(1.8)',
+          WebkitBackdropFilter: 'blur(32px) saturate(1.8)',
           fontFamily: FONT,
           overflow: 'hidden',
         }}
@@ -71,9 +83,28 @@ export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
             <div>
               <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)' }}>Live station crowding</div>
-              <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 1 }}>at {formatHour(hour)} · tap any station</div>
+              <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 1 }}>tap any station</div>
             </div>
             <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', fontSize: 18, padding: '2px 6px', lineHeight: 1 }}>✕</button>
+          </div>
+
+          {/* Hour scrubber */}
+          <div style={{ marginBottom: 10 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
+              <span style={{ fontSize: 11, color: 'var(--text-muted)' }}>12 AM</span>
+              <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>
+                {formatHour(localHour)}
+              </span>
+              <span style={{ fontSize: 11, color: 'var(--text-muted)' }}>11 PM</span>
+            </div>
+            <input
+              type="range"
+              min={0}
+              max={23}
+              value={localHour}
+              onChange={e => { setLocalHour(Number(e.target.value)); setSelected(null) }}
+              style={{ width: '100%', height: 28, accentColor: sliderColor, cursor: 'pointer' }}
+            />
           </div>
 
           {/* Search */}
@@ -121,7 +152,7 @@ export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
               <div style={{ height: '100%', width: `${Math.round(result.pct * 100)}%`, background: result.color, borderRadius: 99, transition: 'width 0.4s ease' }} />
             </div>
             <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 5 }}>
-              Peak at <span style={{ color: 'var(--text-secondary)', fontWeight: 600 }}>{result.peakHour !== null ? formatHour(result.peakHour) : '—'}</span>
+              peak at <span style={{ color: 'var(--text-secondary)', fontWeight: 600 }}>{result.peakHour !== null ? formatHour(result.peakHour) : 'n/a'}</span>
             </div>
           </div>
         )}
@@ -130,7 +161,7 @@ export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
         <div style={{ overflowY: 'auto', flex: 1 }}>
           {filtered.length === 0 ? (
             <div style={{ padding: '24px 16px', textAlign: 'center', fontSize: 13, color: 'var(--text-muted)' }}>
-              {ranked.length === 0 ? 'Loading ridership data…' : 'No stations found'}
+              {ranked.length === 0 ? 'loading ridership data…' : 'no stations found'}
             </div>
           ) : (
             filtered.map(({ station, result: r }) => {
@@ -144,7 +175,7 @@ export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
                     display: 'flex',
                     alignItems: 'center',
                     gap: 10,
-                    padding: '9px 16px',
+                    padding: '11px 16px',
                     borderBottom: '0.5px solid var(--border-row)',
                     cursor: 'pointer',
                     background: isSelected ? r.color + '15' : 'transparent',
@@ -155,20 +186,19 @@ export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
                   <span style={{ width: 8, height: 8, borderRadius: '50%', background: lineColor, flexShrink: 0 }} />
 
                   {/* Name */}
-                  <span style={{ flex: 1, fontSize: 13, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>
+                  <span style={{ flex: 1, fontSize: 13, fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>
                     {station.properties.name}
                   </span>
 
-                  {/* Status badge */}
+                  {/* Status label */}
                   <span style={{
-                    fontSize: 11, fontWeight: 600,
-                    padding: '3px 8px', borderRadius: 20,
+                    fontSize: 12, fontWeight: 500,
+                    padding: '2px 0',
                     color: r.color,
-                    background: r.color + '18',
                     flexShrink: 0,
-                    letterSpacing: '0.01em',
+                    letterSpacing: '0.02em',
                   }}>
-                    {r.emoji} {r.level.charAt(0).toUpperCase() + r.level.slice(1)}
+                    {r.level}
                   </span>
                 </div>
               )
