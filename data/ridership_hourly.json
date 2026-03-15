@@ -1,0 +1,8908 @@
+{
+  "BYPH": {
+    "0": {
+      "total": 16,
+      "entries": 12,
+      "exits": 4
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 3,
+      "entries": 1,
+      "exits": 2
+    },
+    "5": {
+      "total": 97,
+      "entries": 33,
+      "exits": 64
+    },
+    "6": {
+      "total": 253,
+      "entries": 121,
+      "exits": 132
+    },
+    "7": {
+      "total": 631,
+      "entries": 265,
+      "exits": 366
+    },
+    "8": {
+      "total": 1682,
+      "entries": 550,
+      "exits": 1132
+    },
+    "9": {
+      "total": 2491,
+      "entries": 715,
+      "exits": 1776
+    },
+    "10": {
+      "total": 1909,
+      "entries": 578,
+      "exits": 1331
+    },
+    "11": {
+      "total": 1133,
+      "entries": 409,
+      "exits": 724
+    },
+    "12": {
+      "total": 1023,
+      "entries": 443,
+      "exits": 580
+    },
+    "13": {
+      "total": 981,
+      "entries": 449,
+      "exits": 532
+    },
+    "14": {
+      "total": 962,
+      "entries": 573,
+      "exits": 389
+    },
+    "15": {
+      "total": 960,
+      "entries": 560,
+      "exits": 400
+    },
+    "16": {
+      "total": 1271,
+      "entries": 799,
+      "exits": 472
+    },
+    "17": {
+      "total": 1809,
+      "entries": 1181,
+      "exits": 628
+    },
+    "18": {
+      "total": 2493,
+      "entries": 1750,
+      "exits": 743
+    },
+    "19": {
+      "total": 2175,
+      "entries": 1357,
+      "exits": 818
+    },
+    "20": {
+      "total": 1503,
+      "entries": 945,
+      "exits": 558
+    },
+    "21": {
+      "total": 978,
+      "entries": 626,
+      "exits": 352
+    },
+    "22": {
+      "total": 605,
+      "entries": 405,
+      "exits": 200
+    },
+    "23": {
+      "total": 201,
+      "entries": 133,
+      "exits": 68
+    }
+  },
+  "BSRD": {
+    "0": {
+      "total": 12,
+      "entries": 10,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "6": {
+      "total": 12,
+      "entries": 10,
+      "exits": 2
+    },
+    "7": {
+      "total": 63,
+      "entries": 21,
+      "exits": 42
+    },
+    "8": {
+      "total": 235,
+      "entries": 36,
+      "exits": 199
+    },
+    "9": {
+      "total": 317,
+      "entries": 44,
+      "exits": 273
+    },
+    "10": {
+      "total": 312,
+      "entries": 55,
+      "exits": 257
+    },
+    "11": {
+      "total": 306,
+      "entries": 48,
+      "exits": 258
+    },
+    "12": {
+      "total": 353,
+      "entries": 68,
+      "exits": 285
+    },
+    "13": {
+      "total": 337,
+      "entries": 78,
+      "exits": 259
+    },
+    "14": {
+      "total": 271,
+      "entries": 80,
+      "exits": 191
+    },
+    "15": {
+      "total": 300,
+      "entries": 113,
+      "exits": 187
+    },
+    "16": {
+      "total": 316,
+      "entries": 116,
+      "exits": 200
+    },
+    "17": {
+      "total": 383,
+      "entries": 152,
+      "exits": 231
+    },
+    "18": {
+      "total": 456,
+      "entries": 197,
+      "exits": 259
+    },
+    "19": {
+      "total": 424,
+      "entries": 190,
+      "exits": 234
+    },
+    "20": {
+      "total": 382,
+      "entries": 206,
+      "exits": 176
+    },
+    "21": {
+      "total": 220,
+      "entries": 120,
+      "exits": 100
+    },
+    "22": {
+      "total": 146,
+      "entries": 85,
+      "exits": 61
+    },
+    "23": {
+      "total": 65,
+      "entries": 44,
+      "exits": 21
+    }
+  },
+  "IDN": {
+    "0": {
+      "total": 36,
+      "entries": 9,
+      "exits": 27
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 3,
+      "entries": 2,
+      "exits": 1
+    },
+    "5": {
+      "total": 87,
+      "entries": 62,
+      "exits": 25
+    },
+    "6": {
+      "total": 277,
+      "entries": 180,
+      "exits": 97
+    },
+    "7": {
+      "total": 706,
+      "entries": 399,
+      "exits": 307
+    },
+    "8": {
+      "total": 2298,
+      "entries": 1583,
+      "exits": 715
+    },
+    "9": {
+      "total": 4242,
+      "entries": 2928,
+      "exits": 1314
+    },
+    "10": {
+      "total": 3525,
+      "entries": 2417,
+      "exits": 1108
+    },
+    "11": {
+      "total": 2162,
+      "entries": 1375,
+      "exits": 787
+    },
+    "12": {
+      "total": 1855,
+      "entries": 1100,
+      "exits": 755
+    },
+    "13": {
+      "total": 1919,
+      "entries": 1119,
+      "exits": 800
+    },
+    "14": {
+      "total": 1851,
+      "entries": 999,
+      "exits": 852
+    },
+    "15": {
+      "total": 1950,
+      "entries": 947,
+      "exits": 1003
+    },
+    "16": {
+      "total": 2255,
+      "entries": 1075,
+      "exits": 1180
+    },
+    "17": {
+      "total": 3124,
+      "entries": 1523,
+      "exits": 1601
+    },
+    "18": {
+      "total": 4064,
+      "entries": 1892,
+      "exits": 2172
+    },
+    "19": {
+      "total": 4416,
+      "entries": 1900,
+      "exits": 2516
+    },
+    "20": {
+      "total": 3105,
+      "entries": 1320,
+      "exits": 1785
+    },
+    "21": {
+      "total": 1811,
+      "entries": 769,
+      "exits": 1042
+    },
+    "22": {
+      "total": 1148,
+      "entries": 484,
+      "exits": 664
+    },
+    "23": {
+      "total": 492,
+      "entries": 204,
+      "exits": 288
+    }
+  },
+  "HLRU": {
+    "0": {
+      "total": 6,
+      "entries": 3,
+      "exits": 3
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 5,
+      "entries": 2,
+      "exits": 3
+    },
+    "5": {
+      "total": 65,
+      "entries": 39,
+      "exits": 26
+    },
+    "6": {
+      "total": 187,
+      "entries": 68,
+      "exits": 119
+    },
+    "7": {
+      "total": 483,
+      "entries": 175,
+      "exits": 308
+    },
+    "8": {
+      "total": 1077,
+      "entries": 462,
+      "exits": 615
+    },
+    "9": {
+      "total": 1621,
+      "entries": 564,
+      "exits": 1057
+    },
+    "10": {
+      "total": 1272,
+      "entries": 508,
+      "exits": 764
+    },
+    "11": {
+      "total": 910,
+      "entries": 409,
+      "exits": 501
+    },
+    "12": {
+      "total": 744,
+      "entries": 340,
+      "exits": 404
+    },
+    "13": {
+      "total": 746,
+      "entries": 360,
+      "exits": 386
+    },
+    "14": {
+      "total": 761,
+      "entries": 373,
+      "exits": 388
+    },
+    "15": {
+      "total": 764,
+      "entries": 420,
+      "exits": 344
+    },
+    "16": {
+      "total": 847,
+      "entries": 496,
+      "exits": 351
+    },
+    "17": {
+      "total": 1100,
+      "entries": 674,
+      "exits": 426
+    },
+    "18": {
+      "total": 1535,
+      "entries": 977,
+      "exits": 558
+    },
+    "19": {
+      "total": 1647,
+      "entries": 1045,
+      "exits": 602
+    },
+    "20": {
+      "total": 1183,
+      "entries": 728,
+      "exits": 455
+    },
+    "21": {
+      "total": 767,
+      "entries": 475,
+      "exits": 292
+    },
+    "22": {
+      "total": 465,
+      "entries": 296,
+      "exits": 169
+    },
+    "23": {
+      "total": 164,
+      "entries": 112,
+      "exits": 52
+    }
+  },
+  "TTY": {
+    "0": {
+      "total": 5,
+      "entries": 0,
+      "exits": 5
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 0,
+      "exits": 1
+    },
+    "5": {
+      "total": 31,
+      "entries": 24,
+      "exits": 7
+    },
+    "6": {
+      "total": 103,
+      "entries": 69,
+      "exits": 34
+    },
+    "7": {
+      "total": 346,
+      "entries": 264,
+      "exits": 82
+    },
+    "8": {
+      "total": 1092,
+      "entries": 929,
+      "exits": 163
+    },
+    "9": {
+      "total": 3246,
+      "entries": 3011,
+      "exits": 235
+    },
+    "10": {
+      "total": 2418,
+      "entries": 2197,
+      "exits": 221
+    },
+    "11": {
+      "total": 995,
+      "entries": 778,
+      "exits": 217
+    },
+    "12": {
+      "total": 765,
+      "entries": 504,
+      "exits": 261
+    },
+    "13": {
+      "total": 745,
+      "entries": 432,
+      "exits": 313
+    },
+    "14": {
+      "total": 726,
+      "entries": 358,
+      "exits": 368
+    },
+    "15": {
+      "total": 689,
+      "entries": 309,
+      "exits": 380
+    },
+    "16": {
+      "total": 835,
+      "entries": 317,
+      "exits": 518
+    },
+    "17": {
+      "total": 1339,
+      "entries": 362,
+      "exits": 977
+    },
+    "18": {
+      "total": 2276,
+      "entries": 394,
+      "exits": 1882
+    },
+    "19": {
+      "total": 2566,
+      "entries": 340,
+      "exits": 2226
+    },
+    "20": {
+      "total": 1471,
+      "entries": 232,
+      "exits": 1239
+    },
+    "21": {
+      "total": 674,
+      "entries": 170,
+      "exits": 504
+    },
+    "22": {
+      "total": 367,
+      "entries": 88,
+      "exits": 279
+    },
+    "23": {
+      "total": 128,
+      "entries": 36,
+      "exits": 92
+    }
+  },
+  "MIRD": {
+    "0": {
+      "total": 2,
+      "entries": 0,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 1,
+      "exits": 0
+    },
+    "5": {
+      "total": 35,
+      "entries": 14,
+      "exits": 21
+    },
+    "6": {
+      "total": 134,
+      "entries": 50,
+      "exits": 84
+    },
+    "7": {
+      "total": 313,
+      "entries": 91,
+      "exits": 222
+    },
+    "8": {
+      "total": 710,
+      "entries": 219,
+      "exits": 491
+    },
+    "9": {
+      "total": 1137,
+      "entries": 297,
+      "exits": 840
+    },
+    "10": {
+      "total": 991,
+      "entries": 299,
+      "exits": 692
+    },
+    "11": {
+      "total": 675,
+      "entries": 258,
+      "exits": 417
+    },
+    "12": {
+      "total": 600,
+      "entries": 299,
+      "exits": 301
+    },
+    "13": {
+      "total": 625,
+      "entries": 351,
+      "exits": 274
+    },
+    "14": {
+      "total": 633,
+      "entries": 376,
+      "exits": 257
+    },
+    "15": {
+      "total": 611,
+      "entries": 384,
+      "exits": 227
+    },
+    "16": {
+      "total": 756,
+      "entries": 493,
+      "exits": 263
+    },
+    "17": {
+      "total": 944,
+      "entries": 657,
+      "exits": 287
+    },
+    "18": {
+      "total": 1240,
+      "entries": 930,
+      "exits": 310
+    },
+    "19": {
+      "total": 1243,
+      "entries": 924,
+      "exits": 319
+    },
+    "20": {
+      "total": 944,
+      "entries": 702,
+      "exits": 242
+    },
+    "21": {
+      "total": 616,
+      "entries": 465,
+      "exits": 151
+    },
+    "22": {
+      "total": 378,
+      "entries": 261,
+      "exits": 117
+    },
+    "23": {
+      "total": 125,
+      "entries": 76,
+      "exits": 49
+    }
+  },
+  "CBPK": {
+    "0": {
+      "total": 8,
+      "entries": 0,
+      "exits": 8
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 0,
+      "exits": 2
+    },
+    "5": {
+      "total": 38,
+      "entries": 30,
+      "exits": 8
+    },
+    "6": {
+      "total": 170,
+      "entries": 134,
+      "exits": 36
+    },
+    "7": {
+      "total": 530,
+      "entries": 434,
+      "exits": 96
+    },
+    "8": {
+      "total": 1333,
+      "entries": 1076,
+      "exits": 257
+    },
+    "9": {
+      "total": 2820,
+      "entries": 2438,
+      "exits": 382
+    },
+    "10": {
+      "total": 2616,
+      "entries": 2261,
+      "exits": 355
+    },
+    "11": {
+      "total": 1436,
+      "entries": 1137,
+      "exits": 299
+    },
+    "12": {
+      "total": 1231,
+      "entries": 813,
+      "exits": 418
+    },
+    "13": {
+      "total": 1298,
+      "entries": 773,
+      "exits": 525
+    },
+    "14": {
+      "total": 1286,
+      "entries": 674,
+      "exits": 612
+    },
+    "15": {
+      "total": 1273,
+      "entries": 624,
+      "exits": 649
+    },
+    "16": {
+      "total": 1434,
+      "entries": 613,
+      "exits": 821
+    },
+    "17": {
+      "total": 1912,
+      "entries": 556,
+      "exits": 1356
+    },
+    "18": {
+      "total": 2665,
+      "entries": 504,
+      "exits": 2161
+    },
+    "19": {
+      "total": 2400,
+      "entries": 425,
+      "exits": 1975
+    },
+    "20": {
+      "total": 1307,
+      "entries": 306,
+      "exits": 1001
+    },
+    "21": {
+      "total": 643,
+      "entries": 175,
+      "exits": 468
+    },
+    "22": {
+      "total": 354,
+      "entries": 101,
+      "exits": 253
+    },
+    "23": {
+      "total": 154,
+      "entries": 38,
+      "exits": 116
+    }
+  },
+  "VDSA": {
+    "0": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 7,
+      "entries": 3,
+      "exits": 4
+    },
+    "6": {
+      "total": 41,
+      "entries": 20,
+      "exits": 21
+    },
+    "7": {
+      "total": 95,
+      "entries": 47,
+      "exits": 48
+    },
+    "8": {
+      "total": 197,
+      "entries": 98,
+      "exits": 99
+    },
+    "9": {
+      "total": 244,
+      "entries": 122,
+      "exits": 122
+    },
+    "10": {
+      "total": 348,
+      "entries": 174,
+      "exits": 174
+    },
+    "11": {
+      "total": 381,
+      "entries": 190,
+      "exits": 191
+    },
+    "12": {
+      "total": 520,
+      "entries": 260,
+      "exits": 260
+    },
+    "13": {
+      "total": 698,
+      "entries": 349,
+      "exits": 349
+    },
+    "14": {
+      "total": 763,
+      "entries": 381,
+      "exits": 382
+    },
+    "15": {
+      "total": 790,
+      "entries": 395,
+      "exits": 395
+    },
+    "16": {
+      "total": 989,
+      "entries": 494,
+      "exits": 495
+    },
+    "17": {
+      "total": 2153,
+      "entries": 1076,
+      "exits": 1077
+    },
+    "18": {
+      "total": 1914,
+      "entries": 957,
+      "exits": 957
+    },
+    "19": {
+      "total": 1215,
+      "entries": 607,
+      "exits": 608
+    },
+    "20": {
+      "total": 515,
+      "entries": 257,
+      "exits": 258
+    },
+    "21": {
+      "total": 313,
+      "entries": 156,
+      "exits": 157
+    },
+    "22": {
+      "total": 104,
+      "entries": 52,
+      "exits": 52
+    },
+    "23": {
+      "total": 14,
+      "entries": 7,
+      "exits": 7
+    }
+  },
+  "VSWA": {
+    "0": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 8,
+      "entries": 4,
+      "exits": 4
+    },
+    "6": {
+      "total": 34,
+      "entries": 17,
+      "exits": 17
+    },
+    "7": {
+      "total": 113,
+      "entries": 56,
+      "exits": 57
+    },
+    "8": {
+      "total": 195,
+      "entries": 97,
+      "exits": 98
+    },
+    "9": {
+      "total": 266,
+      "entries": 133,
+      "exits": 133
+    },
+    "10": {
+      "total": 343,
+      "entries": 171,
+      "exits": 172
+    },
+    "11": {
+      "total": 567,
+      "entries": 283,
+      "exits": 284
+    },
+    "12": {
+      "total": 783,
+      "entries": 391,
+      "exits": 392
+    },
+    "13": {
+      "total": 779,
+      "entries": 389,
+      "exits": 390
+    },
+    "14": {
+      "total": 799,
+      "entries": 399,
+      "exits": 400
+    },
+    "15": {
+      "total": 835,
+      "entries": 417,
+      "exits": 418
+    },
+    "16": {
+      "total": 1067,
+      "entries": 533,
+      "exits": 534
+    },
+    "17": {
+      "total": 1677,
+      "entries": 838,
+      "exits": 839
+    },
+    "18": {
+      "total": 1686,
+      "entries": 843,
+      "exits": 843
+    },
+    "19": {
+      "total": 974,
+      "entries": 487,
+      "exits": 487
+    },
+    "20": {
+      "total": 629,
+      "entries": 314,
+      "exits": 315
+    },
+    "21": {
+      "total": 297,
+      "entries": 148,
+      "exits": 149
+    },
+    "22": {
+      "total": 113,
+      "entries": 56,
+      "exits": 57
+    },
+    "23": {
+      "total": 11,
+      "entries": 5,
+      "exits": 6
+    }
+  },
+  "KGWA": {
+    "0": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 11,
+      "entries": 5,
+      "exits": 6
+    },
+    "4": {
+      "total": 271,
+      "entries": 135,
+      "exits": 136
+    },
+    "5": {
+      "total": 712,
+      "entries": 356,
+      "exits": 356
+    },
+    "6": {
+      "total": 1204,
+      "entries": 602,
+      "exits": 602
+    },
+    "7": {
+      "total": 1674,
+      "entries": 837,
+      "exits": 837
+    },
+    "8": {
+      "total": 1954,
+      "entries": 977,
+      "exits": 977
+    },
+    "9": {
+      "total": 2292,
+      "entries": 1146,
+      "exits": 1146
+    },
+    "10": {
+      "total": 2041,
+      "entries": 1020,
+      "exits": 1021
+    },
+    "11": {
+      "total": 1959,
+      "entries": 979,
+      "exits": 980
+    },
+    "12": {
+      "total": 2009,
+      "entries": 1004,
+      "exits": 1005
+    },
+    "13": {
+      "total": 2001,
+      "entries": 1000,
+      "exits": 1001
+    },
+    "14": {
+      "total": 1963,
+      "entries": 981,
+      "exits": 982
+    },
+    "15": {
+      "total": 1797,
+      "entries": 898,
+      "exits": 899
+    },
+    "16": {
+      "total": 2114,
+      "entries": 1057,
+      "exits": 1057
+    },
+    "17": {
+      "total": 2474,
+      "entries": 1237,
+      "exits": 1237
+    },
+    "18": {
+      "total": 2579,
+      "entries": 1289,
+      "exits": 1290
+    },
+    "19": {
+      "total": 2601,
+      "entries": 1300,
+      "exits": 1301
+    },
+    "20": {
+      "total": 2162,
+      "entries": 1081,
+      "exits": 1081
+    },
+    "21": {
+      "total": 1700,
+      "entries": 850,
+      "exits": 850
+    },
+    "22": {
+      "total": 1119,
+      "entries": 559,
+      "exits": 560
+    },
+    "23": {
+      "total": 302,
+      "entries": 151,
+      "exits": 151
+    }
+  },
+  "BRCS": {
+    "0": {
+      "total": 13,
+      "entries": 0,
+      "exits": 13
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 23,
+      "entries": 1,
+      "exits": 22
+    },
+    "5": {
+      "total": 385,
+      "entries": 193,
+      "exits": 192
+    },
+    "6": {
+      "total": 616,
+      "entries": 170,
+      "exits": 446
+    },
+    "7": {
+      "total": 1049,
+      "entries": 309,
+      "exits": 740
+    },
+    "8": {
+      "total": 1436,
+      "entries": 474,
+      "exits": 962
+    },
+    "9": {
+      "total": 1419,
+      "entries": 409,
+      "exits": 1010
+    },
+    "10": {
+      "total": 1325,
+      "entries": 407,
+      "exits": 918
+    },
+    "11": {
+      "total": 998,
+      "entries": 442,
+      "exits": 556
+    },
+    "12": {
+      "total": 1155,
+      "entries": 633,
+      "exits": 522
+    },
+    "13": {
+      "total": 1233,
+      "entries": 773,
+      "exits": 460
+    },
+    "14": {
+      "total": 1461,
+      "entries": 947,
+      "exits": 514
+    },
+    "15": {
+      "total": 1087,
+      "entries": 752,
+      "exits": 335
+    },
+    "16": {
+      "total": 1501,
+      "entries": 1128,
+      "exits": 373
+    },
+    "17": {
+      "total": 2184,
+      "entries": 1690,
+      "exits": 494
+    },
+    "18": {
+      "total": 2338,
+      "entries": 1607,
+      "exits": 731
+    },
+    "19": {
+      "total": 1757,
+      "entries": 1095,
+      "exits": 662
+    },
+    "20": {
+      "total": 1670,
+      "entries": 1194,
+      "exits": 476
+    },
+    "21": {
+      "total": 1298,
+      "entries": 717,
+      "exits": 581
+    },
+    "22": {
+      "total": 1112,
+      "entries": 679,
+      "exits": 433
+    },
+    "23": {
+      "total": 430,
+      "entries": 201,
+      "exits": 229
+    }
+  },
+  "DSH": {
+    "0": {
+      "total": 28,
+      "entries": 20,
+      "exits": 8
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 4,
+      "entries": 4,
+      "exits": 0
+    },
+    "5": {
+      "total": 76,
+      "entries": 43,
+      "exits": 33
+    },
+    "6": {
+      "total": 193,
+      "entries": 78,
+      "exits": 115
+    },
+    "7": {
+      "total": 537,
+      "entries": 206,
+      "exits": 331
+    },
+    "8": {
+      "total": 1306,
+      "entries": 396,
+      "exits": 910
+    },
+    "9": {
+      "total": 1686,
+      "entries": 332,
+      "exits": 1354
+    },
+    "10": {
+      "total": 1399,
+      "entries": 296,
+      "exits": 1103
+    },
+    "11": {
+      "total": 1090,
+      "entries": 302,
+      "exits": 788
+    },
+    "12": {
+      "total": 1062,
+      "entries": 386,
+      "exits": 676
+    },
+    "13": {
+      "total": 1068,
+      "entries": 480,
+      "exits": 588
+    },
+    "14": {
+      "total": 1027,
+      "entries": 530,
+      "exits": 497
+    },
+    "15": {
+      "total": 1029,
+      "entries": 603,
+      "exits": 426
+    },
+    "16": {
+      "total": 1085,
+      "entries": 639,
+      "exits": 446
+    },
+    "17": {
+      "total": 1419,
+      "entries": 965,
+      "exits": 454
+    },
+    "18": {
+      "total": 1841,
+      "entries": 1301,
+      "exits": 540
+    },
+    "19": {
+      "total": 1923,
+      "entries": 1393,
+      "exits": 530
+    },
+    "20": {
+      "total": 1564,
+      "entries": 1129,
+      "exits": 435
+    },
+    "21": {
+      "total": 1014,
+      "entries": 719,
+      "exits": 295
+    },
+    "22": {
+      "total": 621,
+      "entries": 428,
+      "exits": 193
+    },
+    "23": {
+      "total": 249,
+      "entries": 175,
+      "exits": 74
+    }
+  },
+  "VJNR": {
+    "0": {
+      "total": 2,
+      "entries": 0,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 4,
+      "entries": 4,
+      "exits": 0
+    },
+    "5": {
+      "total": 87,
+      "entries": 49,
+      "exits": 38
+    },
+    "6": {
+      "total": 195,
+      "entries": 93,
+      "exits": 102
+    },
+    "7": {
+      "total": 472,
+      "entries": 183,
+      "exits": 289
+    },
+    "8": {
+      "total": 1088,
+      "entries": 284,
+      "exits": 804
+    },
+    "9": {
+      "total": 1775,
+      "entries": 439,
+      "exits": 1336
+    },
+    "10": {
+      "total": 1464,
+      "entries": 382,
+      "exits": 1082
+    },
+    "11": {
+      "total": 1071,
+      "entries": 407,
+      "exits": 664
+    },
+    "12": {
+      "total": 1014,
+      "entries": 488,
+      "exits": 526
+    },
+    "13": {
+      "total": 998,
+      "entries": 549,
+      "exits": 449
+    },
+    "14": {
+      "total": 1069,
+      "entries": 638,
+      "exits": 431
+    },
+    "15": {
+      "total": 969,
+      "entries": 615,
+      "exits": 354
+    },
+    "16": {
+      "total": 1203,
+      "entries": 828,
+      "exits": 375
+    },
+    "17": {
+      "total": 1640,
+      "entries": 1221,
+      "exits": 419
+    },
+    "18": {
+      "total": 2204,
+      "entries": 1771,
+      "exits": 433
+    },
+    "19": {
+      "total": 2174,
+      "entries": 1748,
+      "exits": 426
+    },
+    "20": {
+      "total": 1464,
+      "entries": 1093,
+      "exits": 371
+    },
+    "21": {
+      "total": 1027,
+      "entries": 770,
+      "exits": 257
+    },
+    "22": {
+      "total": 583,
+      "entries": 404,
+      "exits": 179
+    },
+    "23": {
+      "total": 202,
+      "entries": 140,
+      "exits": 62
+    }
+  },
+  "AGPP": {
+    "0": {
+      "total": 6,
+      "entries": 3,
+      "exits": 3
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 3,
+      "entries": 2,
+      "exits": 1
+    },
+    "5": {
+      "total": 61,
+      "entries": 35,
+      "exits": 26
+    },
+    "6": {
+      "total": 152,
+      "entries": 61,
+      "exits": 91
+    },
+    "7": {
+      "total": 351,
+      "entries": 122,
+      "exits": 229
+    },
+    "8": {
+      "total": 858,
+      "entries": 235,
+      "exits": 623
+    },
+    "9": {
+      "total": 1265,
+      "entries": 263,
+      "exits": 1002
+    },
+    "10": {
+      "total": 1027,
+      "entries": 244,
+      "exits": 783
+    },
+    "11": {
+      "total": 709,
+      "entries": 238,
+      "exits": 471
+    },
+    "12": {
+      "total": 648,
+      "entries": 274,
+      "exits": 374
+    },
+    "13": {
+      "total": 662,
+      "entries": 337,
+      "exits": 325
+    },
+    "14": {
+      "total": 672,
+      "entries": 374,
+      "exits": 298
+    },
+    "15": {
+      "total": 686,
+      "entries": 429,
+      "exits": 257
+    },
+    "16": {
+      "total": 830,
+      "entries": 547,
+      "exits": 283
+    },
+    "17": {
+      "total": 1096,
+      "entries": 807,
+      "exits": 289
+    },
+    "18": {
+      "total": 1354,
+      "entries": 1065,
+      "exits": 289
+    },
+    "19": {
+      "total": 1347,
+      "entries": 1056,
+      "exits": 291
+    },
+    "20": {
+      "total": 903,
+      "entries": 670,
+      "exits": 233
+    },
+    "21": {
+      "total": 608,
+      "entries": 451,
+      "exits": 157
+    },
+    "22": {
+      "total": 401,
+      "entries": 282,
+      "exits": 119
+    },
+    "23": {
+      "total": 180,
+      "entries": 137,
+      "exits": 43
+    }
+  },
+  "DJNR": {
+    "0": {
+      "total": 9,
+      "entries": 6,
+      "exits": 3
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 3,
+      "entries": 1,
+      "exits": 2
+    },
+    "5": {
+      "total": 59,
+      "entries": 25,
+      "exits": 34
+    },
+    "6": {
+      "total": 169,
+      "entries": 81,
+      "exits": 88
+    },
+    "7": {
+      "total": 307,
+      "entries": 162,
+      "exits": 145
+    },
+    "8": {
+      "total": 491,
+      "entries": 172,
+      "exits": 319
+    },
+    "9": {
+      "total": 643,
+      "entries": 198,
+      "exits": 445
+    },
+    "10": {
+      "total": 585,
+      "entries": 207,
+      "exits": 378
+    },
+    "11": {
+      "total": 443,
+      "entries": 190,
+      "exits": 253
+    },
+    "12": {
+      "total": 429,
+      "entries": 215,
+      "exits": 214
+    },
+    "13": {
+      "total": 420,
+      "entries": 223,
+      "exits": 197
+    },
+    "14": {
+      "total": 412,
+      "entries": 253,
+      "exits": 159
+    },
+    "15": {
+      "total": 393,
+      "entries": 264,
+      "exits": 129
+    },
+    "16": {
+      "total": 470,
+      "entries": 331,
+      "exits": 139
+    },
+    "17": {
+      "total": 646,
+      "entries": 469,
+      "exits": 177
+    },
+    "18": {
+      "total": 783,
+      "entries": 611,
+      "exits": 172
+    },
+    "19": {
+      "total": 818,
+      "entries": 624,
+      "exits": 194
+    },
+    "20": {
+      "total": 650,
+      "entries": 472,
+      "exits": 178
+    },
+    "21": {
+      "total": 520,
+      "entries": 389,
+      "exits": 131
+    },
+    "22": {
+      "total": 365,
+      "entries": 269,
+      "exits": 96
+    },
+    "23": {
+      "total": 145,
+      "entries": 106,
+      "exits": 39
+    }
+  },
+  "MYRD": {
+    "0": {
+      "total": 7,
+      "entries": 5,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 22,
+      "entries": 12,
+      "exits": 10
+    },
+    "6": {
+      "total": 72,
+      "entries": 38,
+      "exits": 34
+    },
+    "7": {
+      "total": 420,
+      "entries": 289,
+      "exits": 131
+    },
+    "8": {
+      "total": 703,
+      "entries": 268,
+      "exits": 435
+    },
+    "9": {
+      "total": 1055,
+      "entries": 182,
+      "exits": 873
+    },
+    "10": {
+      "total": 967,
+      "entries": 161,
+      "exits": 806
+    },
+    "11": {
+      "total": 543,
+      "entries": 131,
+      "exits": 412
+    },
+    "12": {
+      "total": 451,
+      "entries": 176,
+      "exits": 275
+    },
+    "13": {
+      "total": 411,
+      "entries": 176,
+      "exits": 235
+    },
+    "14": {
+      "total": 465,
+      "entries": 211,
+      "exits": 254
+    },
+    "15": {
+      "total": 413,
+      "entries": 212,
+      "exits": 201
+    },
+    "16": {
+      "total": 566,
+      "entries": 334,
+      "exits": 232
+    },
+    "17": {
+      "total": 813,
+      "entries": 551,
+      "exits": 262
+    },
+    "18": {
+      "total": 970,
+      "entries": 709,
+      "exits": 261
+    },
+    "19": {
+      "total": 954,
+      "entries": 735,
+      "exits": 219
+    },
+    "20": {
+      "total": 679,
+      "entries": 505,
+      "exits": 174
+    },
+    "21": {
+      "total": 392,
+      "entries": 279,
+      "exits": 113
+    },
+    "22": {
+      "total": 238,
+      "entries": 157,
+      "exits": 81
+    },
+    "23": {
+      "total": 97,
+      "entries": 67,
+      "exits": 30
+    }
+  },
+  "MLSD": {
+    "0": {
+      "total": 26,
+      "entries": 18,
+      "exits": 8
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 39,
+      "entries": 26,
+      "exits": 13
+    },
+    "6": {
+      "total": 170,
+      "entries": 106,
+      "exits": 64
+    },
+    "7": {
+      "total": 355,
+      "entries": 201,
+      "exits": 154
+    },
+    "8": {
+      "total": 783,
+      "entries": 330,
+      "exits": 453
+    },
+    "9": {
+      "total": 949,
+      "entries": 337,
+      "exits": 612
+    },
+    "10": {
+      "total": 857,
+      "entries": 317,
+      "exits": 540
+    },
+    "11": {
+      "total": 680,
+      "entries": 269,
+      "exits": 411
+    },
+    "12": {
+      "total": 746,
+      "entries": 358,
+      "exits": 388
+    },
+    "13": {
+      "total": 732,
+      "entries": 388,
+      "exits": 344
+    },
+    "14": {
+      "total": 709,
+      "entries": 394,
+      "exits": 315
+    },
+    "15": {
+      "total": 692,
+      "entries": 433,
+      "exits": 259
+    },
+    "16": {
+      "total": 829,
+      "entries": 544,
+      "exits": 285
+    },
+    "17": {
+      "total": 996,
+      "entries": 665,
+      "exits": 331
+    },
+    "18": {
+      "total": 1154,
+      "entries": 810,
+      "exits": 344
+    },
+    "19": {
+      "total": 1174,
+      "entries": 862,
+      "exits": 312
+    },
+    "20": {
+      "total": 887,
+      "entries": 617,
+      "exits": 270
+    },
+    "21": {
+      "total": 651,
+      "entries": 424,
+      "exits": 227
+    },
+    "22": {
+      "total": 425,
+      "entries": 265,
+      "exits": 160
+    },
+    "23": {
+      "total": 184,
+      "entries": 113,
+      "exits": 71
+    }
+  },
+  "KGIT": {
+    "0": {
+      "total": 15,
+      "entries": 5,
+      "exits": 10
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 10,
+      "entries": 3,
+      "exits": 7
+    },
+    "6": {
+      "total": 61,
+      "entries": 27,
+      "exits": 34
+    },
+    "7": {
+      "total": 191,
+      "entries": 77,
+      "exits": 114
+    },
+    "8": {
+      "total": 478,
+      "entries": 134,
+      "exits": 344
+    },
+    "9": {
+      "total": 710,
+      "entries": 159,
+      "exits": 551
+    },
+    "10": {
+      "total": 631,
+      "entries": 105,
+      "exits": 526
+    },
+    "11": {
+      "total": 453,
+      "entries": 111,
+      "exits": 342
+    },
+    "12": {
+      "total": 405,
+      "entries": 131,
+      "exits": 274
+    },
+    "13": {
+      "total": 366,
+      "entries": 139,
+      "exits": 227
+    },
+    "14": {
+      "total": 341,
+      "entries": 144,
+      "exits": 197
+    },
+    "15": {
+      "total": 341,
+      "entries": 159,
+      "exits": 182
+    },
+    "16": {
+      "total": 397,
+      "entries": 183,
+      "exits": 214
+    },
+    "17": {
+      "total": 522,
+      "entries": 262,
+      "exits": 260
+    },
+    "18": {
+      "total": 621,
+      "entries": 332,
+      "exits": 289
+    },
+    "19": {
+      "total": 690,
+      "entries": 352,
+      "exits": 338
+    },
+    "20": {
+      "total": 574,
+      "entries": 280,
+      "exits": 294
+    },
+    "21": {
+      "total": 385,
+      "entries": 177,
+      "exits": 208
+    },
+    "22": {
+      "total": 295,
+      "entries": 111,
+      "exits": 184
+    },
+    "23": {
+      "total": 159,
+      "entries": 50,
+      "exits": 109
+    }
+  },
+  "CLGT": {
+    "0": {
+      "total": 8,
+      "entries": 0,
+      "exits": 8
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 7,
+      "entries": 0,
+      "exits": 7
+    },
+    "6": {
+      "total": 29,
+      "entries": 0,
+      "exits": 29
+    },
+    "7": {
+      "total": 86,
+      "entries": 0,
+      "exits": 86
+    },
+    "8": {
+      "total": 213,
+      "entries": 0,
+      "exits": 213
+    },
+    "9": {
+      "total": 409,
+      "entries": 0,
+      "exits": 409
+    },
+    "10": {
+      "total": 388,
+      "entries": 0,
+      "exits": 388
+    },
+    "11": {
+      "total": 313,
+      "entries": 0,
+      "exits": 313
+    },
+    "12": {
+      "total": 318,
+      "entries": 0,
+      "exits": 318
+    },
+    "13": {
+      "total": 315,
+      "entries": 0,
+      "exits": 315
+    },
+    "14": {
+      "total": 335,
+      "entries": 0,
+      "exits": 335
+    },
+    "15": {
+      "total": 284,
+      "entries": 0,
+      "exits": 284
+    },
+    "16": {
+      "total": 364,
+      "entries": 0,
+      "exits": 364
+    },
+    "17": {
+      "total": 389,
+      "entries": 0,
+      "exits": 389
+    },
+    "18": {
+      "total": 438,
+      "entries": 0,
+      "exits": 438
+    },
+    "19": {
+      "total": 412,
+      "entries": 0,
+      "exits": 412
+    },
+    "20": {
+      "total": 313,
+      "entries": 0,
+      "exits": 313
+    },
+    "21": {
+      "total": 219,
+      "entries": 0,
+      "exits": 219
+    },
+    "22": {
+      "total": 122,
+      "entries": 0,
+      "exits": 122
+    },
+    "23": {
+      "total": 54,
+      "entries": 0,
+      "exits": 54
+    }
+  },
+  "JTPM": {
+    "0": {
+      "total": 41,
+      "entries": 20,
+      "exits": 21
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 21,
+      "entries": 2,
+      "exits": 19
+    },
+    "5": {
+      "total": 168,
+      "entries": 81,
+      "exits": 87
+    },
+    "6": {
+      "total": 538,
+      "entries": 260,
+      "exits": 278
+    },
+    "7": {
+      "total": 1241,
+      "entries": 567,
+      "exits": 674
+    },
+    "8": {
+      "total": 2748,
+      "entries": 1018,
+      "exits": 1730
+    },
+    "9": {
+      "total": 4083,
+      "entries": 1288,
+      "exits": 2795
+    },
+    "10": {
+      "total": 3677,
+      "entries": 1141,
+      "exits": 2536
+    },
+    "11": {
+      "total": 2611,
+      "entries": 901,
+      "exits": 1710
+    },
+    "12": {
+      "total": 2340,
+      "entries": 948,
+      "exits": 1392
+    },
+    "13": {
+      "total": 2136,
+      "entries": 976,
+      "exits": 1160
+    },
+    "14": {
+      "total": 2089,
+      "entries": 1083,
+      "exits": 1006
+    },
+    "15": {
+      "total": 2167,
+      "entries": 1288,
+      "exits": 879
+    },
+    "16": {
+      "total": 2588,
+      "entries": 1597,
+      "exits": 991
+    },
+    "17": {
+      "total": 3340,
+      "entries": 2174,
+      "exits": 1166
+    },
+    "18": {
+      "total": 4103,
+      "entries": 2709,
+      "exits": 1394
+    },
+    "19": {
+      "total": 4102,
+      "entries": 2617,
+      "exits": 1485
+    },
+    "20": {
+      "total": 3057,
+      "entries": 1860,
+      "exits": 1197
+    },
+    "21": {
+      "total": 2115,
+      "entries": 1298,
+      "exits": 817
+    },
+    "22": {
+      "total": 1294,
+      "entries": 772,
+      "exits": 522
+    },
+    "23": {
+      "total": 522,
+      "entries": 294,
+      "exits": 228
+    }
+  },
+  "KRPM": {
+    "0": {
+      "total": 11,
+      "entries": 0,
+      "exits": 11
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 1,
+      "entries": 0,
+      "exits": 1
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 21,
+      "entries": 0,
+      "exits": 21
+    },
+    "5": {
+      "total": 69,
+      "entries": 0,
+      "exits": 69
+    },
+    "6": {
+      "total": 217,
+      "entries": 0,
+      "exits": 217
+    },
+    "7": {
+      "total": 479,
+      "entries": 0,
+      "exits": 479
+    },
+    "8": {
+      "total": 1160,
+      "entries": 0,
+      "exits": 1160
+    },
+    "9": {
+      "total": 1807,
+      "entries": 0,
+      "exits": 1807
+    },
+    "10": {
+      "total": 1623,
+      "entries": 0,
+      "exits": 1623
+    },
+    "11": {
+      "total": 1074,
+      "entries": 0,
+      "exits": 1074
+    },
+    "12": {
+      "total": 1007,
+      "entries": 0,
+      "exits": 1007
+    },
+    "13": {
+      "total": 887,
+      "entries": 0,
+      "exits": 887
+    },
+    "14": {
+      "total": 667,
+      "entries": 0,
+      "exits": 667
+    },
+    "15": {
+      "total": 653,
+      "entries": 0,
+      "exits": 653
+    },
+    "16": {
+      "total": 850,
+      "entries": 0,
+      "exits": 850
+    },
+    "17": {
+      "total": 1108,
+      "entries": 0,
+      "exits": 1108
+    },
+    "18": {
+      "total": 1155,
+      "entries": 0,
+      "exits": 1155
+    },
+    "19": {
+      "total": 1072,
+      "entries": 0,
+      "exits": 1072
+    },
+    "20": {
+      "total": 903,
+      "entries": 0,
+      "exits": 903
+    },
+    "21": {
+      "total": 714,
+      "entries": 0,
+      "exits": 714
+    },
+    "22": {
+      "total": 425,
+      "entries": 0,
+      "exits": 425
+    },
+    "23": {
+      "total": 171,
+      "entries": 0,
+      "exits": 171
+    }
+  },
+  "MDVP": {
+    "0": {
+      "total": 19,
+      "entries": 9,
+      "exits": 10
+    },
+    "1": {
+      "total": 1,
+      "entries": 0,
+      "exits": 1
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 47,
+      "entries": 32,
+      "exits": 15
+    },
+    "6": {
+      "total": 115,
+      "entries": 56,
+      "exits": 59
+    },
+    "7": {
+      "total": 239,
+      "entries": 109,
+      "exits": 130
+    },
+    "8": {
+      "total": 713,
+      "entries": 345,
+      "exits": 368
+    },
+    "9": {
+      "total": 1300,
+      "entries": 649,
+      "exits": 651
+    },
+    "10": {
+      "total": 1103,
+      "entries": 597,
+      "exits": 506
+    },
+    "11": {
+      "total": 806,
+      "entries": 490,
+      "exits": 316
+    },
+    "12": {
+      "total": 735,
+      "entries": 435,
+      "exits": 300
+    },
+    "13": {
+      "total": 734,
+      "entries": 443,
+      "exits": 291
+    },
+    "14": {
+      "total": 711,
+      "entries": 421,
+      "exits": 290
+    },
+    "15": {
+      "total": 751,
+      "entries": 430,
+      "exits": 321
+    },
+    "16": {
+      "total": 1019,
+      "entries": 571,
+      "exits": 448
+    },
+    "17": {
+      "total": 1295,
+      "entries": 662,
+      "exits": 633
+    },
+    "18": {
+      "total": 1591,
+      "entries": 854,
+      "exits": 737
+    },
+    "19": {
+      "total": 1652,
+      "entries": 857,
+      "exits": 795
+    },
+    "20": {
+      "total": 1196,
+      "entries": 548,
+      "exits": 648
+    },
+    "21": {
+      "total": 884,
+      "entries": 394,
+      "exits": 490
+    },
+    "22": {
+      "total": 656,
+      "entries": 248,
+      "exits": 408
+    },
+    "23": {
+      "total": 263,
+      "entries": 113,
+      "exits": 150
+    }
+  },
+  "GDCP": {
+    "0": {
+      "total": 12,
+      "entries": 7,
+      "exits": 5
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 1,
+      "entries": 1,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 48,
+      "entries": 30,
+      "exits": 18
+    },
+    "6": {
+      "total": 153,
+      "entries": 78,
+      "exits": 75
+    },
+    "7": {
+      "total": 357,
+      "entries": 183,
+      "exits": 174
+    },
+    "8": {
+      "total": 940,
+      "entries": 636,
+      "exits": 304
+    },
+    "9": {
+      "total": 1661,
+      "entries": 1245,
+      "exits": 416
+    },
+    "10": {
+      "total": 1294,
+      "entries": 943,
+      "exits": 351
+    },
+    "11": {
+      "total": 707,
+      "entries": 466,
+      "exits": 241
+    },
+    "12": {
+      "total": 547,
+      "entries": 317,
+      "exits": 230
+    },
+    "13": {
+      "total": 565,
+      "entries": 309,
+      "exits": 256
+    },
+    "14": {
+      "total": 518,
+      "entries": 285,
+      "exits": 233
+    },
+    "15": {
+      "total": 577,
+      "entries": 302,
+      "exits": 275
+    },
+    "16": {
+      "total": 800,
+      "entries": 377,
+      "exits": 423
+    },
+    "17": {
+      "total": 1131,
+      "entries": 434,
+      "exits": 697
+    },
+    "18": {
+      "total": 1485,
+      "entries": 552,
+      "exits": 933
+    },
+    "19": {
+      "total": 1413,
+      "entries": 517,
+      "exits": 896
+    },
+    "20": {
+      "total": 911,
+      "entries": 391,
+      "exits": 520
+    },
+    "21": {
+      "total": 604,
+      "entries": 303,
+      "exits": 301
+    },
+    "22": {
+      "total": 412,
+      "entries": 184,
+      "exits": 228
+    },
+    "23": {
+      "total": 161,
+      "entries": 87,
+      "exits": 74
+    }
+  },
+  "DKIA": {
+    "0": {
+      "total": 21,
+      "entries": 16,
+      "exits": 5
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 42,
+      "entries": 33,
+      "exits": 9
+    },
+    "6": {
+      "total": 140,
+      "entries": 81,
+      "exits": 59
+    },
+    "7": {
+      "total": 316,
+      "entries": 189,
+      "exits": 127
+    },
+    "8": {
+      "total": 656,
+      "entries": 300,
+      "exits": 356
+    },
+    "9": {
+      "total": 1106,
+      "entries": 527,
+      "exits": 579
+    },
+    "10": {
+      "total": 920,
+      "entries": 392,
+      "exits": 528
+    },
+    "11": {
+      "total": 629,
+      "entries": 264,
+      "exits": 365
+    },
+    "12": {
+      "total": 584,
+      "entries": 259,
+      "exits": 325
+    },
+    "13": {
+      "total": 573,
+      "entries": 268,
+      "exits": 305
+    },
+    "14": {
+      "total": 548,
+      "entries": 266,
+      "exits": 282
+    },
+    "15": {
+      "total": 586,
+      "entries": 320,
+      "exits": 266
+    },
+    "16": {
+      "total": 728,
+      "entries": 417,
+      "exits": 311
+    },
+    "17": {
+      "total": 1010,
+      "entries": 570,
+      "exits": 440
+    },
+    "18": {
+      "total": 1279,
+      "entries": 706,
+      "exits": 573
+    },
+    "19": {
+      "total": 1367,
+      "entries": 703,
+      "exits": 664
+    },
+    "20": {
+      "total": 956,
+      "entries": 505,
+      "exits": 451
+    },
+    "21": {
+      "total": 639,
+      "entries": 331,
+      "exits": 308
+    },
+    "22": {
+      "total": 424,
+      "entries": 248,
+      "exits": 176
+    },
+    "23": {
+      "total": 172,
+      "entries": 116,
+      "exits": 56
+    }
+  },
+  "VWIA": {
+    "0": {
+      "total": 22,
+      "entries": 14,
+      "exits": 8
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 1,
+      "exits": 0
+    },
+    "5": {
+      "total": 40,
+      "entries": 33,
+      "exits": 7
+    },
+    "6": {
+      "total": 169,
+      "entries": 110,
+      "exits": 59
+    },
+    "7": {
+      "total": 338,
+      "entries": 236,
+      "exits": 102
+    },
+    "8": {
+      "total": 976,
+      "entries": 719,
+      "exits": 257
+    },
+    "9": {
+      "total": 1642,
+      "entries": 1236,
+      "exits": 406
+    },
+    "10": {
+      "total": 1475,
+      "entries": 1075,
+      "exits": 400
+    },
+    "11": {
+      "total": 864,
+      "entries": 594,
+      "exits": 270
+    },
+    "12": {
+      "total": 646,
+      "entries": 379,
+      "exits": 267
+    },
+    "13": {
+      "total": 624,
+      "entries": 338,
+      "exits": 286
+    },
+    "14": {
+      "total": 527,
+      "entries": 223,
+      "exits": 304
+    },
+    "15": {
+      "total": 597,
+      "entries": 222,
+      "exits": 375
+    },
+    "16": {
+      "total": 866,
+      "entries": 294,
+      "exits": 572
+    },
+    "17": {
+      "total": 1288,
+      "entries": 390,
+      "exits": 898
+    },
+    "18": {
+      "total": 1580,
+      "entries": 478,
+      "exits": 1102
+    },
+    "19": {
+      "total": 1477,
+      "entries": 517,
+      "exits": 960
+    },
+    "20": {
+      "total": 1020,
+      "entries": 398,
+      "exits": 622
+    },
+    "21": {
+      "total": 661,
+      "entries": 290,
+      "exits": 371
+    },
+    "22": {
+      "total": 471,
+      "entries": 224,
+      "exits": 247
+    },
+    "23": {
+      "total": 233,
+      "entries": 126,
+      "exits": 107
+    }
+  },
+  "KDNH": {
+    "0": {
+      "total": 17,
+      "entries": 12,
+      "exits": 5
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 33,
+      "entries": 26,
+      "exits": 7
+    },
+    "6": {
+      "total": 145,
+      "entries": 96,
+      "exits": 49
+    },
+    "7": {
+      "total": 312,
+      "entries": 238,
+      "exits": 74
+    },
+    "8": {
+      "total": 987,
+      "entries": 822,
+      "exits": 165
+    },
+    "9": {
+      "total": 1496,
+      "entries": 1244,
+      "exits": 252
+    },
+    "10": {
+      "total": 1366,
+      "entries": 1109,
+      "exits": 257
+    },
+    "11": {
+      "total": 840,
+      "entries": 610,
+      "exits": 230
+    },
+    "12": {
+      "total": 658,
+      "entries": 418,
+      "exits": 240
+    },
+    "13": {
+      "total": 565,
+      "entries": 296,
+      "exits": 269
+    },
+    "14": {
+      "total": 554,
+      "entries": 243,
+      "exits": 311
+    },
+    "15": {
+      "total": 642,
+      "entries": 216,
+      "exits": 426
+    },
+    "16": {
+      "total": 927,
+      "entries": 255,
+      "exits": 672
+    },
+    "17": {
+      "total": 1304,
+      "entries": 311,
+      "exits": 993
+    },
+    "18": {
+      "total": 1450,
+      "entries": 410,
+      "exits": 1040
+    },
+    "19": {
+      "total": 1280,
+      "entries": 409,
+      "exits": 871
+    },
+    "20": {
+      "total": 937,
+      "entries": 365,
+      "exits": 572
+    },
+    "21": {
+      "total": 624,
+      "entries": 291,
+      "exits": 333
+    },
+    "22": {
+      "total": 416,
+      "entries": 219,
+      "exits": 197
+    },
+    "23": {
+      "total": 159,
+      "entries": 94,
+      "exits": 65
+    }
+  },
+  "VDHP": {
+    "0": {
+      "total": 11,
+      "entries": 7,
+      "exits": 4
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 0,
+      "exits": 1
+    },
+    "5": {
+      "total": 29,
+      "entries": 24,
+      "exits": 5
+    },
+    "6": {
+      "total": 117,
+      "entries": 86,
+      "exits": 31
+    },
+    "7": {
+      "total": 325,
+      "entries": 248,
+      "exits": 77
+    },
+    "8": {
+      "total": 1025,
+      "entries": 858,
+      "exits": 167
+    },
+    "9": {
+      "total": 1675,
+      "entries": 1409,
+      "exits": 266
+    },
+    "10": {
+      "total": 1407,
+      "entries": 1148,
+      "exits": 259
+    },
+    "11": {
+      "total": 872,
+      "entries": 656,
+      "exits": 216
+    },
+    "12": {
+      "total": 693,
+      "entries": 452,
+      "exits": 241
+    },
+    "13": {
+      "total": 622,
+      "entries": 310,
+      "exits": 312
+    },
+    "14": {
+      "total": 567,
+      "entries": 236,
+      "exits": 331
+    },
+    "15": {
+      "total": 575,
+      "entries": 202,
+      "exits": 373
+    },
+    "16": {
+      "total": 865,
+      "entries": 219,
+      "exits": 646
+    },
+    "17": {
+      "total": 1128,
+      "entries": 273,
+      "exits": 855
+    },
+    "18": {
+      "total": 1338,
+      "entries": 329,
+      "exits": 1009
+    },
+    "19": {
+      "total": 1274,
+      "entries": 348,
+      "exits": 926
+    },
+    "20": {
+      "total": 942,
+      "entries": 291,
+      "exits": 651
+    },
+    "21": {
+      "total": 573,
+      "entries": 201,
+      "exits": 372
+    },
+    "22": {
+      "total": 355,
+      "entries": 153,
+      "exits": 202
+    },
+    "23": {
+      "total": 131,
+      "entries": 66,
+      "exits": 65
+    }
+  },
+  "SSHP": {
+    "0": {
+      "total": 7,
+      "entries": 0,
+      "exits": 7
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 0,
+      "exits": 1
+    },
+    "5": {
+      "total": 24,
+      "entries": 19,
+      "exits": 5
+    },
+    "6": {
+      "total": 134,
+      "entries": 104,
+      "exits": 30
+    },
+    "7": {
+      "total": 403,
+      "entries": 364,
+      "exits": 39
+    },
+    "8": {
+      "total": 959,
+      "entries": 885,
+      "exits": 74
+    },
+    "9": {
+      "total": 1507,
+      "entries": 1411,
+      "exits": 96
+    },
+    "10": {
+      "total": 1709,
+      "entries": 1579,
+      "exits": 130
+    },
+    "11": {
+      "total": 1177,
+      "entries": 982,
+      "exits": 195
+    },
+    "12": {
+      "total": 698,
+      "entries": 453,
+      "exits": 245
+    },
+    "13": {
+      "total": 648,
+      "entries": 372,
+      "exits": 276
+    },
+    "14": {
+      "total": 592,
+      "entries": 273,
+      "exits": 319
+    },
+    "15": {
+      "total": 530,
+      "entries": 158,
+      "exits": 372
+    },
+    "16": {
+      "total": 805,
+      "entries": 142,
+      "exits": 663
+    },
+    "17": {
+      "total": 1171,
+      "entries": 150,
+      "exits": 1021
+    },
+    "18": {
+      "total": 1536,
+      "entries": 127,
+      "exits": 1409
+    },
+    "19": {
+      "total": 1295,
+      "entries": 135,
+      "exits": 1160
+    },
+    "20": {
+      "total": 810,
+      "entries": 95,
+      "exits": 715
+    },
+    "21": {
+      "total": 457,
+      "entries": 79,
+      "exits": 378
+    },
+    "22": {
+      "total": 193,
+      "entries": 44,
+      "exits": 149
+    },
+    "23": {
+      "total": 64,
+      "entries": 12,
+      "exits": 52
+    }
+  },
+  "ITPL": {
+    "0": {
+      "total": 24,
+      "entries": 11,
+      "exits": 13
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 19,
+      "entries": 16,
+      "exits": 3
+    },
+    "6": {
+      "total": 110,
+      "entries": 73,
+      "exits": 37
+    },
+    "7": {
+      "total": 282,
+      "entries": 230,
+      "exits": 52
+    },
+    "8": {
+      "total": 800,
+      "entries": 673,
+      "exits": 127
+    },
+    "9": {
+      "total": 1708,
+      "entries": 1531,
+      "exits": 177
+    },
+    "10": {
+      "total": 2088,
+      "entries": 1893,
+      "exits": 195
+    },
+    "11": {
+      "total": 1591,
+      "entries": 1372,
+      "exits": 219
+    },
+    "12": {
+      "total": 984,
+      "entries": 715,
+      "exits": 269
+    },
+    "13": {
+      "total": 936,
+      "entries": 576,
+      "exits": 360
+    },
+    "14": {
+      "total": 818,
+      "entries": 403,
+      "exits": 415
+    },
+    "15": {
+      "total": 784,
+      "entries": 287,
+      "exits": 497
+    },
+    "16": {
+      "total": 1056,
+      "entries": 286,
+      "exits": 770
+    },
+    "17": {
+      "total": 1552,
+      "entries": 355,
+      "exits": 1197
+    },
+    "18": {
+      "total": 1889,
+      "entries": 411,
+      "exits": 1478
+    },
+    "19": {
+      "total": 1809,
+      "entries": 366,
+      "exits": 1443
+    },
+    "20": {
+      "total": 1285,
+      "entries": 261,
+      "exits": 1024
+    },
+    "21": {
+      "total": 825,
+      "entries": 218,
+      "exits": 607
+    },
+    "22": {
+      "total": 481,
+      "entries": 128,
+      "exits": 353
+    },
+    "23": {
+      "total": 206,
+      "entries": 65,
+      "exits": 141
+    }
+  },
+  "KDGD": {
+    "0": {
+      "total": 56,
+      "entries": 51,
+      "exits": 5
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 1,
+      "exits": 1
+    },
+    "5": {
+      "total": 59,
+      "entries": 40,
+      "exits": 19
+    },
+    "6": {
+      "total": 223,
+      "entries": 125,
+      "exits": 98
+    },
+    "7": {
+      "total": 407,
+      "entries": 199,
+      "exits": 208
+    },
+    "8": {
+      "total": 1047,
+      "entries": 263,
+      "exits": 784
+    },
+    "9": {
+      "total": 1853,
+      "entries": 385,
+      "exits": 1468
+    },
+    "10": {
+      "total": 1791,
+      "entries": 313,
+      "exits": 1478
+    },
+    "11": {
+      "total": 1313,
+      "entries": 333,
+      "exits": 980
+    },
+    "12": {
+      "total": 951,
+      "entries": 339,
+      "exits": 612
+    },
+    "13": {
+      "total": 999,
+      "entries": 398,
+      "exits": 601
+    },
+    "14": {
+      "total": 939,
+      "entries": 419,
+      "exits": 520
+    },
+    "15": {
+      "total": 835,
+      "entries": 436,
+      "exits": 399
+    },
+    "16": {
+      "total": 1179,
+      "entries": 761,
+      "exits": 418
+    },
+    "17": {
+      "total": 1368,
+      "entries": 877,
+      "exits": 491
+    },
+    "18": {
+      "total": 2171,
+      "entries": 1628,
+      "exits": 543
+    },
+    "19": {
+      "total": 2022,
+      "entries": 1480,
+      "exits": 542
+    },
+    "20": {
+      "total": 1559,
+      "entries": 1066,
+      "exits": 493
+    },
+    "21": {
+      "total": 1092,
+      "entries": 729,
+      "exits": 363
+    },
+    "22": {
+      "total": 721,
+      "entries": 489,
+      "exits": 232
+    },
+    "23": {
+      "total": 342,
+      "entries": 265,
+      "exits": 77
+    }
+  },
+  "UWVL": {
+    "0": {
+      "total": 11,
+      "entries": 9,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 0,
+      "exits": 1
+    },
+    "5": {
+      "total": 6,
+      "entries": 5,
+      "exits": 1
+    },
+    "6": {
+      "total": 38,
+      "entries": 25,
+      "exits": 13
+    },
+    "7": {
+      "total": 88,
+      "entries": 47,
+      "exits": 41
+    },
+    "8": {
+      "total": 252,
+      "entries": 93,
+      "exits": 159
+    },
+    "9": {
+      "total": 510,
+      "entries": 117,
+      "exits": 393
+    },
+    "10": {
+      "total": 444,
+      "entries": 129,
+      "exits": 315
+    },
+    "11": {
+      "total": 277,
+      "entries": 107,
+      "exits": 170
+    },
+    "12": {
+      "total": 223,
+      "entries": 97,
+      "exits": 126
+    },
+    "13": {
+      "total": 208,
+      "entries": 106,
+      "exits": 102
+    },
+    "14": {
+      "total": 204,
+      "entries": 107,
+      "exits": 97
+    },
+    "15": {
+      "total": 207,
+      "entries": 119,
+      "exits": 88
+    },
+    "16": {
+      "total": 276,
+      "entries": 180,
+      "exits": 96
+    },
+    "17": {
+      "total": 335,
+      "entries": 221,
+      "exits": 114
+    },
+    "18": {
+      "total": 502,
+      "entries": 363,
+      "exits": 139
+    },
+    "19": {
+      "total": 471,
+      "entries": 328,
+      "exits": 143
+    },
+    "20": {
+      "total": 343,
+      "entries": 216,
+      "exits": 127
+    },
+    "21": {
+      "total": 205,
+      "entries": 134,
+      "exits": 71
+    },
+    "22": {
+      "total": 139,
+      "entries": 98,
+      "exits": 41
+    },
+    "23": {
+      "total": 61,
+      "entries": 49,
+      "exits": 12
+    }
+  },
+  "WHTM": {
+    "0": {
+      "total": 42,
+      "entries": 39,
+      "exits": 3
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 3,
+      "entries": 0,
+      "exits": 3
+    },
+    "5": {
+      "total": 38,
+      "entries": 8,
+      "exits": 30
+    },
+    "6": {
+      "total": 210,
+      "entries": 58,
+      "exits": 152
+    },
+    "7": {
+      "total": 500,
+      "entries": 136,
+      "exits": 364
+    },
+    "8": {
+      "total": 932,
+      "entries": 196,
+      "exits": 736
+    },
+    "9": {
+      "total": 1475,
+      "entries": 239,
+      "exits": 1236
+    },
+    "10": {
+      "total": 1159,
+      "entries": 237,
+      "exits": 922
+    },
+    "11": {
+      "total": 908,
+      "entries": 238,
+      "exits": 670
+    },
+    "12": {
+      "total": 784,
+      "entries": 329,
+      "exits": 455
+    },
+    "13": {
+      "total": 788,
+      "entries": 376,
+      "exits": 412
+    },
+    "14": {
+      "total": 756,
+      "entries": 413,
+      "exits": 343
+    },
+    "15": {
+      "total": 858,
+      "entries": 562,
+      "exits": 296
+    },
+    "16": {
+      "total": 980,
+      "entries": 705,
+      "exits": 275
+    },
+    "17": {
+      "total": 1238,
+      "entries": 901,
+      "exits": 337
+    },
+    "18": {
+      "total": 1423,
+      "entries": 1072,
+      "exits": 351
+    },
+    "19": {
+      "total": 1317,
+      "entries": 944,
+      "exits": 373
+    },
+    "20": {
+      "total": 1067,
+      "entries": 768,
+      "exits": 299
+    },
+    "21": {
+      "total": 689,
+      "entries": 490,
+      "exits": 199
+    },
+    "22": {
+      "total": 405,
+      "entries": 287,
+      "exits": 118
+    },
+    "23": {
+      "total": 191,
+      "entries": 148,
+      "exits": 43
+    }
+  },
+  "NGSA": {
+    "0": {
+      "total": 34,
+      "entries": 12,
+      "exits": 22
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 1,
+      "exits": 1
+    },
+    "5": {
+      "total": 35,
+      "entries": 19,
+      "exits": 16
+    },
+    "6": {
+      "total": 120,
+      "entries": 55,
+      "exits": 65
+    },
+    "7": {
+      "total": 400,
+      "entries": 157,
+      "exits": 243
+    },
+    "8": {
+      "total": 1117,
+      "entries": 378,
+      "exits": 739
+    },
+    "9": {
+      "total": 1534,
+      "entries": 361,
+      "exits": 1173
+    },
+    "10": {
+      "total": 1160,
+      "entries": 222,
+      "exits": 938
+    },
+    "11": {
+      "total": 948,
+      "entries": 344,
+      "exits": 604
+    },
+    "12": {
+      "total": 947,
+      "entries": 441,
+      "exits": 506
+    },
+    "13": {
+      "total": 985,
+      "entries": 533,
+      "exits": 452
+    },
+    "14": {
+      "total": 1055,
+      "entries": 615,
+      "exits": 440
+    },
+    "15": {
+      "total": 1028,
+      "entries": 571,
+      "exits": 457
+    },
+    "16": {
+      "total": 1145,
+      "entries": 618,
+      "exits": 527
+    },
+    "17": {
+      "total": 1487,
+      "entries": 812,
+      "exits": 675
+    },
+    "18": {
+      "total": 1777,
+      "entries": 1029,
+      "exits": 748
+    },
+    "19": {
+      "total": 1764,
+      "entries": 1044,
+      "exits": 720
+    },
+    "20": {
+      "total": 1379,
+      "entries": 812,
+      "exits": 567
+    },
+    "21": {
+      "total": 861,
+      "entries": 451,
+      "exits": 410
+    },
+    "22": {
+      "total": 597,
+      "entries": 309,
+      "exits": 288
+    },
+    "23": {
+      "total": 263,
+      "entries": 122,
+      "exits": 141
+    }
+  },
+  "JLHL": {
+    "0": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 3,
+      "entries": 1,
+      "exits": 2
+    },
+    "5": {
+      "total": 66,
+      "entries": 33,
+      "exits": 33
+    },
+    "6": {
+      "total": 163,
+      "entries": 81,
+      "exits": 82
+    },
+    "7": {
+      "total": 410,
+      "entries": 205,
+      "exits": 205
+    },
+    "8": {
+      "total": 709,
+      "entries": 354,
+      "exits": 355
+    },
+    "9": {
+      "total": 798,
+      "entries": 399,
+      "exits": 399
+    },
+    "10": {
+      "total": 650,
+      "entries": 325,
+      "exits": 325
+    },
+    "11": {
+      "total": 590,
+      "entries": 295,
+      "exits": 295
+    },
+    "12": {
+      "total": 561,
+      "entries": 280,
+      "exits": 281
+    },
+    "13": {
+      "total": 498,
+      "entries": 249,
+      "exits": 249
+    },
+    "14": {
+      "total": 412,
+      "entries": 206,
+      "exits": 206
+    },
+    "15": {
+      "total": 421,
+      "entries": 210,
+      "exits": 211
+    },
+    "16": {
+      "total": 448,
+      "entries": 224,
+      "exits": 224
+    },
+    "17": {
+      "total": 557,
+      "entries": 278,
+      "exits": 279
+    },
+    "18": {
+      "total": 681,
+      "entries": 340,
+      "exits": 341
+    },
+    "19": {
+      "total": 524,
+      "entries": 262,
+      "exits": 262
+    },
+    "20": {
+      "total": 342,
+      "entries": 171,
+      "exits": 171
+    },
+    "21": {
+      "total": 236,
+      "entries": 118,
+      "exits": 118
+    },
+    "22": {
+      "total": 125,
+      "entries": 62,
+      "exits": 63
+    },
+    "23": {
+      "total": 9,
+      "entries": 4,
+      "exits": 5
+    }
+  },
+  "PYID": {
+    "0": {
+      "total": 3,
+      "entries": 2,
+      "exits": 1
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 0,
+      "exits": 1
+    },
+    "5": {
+      "total": 14,
+      "entries": 12,
+      "exits": 2
+    },
+    "6": {
+      "total": 27,
+      "entries": 9,
+      "exits": 18
+    },
+    "7": {
+      "total": 77,
+      "entries": 33,
+      "exits": 44
+    },
+    "8": {
+      "total": 379,
+      "entries": 229,
+      "exits": 150
+    },
+    "9": {
+      "total": 437,
+      "entries": 210,
+      "exits": 227
+    },
+    "10": {
+      "total": 304,
+      "entries": 123,
+      "exits": 181
+    },
+    "11": {
+      "total": 202,
+      "entries": 74,
+      "exits": 128
+    },
+    "12": {
+      "total": 172,
+      "entries": 69,
+      "exits": 103
+    },
+    "13": {
+      "total": 173,
+      "entries": 81,
+      "exits": 92
+    },
+    "14": {
+      "total": 168,
+      "entries": 81,
+      "exits": 87
+    },
+    "15": {
+      "total": 149,
+      "entries": 75,
+      "exits": 74
+    },
+    "16": {
+      "total": 173,
+      "entries": 90,
+      "exits": 83
+    },
+    "17": {
+      "total": 292,
+      "entries": 146,
+      "exits": 146
+    },
+    "18": {
+      "total": 433,
+      "entries": 187,
+      "exits": 246
+    },
+    "19": {
+      "total": 386,
+      "entries": 199,
+      "exits": 187
+    },
+    "20": {
+      "total": 262,
+      "entries": 169,
+      "exits": 93
+    },
+    "21": {
+      "total": 146,
+      "entries": 103,
+      "exits": 43
+    },
+    "22": {
+      "total": 84,
+      "entries": 52,
+      "exits": 32
+    },
+    "23": {
+      "total": 37,
+      "entries": 26,
+      "exits": 11
+    }
+  },
+  "PEYA": {
+    "0": {
+      "total": 8,
+      "entries": 4,
+      "exits": 4
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 11,
+      "entries": 7,
+      "exits": 4
+    },
+    "6": {
+      "total": 51,
+      "entries": 20,
+      "exits": 31
+    },
+    "7": {
+      "total": 175,
+      "entries": 83,
+      "exits": 92
+    },
+    "8": {
+      "total": 502,
+      "entries": 233,
+      "exits": 269
+    },
+    "9": {
+      "total": 695,
+      "entries": 254,
+      "exits": 441
+    },
+    "10": {
+      "total": 546,
+      "entries": 153,
+      "exits": 393
+    },
+    "11": {
+      "total": 369,
+      "entries": 113,
+      "exits": 256
+    },
+    "12": {
+      "total": 307,
+      "entries": 109,
+      "exits": 198
+    },
+    "13": {
+      "total": 280,
+      "entries": 118,
+      "exits": 162
+    },
+    "14": {
+      "total": 294,
+      "entries": 150,
+      "exits": 144
+    },
+    "15": {
+      "total": 271,
+      "entries": 136,
+      "exits": 135
+    },
+    "16": {
+      "total": 354,
+      "entries": 195,
+      "exits": 159
+    },
+    "17": {
+      "total": 524,
+      "entries": 287,
+      "exits": 237
+    },
+    "18": {
+      "total": 716,
+      "entries": 382,
+      "exits": 334
+    },
+    "19": {
+      "total": 722,
+      "entries": 414,
+      "exits": 308
+    },
+    "20": {
+      "total": 500,
+      "entries": 317,
+      "exits": 183
+    },
+    "21": {
+      "total": 298,
+      "entries": 201,
+      "exits": 97
+    },
+    "22": {
+      "total": 176,
+      "entries": 116,
+      "exits": 60
+    },
+    "23": {
+      "total": 63,
+      "entries": 39,
+      "exits": 24
+    }
+  },
+  "YPM": {
+    "0": {
+      "total": 41,
+      "entries": 5,
+      "exits": 36
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 51,
+      "entries": 1,
+      "exits": 50
+    },
+    "5": {
+      "total": 445,
+      "entries": 95,
+      "exits": 350
+    },
+    "6": {
+      "total": 779,
+      "entries": 203,
+      "exits": 576
+    },
+    "7": {
+      "total": 973,
+      "entries": 239,
+      "exits": 734
+    },
+    "8": {
+      "total": 1810,
+      "entries": 720,
+      "exits": 1090
+    },
+    "9": {
+      "total": 1573,
+      "entries": 546,
+      "exits": 1027
+    },
+    "10": {
+      "total": 1437,
+      "entries": 495,
+      "exits": 942
+    },
+    "11": {
+      "total": 1065,
+      "entries": 475,
+      "exits": 590
+    },
+    "12": {
+      "total": 1213,
+      "entries": 668,
+      "exits": 545
+    },
+    "13": {
+      "total": 1331,
+      "entries": 747,
+      "exits": 584
+    },
+    "14": {
+      "total": 1755,
+      "entries": 1093,
+      "exits": 662
+    },
+    "15": {
+      "total": 1290,
+      "entries": 814,
+      "exits": 476
+    },
+    "16": {
+      "total": 1115,
+      "entries": 709,
+      "exits": 406
+    },
+    "17": {
+      "total": 1857,
+      "entries": 1331,
+      "exits": 526
+    },
+    "18": {
+      "total": 2082,
+      "entries": 1408,
+      "exits": 674
+    },
+    "19": {
+      "total": 2432,
+      "entries": 1707,
+      "exits": 725
+    },
+    "20": {
+      "total": 2008,
+      "entries": 1350,
+      "exits": 658
+    },
+    "21": {
+      "total": 1988,
+      "entries": 824,
+      "exits": 1164
+    },
+    "22": {
+      "total": 1067,
+      "entries": 665,
+      "exits": 402
+    },
+    "23": {
+      "total": 506,
+      "entries": 289,
+      "exits": 217
+    }
+  },
+  "SSFY": {
+    "0": {
+      "total": 20,
+      "entries": 1,
+      "exits": 19
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 0,
+      "exits": 1
+    },
+    "5": {
+      "total": 34,
+      "entries": 21,
+      "exits": 13
+    },
+    "6": {
+      "total": 121,
+      "entries": 65,
+      "exits": 56
+    },
+    "7": {
+      "total": 350,
+      "entries": 221,
+      "exits": 129
+    },
+    "8": {
+      "total": 841,
+      "entries": 515,
+      "exits": 326
+    },
+    "9": {
+      "total": 1504,
+      "entries": 1031,
+      "exits": 473
+    },
+    "10": {
+      "total": 1499,
+      "entries": 1062,
+      "exits": 437
+    },
+    "11": {
+      "total": 1159,
+      "entries": 761,
+      "exits": 398
+    },
+    "12": {
+      "total": 1254,
+      "entries": 805,
+      "exits": 449
+    },
+    "13": {
+      "total": 1231,
+      "entries": 719,
+      "exits": 512
+    },
+    "14": {
+      "total": 1235,
+      "entries": 650,
+      "exits": 585
+    },
+    "15": {
+      "total": 1340,
+      "entries": 670,
+      "exits": 670
+    },
+    "16": {
+      "total": 1485,
+      "entries": 709,
+      "exits": 776
+    },
+    "17": {
+      "total": 1767,
+      "entries": 799,
+      "exits": 968
+    },
+    "18": {
+      "total": 2148,
+      "entries": 886,
+      "exits": 1262
+    },
+    "19": {
+      "total": 2233,
+      "entries": 834,
+      "exits": 1399
+    },
+    "20": {
+      "total": 1582,
+      "entries": 524,
+      "exits": 1058
+    },
+    "21": {
+      "total": 1003,
+      "entries": 308,
+      "exits": 695
+    },
+    "22": {
+      "total": 731,
+      "entries": 153,
+      "exits": 578
+    },
+    "23": {
+      "total": 323,
+      "entries": 69,
+      "exits": 254
+    }
+  },
+  "MHLI": {
+    "0": {
+      "total": 19,
+      "entries": 1,
+      "exits": 18
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 1,
+      "exits": 1
+    },
+    "5": {
+      "total": 47,
+      "entries": 26,
+      "exits": 21
+    },
+    "6": {
+      "total": 141,
+      "entries": 60,
+      "exits": 81
+    },
+    "7": {
+      "total": 414,
+      "entries": 188,
+      "exits": 226
+    },
+    "8": {
+      "total": 945,
+      "entries": 400,
+      "exits": 545
+    },
+    "9": {
+      "total": 1537,
+      "entries": 640,
+      "exits": 897
+    },
+    "10": {
+      "total": 1479,
+      "entries": 729,
+      "exits": 750
+    },
+    "11": {
+      "total": 1421,
+      "entries": 833,
+      "exits": 588
+    },
+    "12": {
+      "total": 1405,
+      "entries": 845,
+      "exits": 560
+    },
+    "13": {
+      "total": 1307,
+      "entries": 678,
+      "exits": 629
+    },
+    "14": {
+      "total": 1312,
+      "entries": 645,
+      "exits": 667
+    },
+    "15": {
+      "total": 1206,
+      "entries": 575,
+      "exits": 631
+    },
+    "16": {
+      "total": 1389,
+      "entries": 776,
+      "exits": 613
+    },
+    "17": {
+      "total": 1597,
+      "entries": 959,
+      "exits": 638
+    },
+    "18": {
+      "total": 1828,
+      "entries": 1072,
+      "exits": 756
+    },
+    "19": {
+      "total": 1844,
+      "entries": 1071,
+      "exits": 773
+    },
+    "20": {
+      "total": 1300,
+      "entries": 686,
+      "exits": 614
+    },
+    "21": {
+      "total": 890,
+      "entries": 391,
+      "exits": 499
+    },
+    "22": {
+      "total": 515,
+      "entries": 241,
+      "exits": 274
+    },
+    "23": {
+      "total": 205,
+      "entries": 98,
+      "exits": 107
+    }
+  },
+  "RJNR": {
+    "0": {
+      "total": 5,
+      "entries": 0,
+      "exits": 5
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 4,
+      "entries": 2,
+      "exits": 2
+    },
+    "5": {
+      "total": 60,
+      "entries": 34,
+      "exits": 26
+    },
+    "6": {
+      "total": 153,
+      "entries": 68,
+      "exits": 85
+    },
+    "7": {
+      "total": 479,
+      "entries": 223,
+      "exits": 256
+    },
+    "8": {
+      "total": 1190,
+      "entries": 474,
+      "exits": 716
+    },
+    "9": {
+      "total": 1902,
+      "entries": 827,
+      "exits": 1075
+    },
+    "10": {
+      "total": 1547,
+      "entries": 664,
+      "exits": 883
+    },
+    "11": {
+      "total": 1182,
+      "entries": 521,
+      "exits": 661
+    },
+    "12": {
+      "total": 1131,
+      "entries": 535,
+      "exits": 596
+    },
+    "13": {
+      "total": 1141,
+      "entries": 594,
+      "exits": 547
+    },
+    "14": {
+      "total": 1151,
+      "entries": 591,
+      "exits": 560
+    },
+    "15": {
+      "total": 1126,
+      "entries": 621,
+      "exits": 505
+    },
+    "16": {
+      "total": 1179,
+      "entries": 640,
+      "exits": 539
+    },
+    "17": {
+      "total": 1573,
+      "entries": 938,
+      "exits": 635
+    },
+    "18": {
+      "total": 1889,
+      "entries": 1182,
+      "exits": 707
+    },
+    "19": {
+      "total": 2032,
+      "entries": 1273,
+      "exits": 759
+    },
+    "20": {
+      "total": 1432,
+      "entries": 900,
+      "exits": 532
+    },
+    "21": {
+      "total": 970,
+      "entries": 637,
+      "exits": 333
+    },
+    "22": {
+      "total": 550,
+      "entries": 354,
+      "exits": 196
+    },
+    "23": {
+      "total": 192,
+      "entries": 112,
+      "exits": 80
+    }
+  },
+  "KVPR": {
+    "0": {
+      "total": 2,
+      "entries": 0,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 3,
+      "entries": 2,
+      "exits": 1
+    },
+    "5": {
+      "total": 37,
+      "entries": 18,
+      "exits": 19
+    },
+    "6": {
+      "total": 86,
+      "entries": 34,
+      "exits": 52
+    },
+    "7": {
+      "total": 230,
+      "entries": 77,
+      "exits": 153
+    },
+    "8": {
+      "total": 564,
+      "entries": 144,
+      "exits": 420
+    },
+    "9": {
+      "total": 939,
+      "entries": 245,
+      "exits": 694
+    },
+    "10": {
+      "total": 753,
+      "entries": 200,
+      "exits": 553
+    },
+    "11": {
+      "total": 512,
+      "entries": 160,
+      "exits": 352
+    },
+    "12": {
+      "total": 496,
+      "entries": 202,
+      "exits": 294
+    },
+    "13": {
+      "total": 502,
+      "entries": 244,
+      "exits": 258
+    },
+    "14": {
+      "total": 491,
+      "entries": 270,
+      "exits": 221
+    },
+    "15": {
+      "total": 489,
+      "entries": 276,
+      "exits": 213
+    },
+    "16": {
+      "total": 544,
+      "entries": 311,
+      "exits": 233
+    },
+    "17": {
+      "total": 707,
+      "entries": 470,
+      "exits": 237
+    },
+    "18": {
+      "total": 904,
+      "entries": 637,
+      "exits": 267
+    },
+    "19": {
+      "total": 1010,
+      "entries": 726,
+      "exits": 284
+    },
+    "20": {
+      "total": 703,
+      "entries": 491,
+      "exits": 212
+    },
+    "21": {
+      "total": 488,
+      "entries": 349,
+      "exits": 139
+    },
+    "22": {
+      "total": 280,
+      "entries": 200,
+      "exits": 80
+    },
+    "23": {
+      "total": 91,
+      "entries": 62,
+      "exits": 29
+    }
+  },
+  "SPRU": {
+    "0": {
+      "total": 3,
+      "entries": 0,
+      "exits": 3
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 1,
+      "exits": 0
+    },
+    "5": {
+      "total": 28,
+      "entries": 13,
+      "exits": 15
+    },
+    "6": {
+      "total": 82,
+      "entries": 30,
+      "exits": 52
+    },
+    "7": {
+      "total": 244,
+      "entries": 81,
+      "exits": 163
+    },
+    "8": {
+      "total": 596,
+      "entries": 170,
+      "exits": 426
+    },
+    "9": {
+      "total": 954,
+      "entries": 284,
+      "exits": 670
+    },
+    "10": {
+      "total": 828,
+      "entries": 256,
+      "exits": 572
+    },
+    "11": {
+      "total": 572,
+      "entries": 218,
+      "exits": 354
+    },
+    "12": {
+      "total": 542,
+      "entries": 248,
+      "exits": 294
+    },
+    "13": {
+      "total": 583,
+      "entries": 288,
+      "exits": 295
+    },
+    "14": {
+      "total": 559,
+      "entries": 315,
+      "exits": 244
+    },
+    "15": {
+      "total": 556,
+      "entries": 306,
+      "exits": 250
+    },
+    "16": {
+      "total": 647,
+      "entries": 380,
+      "exits": 267
+    },
+    "17": {
+      "total": 804,
+      "entries": 517,
+      "exits": 287
+    },
+    "18": {
+      "total": 991,
+      "entries": 650,
+      "exits": 341
+    },
+    "19": {
+      "total": 1085,
+      "entries": 719,
+      "exits": 366
+    },
+    "20": {
+      "total": 757,
+      "entries": 501,
+      "exits": 256
+    },
+    "21": {
+      "total": 510,
+      "entries": 339,
+      "exits": 171
+    },
+    "22": {
+      "total": 289,
+      "entries": 201,
+      "exits": 88
+    },
+    "23": {
+      "total": 93,
+      "entries": 64,
+      "exits": 29
+    }
+  },
+  "SPGD": {
+    "0": {
+      "total": 10,
+      "entries": 0,
+      "exits": 10
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 1,
+      "exits": 1
+    },
+    "5": {
+      "total": 39,
+      "entries": 24,
+      "exits": 15
+    },
+    "6": {
+      "total": 116,
+      "entries": 61,
+      "exits": 55
+    },
+    "7": {
+      "total": 710,
+      "entries": 505,
+      "exits": 205
+    },
+    "8": {
+      "total": 1145,
+      "entries": 604,
+      "exits": 541
+    },
+    "9": {
+      "total": 2118,
+      "entries": 1274,
+      "exits": 844
+    },
+    "10": {
+      "total": 2043,
+      "entries": 1294,
+      "exits": 749
+    },
+    "11": {
+      "total": 1716,
+      "entries": 1150,
+      "exits": 566
+    },
+    "12": {
+      "total": 1862,
+      "entries": 1236,
+      "exits": 626
+    },
+    "13": {
+      "total": 1991,
+      "entries": 1228,
+      "exits": 763
+    },
+    "14": {
+      "total": 2064,
+      "entries": 1178,
+      "exits": 886
+    },
+    "15": {
+      "total": 1994,
+      "entries": 1101,
+      "exits": 893
+    },
+    "16": {
+      "total": 2278,
+      "entries": 1264,
+      "exits": 1014
+    },
+    "17": {
+      "total": 2605,
+      "entries": 1282,
+      "exits": 1323
+    },
+    "18": {
+      "total": 3034,
+      "entries": 1448,
+      "exits": 1586
+    },
+    "19": {
+      "total": 3028,
+      "entries": 1324,
+      "exits": 1704
+    },
+    "20": {
+      "total": 2115,
+      "entries": 746,
+      "exits": 1369
+    },
+    "21": {
+      "total": 1370,
+      "entries": 468,
+      "exits": 902
+    },
+    "22": {
+      "total": 950,
+      "entries": 261,
+      "exits": 689
+    },
+    "23": {
+      "total": 290,
+      "entries": 84,
+      "exits": 206
+    }
+  },
+  "CKPE": {
+    "0": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 13,
+      "entries": 6,
+      "exits": 7
+    },
+    "6": {
+      "total": 57,
+      "entries": 28,
+      "exits": 29
+    },
+    "7": {
+      "total": 194,
+      "entries": 97,
+      "exits": 97
+    },
+    "8": {
+      "total": 323,
+      "entries": 161,
+      "exits": 162
+    },
+    "9": {
+      "total": 406,
+      "entries": 203,
+      "exits": 203
+    },
+    "10": {
+      "total": 393,
+      "entries": 196,
+      "exits": 197
+    },
+    "11": {
+      "total": 495,
+      "entries": 247,
+      "exits": 248
+    },
+    "12": {
+      "total": 782,
+      "entries": 391,
+      "exits": 391
+    },
+    "13": {
+      "total": 1154,
+      "entries": 577,
+      "exits": 577
+    },
+    "14": {
+      "total": 1525,
+      "entries": 762,
+      "exits": 763
+    },
+    "15": {
+      "total": 1656,
+      "entries": 828,
+      "exits": 828
+    },
+    "16": {
+      "total": 1636,
+      "entries": 818,
+      "exits": 818
+    },
+    "17": {
+      "total": 1774,
+      "entries": 887,
+      "exits": 887
+    },
+    "18": {
+      "total": 1688,
+      "entries": 844,
+      "exits": 844
+    },
+    "19": {
+      "total": 1615,
+      "entries": 807,
+      "exits": 808
+    },
+    "20": {
+      "total": 1369,
+      "entries": 684,
+      "exits": 685
+    },
+    "21": {
+      "total": 674,
+      "entries": 337,
+      "exits": 337
+    },
+    "22": {
+      "total": 146,
+      "entries": 73,
+      "exits": 73
+    },
+    "23": {
+      "total": 15,
+      "entries": 7,
+      "exits": 8
+    }
+  },
+  "NLC": {
+    "0": {
+      "total": 4,
+      "entries": 0,
+      "exits": 4
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 1,
+      "exits": 0
+    },
+    "5": {
+      "total": 47,
+      "entries": 38,
+      "exits": 9
+    },
+    "6": {
+      "total": 111,
+      "entries": 66,
+      "exits": 45
+    },
+    "7": {
+      "total": 516,
+      "entries": 361,
+      "exits": 155
+    },
+    "8": {
+      "total": 1639,
+      "entries": 1182,
+      "exits": 457
+    },
+    "9": {
+      "total": 2058,
+      "entries": 1362,
+      "exits": 696
+    },
+    "10": {
+      "total": 1669,
+      "entries": 957,
+      "exits": 712
+    },
+    "11": {
+      "total": 1279,
+      "entries": 670,
+      "exits": 609
+    },
+    "12": {
+      "total": 1239,
+      "entries": 639,
+      "exits": 600
+    },
+    "13": {
+      "total": 1281,
+      "entries": 577,
+      "exits": 704
+    },
+    "14": {
+      "total": 1290,
+      "entries": 525,
+      "exits": 765
+    },
+    "15": {
+      "total": 1286,
+      "entries": 540,
+      "exits": 746
+    },
+    "16": {
+      "total": 1447,
+      "entries": 674,
+      "exits": 773
+    },
+    "17": {
+      "total": 1650,
+      "entries": 829,
+      "exits": 821
+    },
+    "18": {
+      "total": 1816,
+      "entries": 988,
+      "exits": 828
+    },
+    "19": {
+      "total": 1869,
+      "entries": 1003,
+      "exits": 866
+    },
+    "20": {
+      "total": 1271,
+      "entries": 660,
+      "exits": 611
+    },
+    "21": {
+      "total": 850,
+      "entries": 448,
+      "exits": 402
+    },
+    "22": {
+      "total": 451,
+      "entries": 235,
+      "exits": 216
+    },
+    "23": {
+      "total": 160,
+      "entries": 98,
+      "exits": 62
+    }
+  },
+  "LBGH": {
+    "0": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 1,
+      "exits": 1
+    },
+    "5": {
+      "total": 15,
+      "entries": 7,
+      "exits": 8
+    },
+    "6": {
+      "total": 46,
+      "entries": 23,
+      "exits": 23
+    },
+    "7": {
+      "total": 125,
+      "entries": 62,
+      "exits": 63
+    },
+    "8": {
+      "total": 236,
+      "entries": 118,
+      "exits": 118
+    },
+    "9": {
+      "total": 276,
+      "entries": 138,
+      "exits": 138
+    },
+    "10": {
+      "total": 242,
+      "entries": 121,
+      "exits": 121
+    },
+    "11": {
+      "total": 266,
+      "entries": 133,
+      "exits": 133
+    },
+    "12": {
+      "total": 391,
+      "entries": 195,
+      "exits": 196
+    },
+    "13": {
+      "total": 488,
+      "entries": 244,
+      "exits": 244
+    },
+    "14": {
+      "total": 594,
+      "entries": 297,
+      "exits": 297
+    },
+    "15": {
+      "total": 704,
+      "entries": 352,
+      "exits": 352
+    },
+    "16": {
+      "total": 799,
+      "entries": 399,
+      "exits": 400
+    },
+    "17": {
+      "total": 976,
+      "entries": 488,
+      "exits": 488
+    },
+    "18": {
+      "total": 1094,
+      "entries": 547,
+      "exits": 547
+    },
+    "19": {
+      "total": 912,
+      "entries": 456,
+      "exits": 456
+    },
+    "20": {
+      "total": 360,
+      "entries": 180,
+      "exits": 180
+    },
+    "21": {
+      "total": 174,
+      "entries": 87,
+      "exits": 87
+    },
+    "22": {
+      "total": 79,
+      "entries": 39,
+      "exits": 40
+    },
+    "23": {
+      "total": 11,
+      "entries": 5,
+      "exits": 6
+    }
+  },
+  "SECE": {
+    "0": {
+      "total": 2,
+      "entries": 0,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 1,
+      "exits": 0
+    },
+    "5": {
+      "total": 21,
+      "entries": 14,
+      "exits": 7
+    },
+    "6": {
+      "total": 87,
+      "entries": 57,
+      "exits": 30
+    },
+    "7": {
+      "total": 323,
+      "entries": 247,
+      "exits": 76
+    },
+    "8": {
+      "total": 1159,
+      "entries": 945,
+      "exits": 214
+    },
+    "9": {
+      "total": 1653,
+      "entries": 1349,
+      "exits": 304
+    },
+    "10": {
+      "total": 1059,
+      "entries": 782,
+      "exits": 277
+    },
+    "11": {
+      "total": 683,
+      "entries": 410,
+      "exits": 273
+    },
+    "12": {
+      "total": 624,
+      "entries": 321,
+      "exits": 303
+    },
+    "13": {
+      "total": 833,
+      "entries": 404,
+      "exits": 429
+    },
+    "14": {
+      "total": 880,
+      "entries": 318,
+      "exits": 562
+    },
+    "15": {
+      "total": 741,
+      "entries": 296,
+      "exits": 445
+    },
+    "16": {
+      "total": 942,
+      "entries": 339,
+      "exits": 603
+    },
+    "17": {
+      "total": 1002,
+      "entries": 371,
+      "exits": 631
+    },
+    "18": {
+      "total": 1162,
+      "entries": 403,
+      "exits": 759
+    },
+    "19": {
+      "total": 1397,
+      "entries": 412,
+      "exits": 985
+    },
+    "20": {
+      "total": 845,
+      "entries": 286,
+      "exits": 559
+    },
+    "21": {
+      "total": 489,
+      "entries": 195,
+      "exits": 294
+    },
+    "22": {
+      "total": 271,
+      "entries": 116,
+      "exits": 155
+    },
+    "23": {
+      "total": 101,
+      "entries": 54,
+      "exits": 47
+    }
+  },
+  "JYN": {
+    "0": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 4,
+      "entries": 2,
+      "exits": 2
+    },
+    "5": {
+      "total": 46,
+      "entries": 23,
+      "exits": 23
+    },
+    "6": {
+      "total": 111,
+      "entries": 55,
+      "exits": 56
+    },
+    "7": {
+      "total": 347,
+      "entries": 173,
+      "exits": 174
+    },
+    "8": {
+      "total": 752,
+      "entries": 376,
+      "exits": 376
+    },
+    "9": {
+      "total": 920,
+      "entries": 460,
+      "exits": 460
+    },
+    "10": {
+      "total": 685,
+      "entries": 342,
+      "exits": 343
+    },
+    "11": {
+      "total": 573,
+      "entries": 286,
+      "exits": 287
+    },
+    "12": {
+      "total": 603,
+      "entries": 301,
+      "exits": 302
+    },
+    "13": {
+      "total": 644,
+      "entries": 322,
+      "exits": 322
+    },
+    "14": {
+      "total": 722,
+      "entries": 361,
+      "exits": 361
+    },
+    "15": {
+      "total": 693,
+      "entries": 346,
+      "exits": 347
+    },
+    "16": {
+      "total": 937,
+      "entries": 468,
+      "exits": 469
+    },
+    "17": {
+      "total": 983,
+      "entries": 491,
+      "exits": 492
+    },
+    "18": {
+      "total": 1144,
+      "entries": 572,
+      "exits": 572
+    },
+    "19": {
+      "total": 1018,
+      "entries": 509,
+      "exits": 509
+    },
+    "20": {
+      "total": 689,
+      "entries": 344,
+      "exits": 345
+    },
+    "21": {
+      "total": 455,
+      "entries": 227,
+      "exits": 228
+    },
+    "22": {
+      "total": 232,
+      "entries": 116,
+      "exits": 116
+    },
+    "23": {
+      "total": 22,
+      "entries": 11,
+      "exits": 11
+    }
+  },
+  "BSNK": {
+    "0": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 1,
+      "exits": 1
+    },
+    "5": {
+      "total": 60,
+      "entries": 30,
+      "exits": 30
+    },
+    "6": {
+      "total": 167,
+      "entries": 83,
+      "exits": 84
+    },
+    "7": {
+      "total": 455,
+      "entries": 227,
+      "exits": 228
+    },
+    "8": {
+      "total": 888,
+      "entries": 444,
+      "exits": 444
+    },
+    "9": {
+      "total": 1080,
+      "entries": 540,
+      "exits": 540
+    },
+    "10": {
+      "total": 920,
+      "entries": 460,
+      "exits": 460
+    },
+    "11": {
+      "total": 806,
+      "entries": 403,
+      "exits": 403
+    },
+    "12": {
+      "total": 832,
+      "entries": 416,
+      "exits": 416
+    },
+    "13": {
+      "total": 867,
+      "entries": 433,
+      "exits": 434
+    },
+    "14": {
+      "total": 763,
+      "entries": 381,
+      "exits": 382
+    },
+    "15": {
+      "total": 678,
+      "entries": 339,
+      "exits": 339
+    },
+    "16": {
+      "total": 820,
+      "entries": 410,
+      "exits": 410
+    },
+    "17": {
+      "total": 993,
+      "entries": 496,
+      "exits": 497
+    },
+    "18": {
+      "total": 1066,
+      "entries": 533,
+      "exits": 533
+    },
+    "19": {
+      "total": 1006,
+      "entries": 503,
+      "exits": 503
+    },
+    "20": {
+      "total": 683,
+      "entries": 341,
+      "exits": 342
+    },
+    "21": {
+      "total": 427,
+      "entries": 213,
+      "exits": 214
+    },
+    "22": {
+      "total": 218,
+      "entries": 109,
+      "exits": 109
+    },
+    "23": {
+      "total": 31,
+      "entries": 15,
+      "exits": 16
+    }
+  },
+  "APRC": {
+    "0": {
+      "total": 22,
+      "entries": 16,
+      "exits": 6
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 1,
+      "exits": 0
+    },
+    "5": {
+      "total": 63,
+      "entries": 46,
+      "exits": 17
+    },
+    "6": {
+      "total": 186,
+      "entries": 117,
+      "exits": 69
+    },
+    "7": {
+      "total": 477,
+      "entries": 245,
+      "exits": 232
+    },
+    "8": {
+      "total": 1108,
+      "entries": 407,
+      "exits": 701
+    },
+    "9": {
+      "total": 1526,
+      "entries": 466,
+      "exits": 1060
+    },
+    "10": {
+      "total": 1463,
+      "entries": 501,
+      "exits": 962
+    },
+    "11": {
+      "total": 1257,
+      "entries": 542,
+      "exits": 715
+    },
+    "12": {
+      "total": 1294,
+      "entries": 681,
+      "exits": 613
+    },
+    "13": {
+      "total": 1357,
+      "entries": 774,
+      "exits": 583
+    },
+    "14": {
+      "total": 1363,
+      "entries": 793,
+      "exits": 570
+    },
+    "15": {
+      "total": 1396,
+      "entries": 834,
+      "exits": 562
+    },
+    "16": {
+      "total": 1573,
+      "entries": 915,
+      "exits": 658
+    },
+    "17": {
+      "total": 1798,
+      "entries": 1109,
+      "exits": 689
+    },
+    "18": {
+      "total": 2142,
+      "entries": 1384,
+      "exits": 758
+    },
+    "19": {
+      "total": 2173,
+      "entries": 1377,
+      "exits": 796
+    },
+    "20": {
+      "total": 1636,
+      "entries": 953,
+      "exits": 683
+    },
+    "21": {
+      "total": 1177,
+      "entries": 680,
+      "exits": 497
+    },
+    "22": {
+      "total": 786,
+      "entries": 294,
+      "exits": 492
+    },
+    "23": {
+      "total": 348,
+      "entries": 161,
+      "exits": 187
+    }
+  },
+  "KLPK": {
+    "0": {
+      "total": 7,
+      "entries": 6,
+      "exits": 1
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 21,
+      "entries": 14,
+      "exits": 7
+    },
+    "6": {
+      "total": 79,
+      "entries": 42,
+      "exits": 37
+    },
+    "7": {
+      "total": 189,
+      "entries": 63,
+      "exits": 126
+    },
+    "8": {
+      "total": 544,
+      "entries": 135,
+      "exits": 409
+    },
+    "9": {
+      "total": 891,
+      "entries": 244,
+      "exits": 647
+    },
+    "10": {
+      "total": 709,
+      "entries": 233,
+      "exits": 476
+    },
+    "11": {
+      "total": 526,
+      "entries": 194,
+      "exits": 332
+    },
+    "12": {
+      "total": 460,
+      "entries": 193,
+      "exits": 267
+    },
+    "13": {
+      "total": 487,
+      "entries": 238,
+      "exits": 249
+    },
+    "14": {
+      "total": 466,
+      "entries": 256,
+      "exits": 210
+    },
+    "15": {
+      "total": 486,
+      "entries": 274,
+      "exits": 212
+    },
+    "16": {
+      "total": 584,
+      "entries": 359,
+      "exits": 225
+    },
+    "17": {
+      "total": 700,
+      "entries": 474,
+      "exits": 226
+    },
+    "18": {
+      "total": 862,
+      "entries": 586,
+      "exits": 276
+    },
+    "19": {
+      "total": 905,
+      "entries": 600,
+      "exits": 305
+    },
+    "20": {
+      "total": 664,
+      "entries": 452,
+      "exits": 212
+    },
+    "21": {
+      "total": 423,
+      "entries": 292,
+      "exits": 131
+    },
+    "22": {
+      "total": 223,
+      "entries": 148,
+      "exits": 75
+    },
+    "23": {
+      "total": 104,
+      "entries": 74,
+      "exits": 30
+    }
+  },
+  "VJRH": {
+    "0": {
+      "total": 10,
+      "entries": 8,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 1,
+      "exits": 0
+    },
+    "5": {
+      "total": 32,
+      "entries": 22,
+      "exits": 10
+    },
+    "6": {
+      "total": 82,
+      "entries": 48,
+      "exits": 34
+    },
+    "7": {
+      "total": 215,
+      "entries": 85,
+      "exits": 130
+    },
+    "8": {
+      "total": 767,
+      "entries": 334,
+      "exits": 433
+    },
+    "9": {
+      "total": 809,
+      "entries": 246,
+      "exits": 563
+    },
+    "10": {
+      "total": 629,
+      "entries": 185,
+      "exits": 444
+    },
+    "11": {
+      "total": 520,
+      "entries": 195,
+      "exits": 325
+    },
+    "12": {
+      "total": 522,
+      "entries": 239,
+      "exits": 283
+    },
+    "13": {
+      "total": 506,
+      "entries": 239,
+      "exits": 267
+    },
+    "14": {
+      "total": 530,
+      "entries": 289,
+      "exits": 241
+    },
+    "15": {
+      "total": 497,
+      "entries": 250,
+      "exits": 247
+    },
+    "16": {
+      "total": 649,
+      "entries": 379,
+      "exits": 270
+    },
+    "17": {
+      "total": 682,
+      "entries": 430,
+      "exits": 252
+    },
+    "18": {
+      "total": 833,
+      "entries": 561,
+      "exits": 272
+    },
+    "19": {
+      "total": 900,
+      "entries": 617,
+      "exits": 283
+    },
+    "20": {
+      "total": 683,
+      "entries": 498,
+      "exits": 185
+    },
+    "21": {
+      "total": 379,
+      "entries": 262,
+      "exits": 117
+    },
+    "22": {
+      "total": 250,
+      "entries": 177,
+      "exits": 73
+    },
+    "23": {
+      "total": 109,
+      "entries": 79,
+      "exits": 30
+    }
+  },
+  "TGTP": {
+    "0": {
+      "total": 6,
+      "entries": 5,
+      "exits": 1
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 15,
+      "entries": 9,
+      "exits": 6
+    },
+    "6": {
+      "total": 47,
+      "entries": 23,
+      "exits": 24
+    },
+    "7": {
+      "total": 119,
+      "entries": 49,
+      "exits": 70
+    },
+    "8": {
+      "total": 377,
+      "entries": 147,
+      "exits": 230
+    },
+    "9": {
+      "total": 486,
+      "entries": 138,
+      "exits": 348
+    },
+    "10": {
+      "total": 373,
+      "entries": 92,
+      "exits": 281
+    },
+    "11": {
+      "total": 279,
+      "entries": 96,
+      "exits": 183
+    },
+    "12": {
+      "total": 280,
+      "entries": 120,
+      "exits": 160
+    },
+    "13": {
+      "total": 249,
+      "entries": 119,
+      "exits": 130
+    },
+    "14": {
+      "total": 274,
+      "entries": 150,
+      "exits": 124
+    },
+    "15": {
+      "total": 262,
+      "entries": 139,
+      "exits": 123
+    },
+    "16": {
+      "total": 331,
+      "entries": 194,
+      "exits": 137
+    },
+    "17": {
+      "total": 361,
+      "entries": 235,
+      "exits": 126
+    },
+    "18": {
+      "total": 449,
+      "entries": 307,
+      "exits": 142
+    },
+    "19": {
+      "total": 473,
+      "entries": 335,
+      "exits": 138
+    },
+    "20": {
+      "total": 357,
+      "entries": 263,
+      "exits": 94
+    },
+    "21": {
+      "total": 204,
+      "entries": 147,
+      "exits": 57
+    },
+    "22": {
+      "total": 139,
+      "entries": 102,
+      "exits": 37
+    },
+    "23": {
+      "total": 60,
+      "entries": 46,
+      "exits": 14
+    }
+  },
+  "APTS": {
+    "0": {
+      "total": 9,
+      "entries": 7,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 1,
+      "exits": 0
+    },
+    "5": {
+      "total": 31,
+      "entries": 25,
+      "exits": 6
+    },
+    "6": {
+      "total": 110,
+      "entries": 68,
+      "exits": 42
+    },
+    "7": {
+      "total": 346,
+      "entries": 217,
+      "exits": 129
+    },
+    "8": {
+      "total": 792,
+      "entries": 412,
+      "exits": 380
+    },
+    "9": {
+      "total": 988,
+      "entries": 393,
+      "exits": 595
+    },
+    "10": {
+      "total": 814,
+      "entries": 261,
+      "exits": 553
+    },
+    "11": {
+      "total": 698,
+      "entries": 250,
+      "exits": 448
+    },
+    "12": {
+      "total": 640,
+      "entries": 252,
+      "exits": 388
+    },
+    "13": {
+      "total": 617,
+      "entries": 289,
+      "exits": 328
+    },
+    "14": {
+      "total": 632,
+      "entries": 301,
+      "exits": 331
+    },
+    "15": {
+      "total": 645,
+      "entries": 339,
+      "exits": 306
+    },
+    "16": {
+      "total": 748,
+      "entries": 360,
+      "exits": 388
+    },
+    "17": {
+      "total": 879,
+      "entries": 473,
+      "exits": 406
+    },
+    "18": {
+      "total": 1021,
+      "entries": 566,
+      "exits": 455
+    },
+    "19": {
+      "total": 991,
+      "entries": 602,
+      "exits": 389
+    },
+    "20": {
+      "total": 699,
+      "entries": 444,
+      "exits": 255
+    },
+    "21": {
+      "total": 436,
+      "entries": 284,
+      "exits": 152
+    },
+    "22": {
+      "total": 247,
+      "entries": 162,
+      "exits": 85
+    },
+    "23": {
+      "total": 95,
+      "entries": 72,
+      "exits": 23
+    }
+  },
+  "ECTN": {
+    "0": {
+      "total": 17,
+      "entries": 11,
+      "exits": 6
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 1,
+      "entries": 0,
+      "exits": 1
+    },
+    "6": {
+      "total": 23,
+      "entries": 14,
+      "exits": 9
+    },
+    "7": {
+      "total": 92,
+      "entries": 27,
+      "exits": 65
+    },
+    "8": {
+      "total": 329,
+      "entries": 136,
+      "exits": 193
+    },
+    "9": {
+      "total": 424,
+      "entries": 144,
+      "exits": 280
+    },
+    "10": {
+      "total": 477,
+      "entries": 187,
+      "exits": 290
+    },
+    "11": {
+      "total": 398,
+      "entries": 113,
+      "exits": 285
+    },
+    "12": {
+      "total": 460,
+      "entries": 106,
+      "exits": 354
+    },
+    "13": {
+      "total": 459,
+      "entries": 136,
+      "exits": 323
+    },
+    "14": {
+      "total": 465,
+      "entries": 111,
+      "exits": 354
+    },
+    "15": {
+      "total": 439,
+      "entries": 135,
+      "exits": 304
+    },
+    "16": {
+      "total": 560,
+      "entries": 134,
+      "exits": 426
+    },
+    "17": {
+      "total": 657,
+      "entries": 152,
+      "exits": 505
+    },
+    "18": {
+      "total": 825,
+      "entries": 231,
+      "exits": 594
+    },
+    "19": {
+      "total": 783,
+      "entries": 229,
+      "exits": 554
+    },
+    "20": {
+      "total": 643,
+      "entries": 213,
+      "exits": 430
+    },
+    "21": {
+      "total": 430,
+      "entries": 155,
+      "exits": 275
+    },
+    "22": {
+      "total": 296,
+      "entries": 113,
+      "exits": 183
+    },
+    "23": {
+      "total": 134,
+      "entries": 67,
+      "exits": 67
+    }
+  },
+  "HSKR": {
+    "0": {
+      "total": 3,
+      "entries": 2,
+      "exits": 1
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "6": {
+      "total": 3,
+      "entries": 1,
+      "exits": 2
+    },
+    "7": {
+      "total": 32,
+      "entries": 10,
+      "exits": 22
+    },
+    "8": {
+      "total": 123,
+      "entries": 40,
+      "exits": 83
+    },
+    "9": {
+      "total": 150,
+      "entries": 34,
+      "exits": 116
+    },
+    "10": {
+      "total": 153,
+      "entries": 37,
+      "exits": 116
+    },
+    "11": {
+      "total": 161,
+      "entries": 33,
+      "exits": 128
+    },
+    "12": {
+      "total": 175,
+      "entries": 39,
+      "exits": 136
+    },
+    "13": {
+      "total": 196,
+      "entries": 49,
+      "exits": 147
+    },
+    "14": {
+      "total": 168,
+      "entries": 45,
+      "exits": 123
+    },
+    "15": {
+      "total": 191,
+      "entries": 60,
+      "exits": 131
+    },
+    "16": {
+      "total": 226,
+      "entries": 65,
+      "exits": 161
+    },
+    "17": {
+      "total": 261,
+      "entries": 77,
+      "exits": 184
+    },
+    "18": {
+      "total": 292,
+      "entries": 99,
+      "exits": 193
+    },
+    "19": {
+      "total": 315,
+      "entries": 98,
+      "exits": 217
+    },
+    "20": {
+      "total": 248,
+      "entries": 81,
+      "exits": 167
+    },
+    "21": {
+      "total": 154,
+      "entries": 53,
+      "exits": 101
+    },
+    "22": {
+      "total": 111,
+      "entries": 40,
+      "exits": 71
+    },
+    "23": {
+      "total": 42,
+      "entries": 21,
+      "exits": 21
+    }
+  },
+  "HOSR": {
+    "0": {
+      "total": 3,
+      "entries": 1,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "6": {
+      "total": 2,
+      "entries": 1,
+      "exits": 1
+    },
+    "7": {
+      "total": 9,
+      "entries": 4,
+      "exits": 5
+    },
+    "8": {
+      "total": 33,
+      "entries": 9,
+      "exits": 24
+    },
+    "9": {
+      "total": 48,
+      "entries": 14,
+      "exits": 34
+    },
+    "10": {
+      "total": 56,
+      "entries": 18,
+      "exits": 38
+    },
+    "11": {
+      "total": 47,
+      "entries": 13,
+      "exits": 34
+    },
+    "12": {
+      "total": 55,
+      "entries": 15,
+      "exits": 40
+    },
+    "13": {
+      "total": 52,
+      "entries": 13,
+      "exits": 39
+    },
+    "14": {
+      "total": 49,
+      "entries": 12,
+      "exits": 37
+    },
+    "15": {
+      "total": 55,
+      "entries": 18,
+      "exits": 37
+    },
+    "16": {
+      "total": 63,
+      "entries": 17,
+      "exits": 46
+    },
+    "17": {
+      "total": 70,
+      "entries": 23,
+      "exits": 47
+    },
+    "18": {
+      "total": 109,
+      "entries": 30,
+      "exits": 79
+    },
+    "19": {
+      "total": 94,
+      "entries": 25,
+      "exits": 69
+    },
+    "20": {
+      "total": 75,
+      "entries": 28,
+      "exits": 47
+    },
+    "21": {
+      "total": 38,
+      "entries": 14,
+      "exits": 24
+    },
+    "22": {
+      "total": 26,
+      "entries": 15,
+      "exits": 11
+    },
+    "23": {
+      "total": 8,
+      "entries": 4,
+      "exits": 4
+    }
+  },
+  "ETCT": {
+    "0": {
+      "total": 15,
+      "entries": 10,
+      "exits": 5
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 3,
+      "entries": 1,
+      "exits": 2
+    },
+    "6": {
+      "total": 16,
+      "entries": 11,
+      "exits": 5
+    },
+    "7": {
+      "total": 68,
+      "entries": 45,
+      "exits": 23
+    },
+    "8": {
+      "total": 185,
+      "entries": 74,
+      "exits": 111
+    },
+    "9": {
+      "total": 224,
+      "entries": 69,
+      "exits": 155
+    },
+    "10": {
+      "total": 261,
+      "entries": 100,
+      "exits": 161
+    },
+    "11": {
+      "total": 252,
+      "entries": 82,
+      "exits": 170
+    },
+    "12": {
+      "total": 320,
+      "entries": 105,
+      "exits": 215
+    },
+    "13": {
+      "total": 335,
+      "entries": 88,
+      "exits": 247
+    },
+    "14": {
+      "total": 318,
+      "entries": 87,
+      "exits": 231
+    },
+    "15": {
+      "total": 322,
+      "entries": 115,
+      "exits": 207
+    },
+    "16": {
+      "total": 360,
+      "entries": 103,
+      "exits": 257
+    },
+    "17": {
+      "total": 409,
+      "entries": 125,
+      "exits": 284
+    },
+    "18": {
+      "total": 482,
+      "entries": 167,
+      "exits": 315
+    },
+    "19": {
+      "total": 428,
+      "entries": 164,
+      "exits": 264
+    },
+    "20": {
+      "total": 374,
+      "entries": 172,
+      "exits": 202
+    },
+    "21": {
+      "total": 262,
+      "entries": 110,
+      "exits": 152
+    },
+    "22": {
+      "total": 184,
+      "entries": 85,
+      "exits": 99
+    },
+    "23": {
+      "total": 82,
+      "entries": 48,
+      "exits": 34
+    }
+  },
+  "HBGI": {
+    "0": {
+      "total": 5,
+      "entries": 3,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "6": {
+      "total": 4,
+      "entries": 1,
+      "exits": 3
+    },
+    "7": {
+      "total": 22,
+      "entries": 7,
+      "exits": 15
+    },
+    "8": {
+      "total": 70,
+      "entries": 26,
+      "exits": 44
+    },
+    "9": {
+      "total": 112,
+      "entries": 27,
+      "exits": 85
+    },
+    "10": {
+      "total": 132,
+      "entries": 23,
+      "exits": 109
+    },
+    "11": {
+      "total": 125,
+      "entries": 22,
+      "exits": 103
+    },
+    "12": {
+      "total": 142,
+      "entries": 26,
+      "exits": 116
+    },
+    "13": {
+      "total": 149,
+      "entries": 33,
+      "exits": 116
+    },
+    "14": {
+      "total": 147,
+      "entries": 40,
+      "exits": 107
+    },
+    "15": {
+      "total": 139,
+      "entries": 40,
+      "exits": 99
+    },
+    "16": {
+      "total": 149,
+      "entries": 50,
+      "exits": 99
+    },
+    "17": {
+      "total": 165,
+      "entries": 54,
+      "exits": 111
+    },
+    "18": {
+      "total": 210,
+      "entries": 74,
+      "exits": 136
+    },
+    "19": {
+      "total": 214,
+      "entries": 74,
+      "exits": 140
+    },
+    "20": {
+      "total": 155,
+      "entries": 59,
+      "exits": 96
+    },
+    "21": {
+      "total": 106,
+      "entries": 48,
+      "exits": 58
+    },
+    "22": {
+      "total": 62,
+      "entries": 33,
+      "exits": 29
+    },
+    "23": {
+      "total": 24,
+      "entries": 15,
+      "exits": 9
+    }
+  },
+  "BMSD": {
+    "0": {
+      "total": 18,
+      "entries": 14,
+      "exits": 4
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 2,
+      "entries": 0,
+      "exits": 2
+    },
+    "6": {
+      "total": 13,
+      "entries": 6,
+      "exits": 7
+    },
+    "7": {
+      "total": 123,
+      "entries": 61,
+      "exits": 62
+    },
+    "8": {
+      "total": 384,
+      "entries": 160,
+      "exits": 224
+    },
+    "9": {
+      "total": 492,
+      "entries": 155,
+      "exits": 337
+    },
+    "10": {
+      "total": 522,
+      "entries": 131,
+      "exits": 391
+    },
+    "11": {
+      "total": 635,
+      "entries": 184,
+      "exits": 451
+    },
+    "12": {
+      "total": 650,
+      "entries": 154,
+      "exits": 496
+    },
+    "13": {
+      "total": 656,
+      "entries": 185,
+      "exits": 471
+    },
+    "14": {
+      "total": 641,
+      "entries": 205,
+      "exits": 436
+    },
+    "15": {
+      "total": 589,
+      "entries": 180,
+      "exits": 409
+    },
+    "16": {
+      "total": 676,
+      "entries": 272,
+      "exits": 404
+    },
+    "17": {
+      "total": 736,
+      "entries": 256,
+      "exits": 480
+    },
+    "18": {
+      "total": 901,
+      "entries": 327,
+      "exits": 574
+    },
+    "19": {
+      "total": 963,
+      "entries": 374,
+      "exits": 589
+    },
+    "20": {
+      "total": 706,
+      "entries": 248,
+      "exits": 458
+    },
+    "21": {
+      "total": 494,
+      "entries": 237,
+      "exits": 257
+    },
+    "22": {
+      "total": 259,
+      "entries": 126,
+      "exits": 133
+    },
+    "23": {
+      "total": 92,
+      "entries": 56,
+      "exits": 36
+    }
+  },
+  "JPN": {
+    "0": {
+      "total": 24,
+      "entries": 18,
+      "exits": 6
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 1,
+      "exits": 1
+    },
+    "5": {
+      "total": 72,
+      "entries": 51,
+      "exits": 21
+    },
+    "6": {
+      "total": 136,
+      "entries": 79,
+      "exits": 57
+    },
+    "7": {
+      "total": 406,
+      "entries": 235,
+      "exits": 171
+    },
+    "8": {
+      "total": 1064,
+      "entries": 443,
+      "exits": 621
+    },
+    "9": {
+      "total": 1780,
+      "entries": 709,
+      "exits": 1071
+    },
+    "10": {
+      "total": 1426,
+      "entries": 554,
+      "exits": 872
+    },
+    "11": {
+      "total": 962,
+      "entries": 398,
+      "exits": 564
+    },
+    "12": {
+      "total": 912,
+      "entries": 429,
+      "exits": 483
+    },
+    "13": {
+      "total": 912,
+      "entries": 471,
+      "exits": 441
+    },
+    "14": {
+      "total": 940,
+      "entries": 523,
+      "exits": 417
+    },
+    "15": {
+      "total": 896,
+      "entries": 504,
+      "exits": 392
+    },
+    "16": {
+      "total": 1040,
+      "entries": 599,
+      "exits": 441
+    },
+    "17": {
+      "total": 1318,
+      "entries": 783,
+      "exits": 535
+    },
+    "18": {
+      "total": 1655,
+      "entries": 996,
+      "exits": 659
+    },
+    "19": {
+      "total": 1872,
+      "entries": 1156,
+      "exits": 716
+    },
+    "20": {
+      "total": 1337,
+      "entries": 843,
+      "exits": 494
+    },
+    "21": {
+      "total": 910,
+      "entries": 585,
+      "exits": 325
+    },
+    "22": {
+      "total": 578,
+      "entries": 380,
+      "exits": 198
+    },
+    "23": {
+      "total": 283,
+      "entries": 183,
+      "exits": 100
+    }
+  },
+  "MGRD": {
+    "0": {
+      "total": 75,
+      "entries": 0,
+      "exits": 75
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 44,
+      "entries": 36,
+      "exits": 8
+    },
+    "6": {
+      "total": 275,
+      "entries": 233,
+      "exits": 42
+    },
+    "7": {
+      "total": 726,
+      "entries": 655,
+      "exits": 71
+    },
+    "8": {
+      "total": 1656,
+      "entries": 1449,
+      "exits": 207
+    },
+    "9": {
+      "total": 3377,
+      "entries": 3051,
+      "exits": 326
+    },
+    "10": {
+      "total": 2884,
+      "entries": 2542,
+      "exits": 342
+    },
+    "11": {
+      "total": 2041,
+      "entries": 1606,
+      "exits": 435
+    },
+    "12": {
+      "total": 1846,
+      "entries": 1303,
+      "exits": 543
+    },
+    "13": {
+      "total": 2060,
+      "entries": 1290,
+      "exits": 770
+    },
+    "14": {
+      "total": 2057,
+      "entries": 1224,
+      "exits": 833
+    },
+    "15": {
+      "total": 2143,
+      "entries": 1071,
+      "exits": 1072
+    },
+    "16": {
+      "total": 2421,
+      "entries": 1114,
+      "exits": 1307
+    },
+    "17": {
+      "total": 3080,
+      "entries": 1284,
+      "exits": 1796
+    },
+    "18": {
+      "total": 3953,
+      "entries": 1428,
+      "exits": 2525
+    },
+    "19": {
+      "total": 4236,
+      "entries": 1311,
+      "exits": 2925
+    },
+    "20": {
+      "total": 2991,
+      "entries": 873,
+      "exits": 2118
+    },
+    "21": {
+      "total": 1948,
+      "entries": 493,
+      "exits": 1455
+    },
+    "22": {
+      "total": 1327,
+      "entries": 264,
+      "exits": 1063
+    },
+    "23": {
+      "total": 716,
+      "entries": 81,
+      "exits": 635
+    }
+  },
+  "JAYN": {
+    "0": {
+      "total": 6,
+      "entries": 1,
+      "exits": 5
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 3,
+      "entries": 2,
+      "exits": 1
+    },
+    "5": {
+      "total": 45,
+      "entries": 34,
+      "exits": 11
+    },
+    "6": {
+      "total": 130,
+      "entries": 91,
+      "exits": 39
+    },
+    "7": {
+      "total": 409,
+      "entries": 276,
+      "exits": 133
+    },
+    "8": {
+      "total": 1235,
+      "entries": 881,
+      "exits": 354
+    },
+    "9": {
+      "total": 2254,
+      "entries": 1688,
+      "exits": 566
+    },
+    "10": {
+      "total": 1782,
+      "entries": 1236,
+      "exits": 546
+    },
+    "11": {
+      "total": 1325,
+      "entries": 832,
+      "exits": 493
+    },
+    "12": {
+      "total": 1393,
+      "entries": 813,
+      "exits": 580
+    },
+    "13": {
+      "total": 1475,
+      "entries": 831,
+      "exits": 644
+    },
+    "14": {
+      "total": 1639,
+      "entries": 833,
+      "exits": 806
+    },
+    "15": {
+      "total": 1498,
+      "entries": 720,
+      "exits": 778
+    },
+    "16": {
+      "total": 1770,
+      "entries": 846,
+      "exits": 924
+    },
+    "17": {
+      "total": 2139,
+      "entries": 959,
+      "exits": 1180
+    },
+    "18": {
+      "total": 2243,
+      "entries": 1036,
+      "exits": 1207
+    },
+    "19": {
+      "total": 2307,
+      "entries": 991,
+      "exits": 1316
+    },
+    "20": {
+      "total": 1695,
+      "entries": 699,
+      "exits": 996
+    },
+    "21": {
+      "total": 1077,
+      "entries": 432,
+      "exits": 645
+    },
+    "22": {
+      "total": 611,
+      "entries": 246,
+      "exits": 365
+    },
+    "23": {
+      "total": 234,
+      "entries": 116,
+      "exits": 118
+    }
+  },
+  "NYHM": {
+    "0": {
+      "total": 5,
+      "entries": 3,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 0,
+      "exits": 2
+    },
+    "5": {
+      "total": 10,
+      "entries": 6,
+      "exits": 4
+    },
+    "6": {
+      "total": 32,
+      "entries": 16,
+      "exits": 16
+    },
+    "7": {
+      "total": 85,
+      "entries": 37,
+      "exits": 48
+    },
+    "8": {
+      "total": 201,
+      "entries": 62,
+      "exits": 139
+    },
+    "9": {
+      "total": 278,
+      "entries": 105,
+      "exits": 173
+    },
+    "10": {
+      "total": 222,
+      "entries": 92,
+      "exits": 130
+    },
+    "11": {
+      "total": 206,
+      "entries": 104,
+      "exits": 102
+    },
+    "12": {
+      "total": 221,
+      "entries": 112,
+      "exits": 109
+    },
+    "13": {
+      "total": 239,
+      "entries": 139,
+      "exits": 100
+    },
+    "14": {
+      "total": 239,
+      "entries": 139,
+      "exits": 100
+    },
+    "15": {
+      "total": 231,
+      "entries": 136,
+      "exits": 95
+    },
+    "16": {
+      "total": 264,
+      "entries": 153,
+      "exits": 111
+    },
+    "17": {
+      "total": 301,
+      "entries": 174,
+      "exits": 127
+    },
+    "18": {
+      "total": 341,
+      "entries": 203,
+      "exits": 138
+    },
+    "19": {
+      "total": 385,
+      "entries": 232,
+      "exits": 153
+    },
+    "20": {
+      "total": 291,
+      "entries": 163,
+      "exits": 128
+    },
+    "21": {
+      "total": 205,
+      "entries": 123,
+      "exits": 82
+    },
+    "22": {
+      "total": 144,
+      "entries": 78,
+      "exits": 66
+    },
+    "23": {
+      "total": 58,
+      "entries": 26,
+      "exits": 32
+    }
+  },
+  "PUTH": {
+    "0": {
+      "total": 14,
+      "entries": 12,
+      "exits": 2
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 53,
+      "entries": 34,
+      "exits": 19
+    },
+    "6": {
+      "total": 145,
+      "entries": 83,
+      "exits": 62
+    },
+    "7": {
+      "total": 411,
+      "entries": 214,
+      "exits": 197
+    },
+    "8": {
+      "total": 1254,
+      "entries": 523,
+      "exits": 731
+    },
+    "9": {
+      "total": 1704,
+      "entries": 520,
+      "exits": 1184
+    },
+    "10": {
+      "total": 1342,
+      "entries": 387,
+      "exits": 955
+    },
+    "11": {
+      "total": 900,
+      "entries": 291,
+      "exits": 609
+    },
+    "12": {
+      "total": 815,
+      "entries": 356,
+      "exits": 459
+    },
+    "13": {
+      "total": 773,
+      "entries": 361,
+      "exits": 412
+    },
+    "14": {
+      "total": 872,
+      "entries": 474,
+      "exits": 398
+    },
+    "15": {
+      "total": 808,
+      "entries": 425,
+      "exits": 383
+    },
+    "16": {
+      "total": 1034,
+      "entries": 607,
+      "exits": 427
+    },
+    "17": {
+      "total": 1220,
+      "entries": 799,
+      "exits": 421
+    },
+    "18": {
+      "total": 1576,
+      "entries": 1074,
+      "exits": 502
+    },
+    "19": {
+      "total": 1644,
+      "entries": 1148,
+      "exits": 496
+    },
+    "20": {
+      "total": 1154,
+      "entries": 813,
+      "exits": 341
+    },
+    "21": {
+      "total": 695,
+      "entries": 485,
+      "exits": 210
+    },
+    "22": {
+      "total": 394,
+      "entries": 263,
+      "exits": 131
+    },
+    "23": {
+      "total": 191,
+      "entries": 142,
+      "exits": 49
+    }
+  },
+  "SVRD": {
+    "0": {
+      "total": 12,
+      "entries": 4,
+      "exits": 8
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 50,
+      "entries": 23,
+      "exits": 27
+    },
+    "6": {
+      "total": 254,
+      "entries": 164,
+      "exits": 90
+    },
+    "7": {
+      "total": 436,
+      "entries": 264,
+      "exits": 172
+    },
+    "8": {
+      "total": 1248,
+      "entries": 790,
+      "exits": 458
+    },
+    "9": {
+      "total": 1809,
+      "entries": 1210,
+      "exits": 599
+    },
+    "10": {
+      "total": 1454,
+      "entries": 965,
+      "exits": 489
+    },
+    "11": {
+      "total": 831,
+      "entries": 464,
+      "exits": 367
+    },
+    "12": {
+      "total": 645,
+      "entries": 298,
+      "exits": 347
+    },
+    "13": {
+      "total": 683,
+      "entries": 339,
+      "exits": 344
+    },
+    "14": {
+      "total": 664,
+      "entries": 325,
+      "exits": 339
+    },
+    "15": {
+      "total": 736,
+      "entries": 355,
+      "exits": 381
+    },
+    "16": {
+      "total": 961,
+      "entries": 466,
+      "exits": 495
+    },
+    "17": {
+      "total": 1338,
+      "entries": 532,
+      "exits": 806
+    },
+    "18": {
+      "total": 1482,
+      "entries": 620,
+      "exits": 862
+    },
+    "19": {
+      "total": 1394,
+      "entries": 614,
+      "exits": 780
+    },
+    "20": {
+      "total": 995,
+      "entries": 476,
+      "exits": 519
+    },
+    "21": {
+      "total": 562,
+      "entries": 313,
+      "exits": 249
+    },
+    "22": {
+      "total": 339,
+      "entries": 190,
+      "exits": 149
+    },
+    "23": {
+      "total": 140,
+      "entries": 81,
+      "exits": 59
+    }
+  },
+  "JHLI": {
+    "0": {
+      "total": 17,
+      "entries": 12,
+      "exits": 5
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 4,
+      "entries": 2,
+      "exits": 2
+    },
+    "5": {
+      "total": 52,
+      "entries": 37,
+      "exits": 15
+    },
+    "6": {
+      "total": 149,
+      "entries": 70,
+      "exits": 79
+    },
+    "7": {
+      "total": 364,
+      "entries": 172,
+      "exits": 192
+    },
+    "8": {
+      "total": 991,
+      "entries": 484,
+      "exits": 507
+    },
+    "9": {
+      "total": 1234,
+      "entries": 495,
+      "exits": 739
+    },
+    "10": {
+      "total": 979,
+      "entries": 335,
+      "exits": 644
+    },
+    "11": {
+      "total": 802,
+      "entries": 264,
+      "exits": 538
+    },
+    "12": {
+      "total": 817,
+      "entries": 319,
+      "exits": 498
+    },
+    "13": {
+      "total": 836,
+      "entries": 372,
+      "exits": 464
+    },
+    "14": {
+      "total": 802,
+      "entries": 415,
+      "exits": 387
+    },
+    "15": {
+      "total": 790,
+      "entries": 439,
+      "exits": 351
+    },
+    "16": {
+      "total": 849,
+      "entries": 487,
+      "exits": 362
+    },
+    "17": {
+      "total": 1101,
+      "entries": 678,
+      "exits": 423
+    },
+    "18": {
+      "total": 1461,
+      "entries": 873,
+      "exits": 588
+    },
+    "19": {
+      "total": 1465,
+      "entries": 901,
+      "exits": 564
+    },
+    "20": {
+      "total": 1089,
+      "entries": 725,
+      "exits": 364
+    },
+    "21": {
+      "total": 720,
+      "entries": 472,
+      "exits": 248
+    },
+    "22": {
+      "total": 429,
+      "entries": 266,
+      "exits": 163
+    },
+    "23": {
+      "total": 180,
+      "entries": 115,
+      "exits": 65
+    }
+  },
+  "BNSK": {
+    "0": {
+      "total": 16,
+      "entries": 11,
+      "exits": 5
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 2,
+      "exits": 0
+    },
+    "5": {
+      "total": 120,
+      "entries": 101,
+      "exits": 19
+    },
+    "6": {
+      "total": 214,
+      "entries": 144,
+      "exits": 70
+    },
+    "7": {
+      "total": 713,
+      "entries": 502,
+      "exits": 211
+    },
+    "8": {
+      "total": 1537,
+      "entries": 910,
+      "exits": 627
+    },
+    "9": {
+      "total": 1913,
+      "entries": 977,
+      "exits": 936
+    },
+    "10": {
+      "total": 1733,
+      "entries": 869,
+      "exits": 864
+    },
+    "11": {
+      "total": 1435,
+      "entries": 727,
+      "exits": 708
+    },
+    "12": {
+      "total": 1349,
+      "entries": 637,
+      "exits": 712
+    },
+    "13": {
+      "total": 1377,
+      "entries": 653,
+      "exits": 724
+    },
+    "14": {
+      "total": 1338,
+      "entries": 653,
+      "exits": 685
+    },
+    "15": {
+      "total": 1290,
+      "entries": 700,
+      "exits": 590
+    },
+    "16": {
+      "total": 1414,
+      "entries": 811,
+      "exits": 603
+    },
+    "17": {
+      "total": 1782,
+      "entries": 1004,
+      "exits": 778
+    },
+    "18": {
+      "total": 2091,
+      "entries": 1181,
+      "exits": 910
+    },
+    "19": {
+      "total": 2147,
+      "entries": 1207,
+      "exits": 940
+    },
+    "20": {
+      "total": 1567,
+      "entries": 848,
+      "exits": 719
+    },
+    "21": {
+      "total": 1007,
+      "entries": 589,
+      "exits": 418
+    },
+    "22": {
+      "total": 586,
+      "entries": 351,
+      "exits": 235
+    },
+    "23": {
+      "total": 236,
+      "entries": 135,
+      "exits": 101
+    }
+  },
+  "KRMA": {
+    "0": {
+      "total": 17,
+      "entries": 17,
+      "exits": 0
+    },
+    "1": {
+      "total": 1,
+      "entries": 1,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 63,
+      "entries": 63,
+      "exits": 0
+    },
+    "6": {
+      "total": 231,
+      "entries": 231,
+      "exits": 0
+    },
+    "7": {
+      "total": 400,
+      "entries": 400,
+      "exits": 0
+    },
+    "8": {
+      "total": 942,
+      "entries": 942,
+      "exits": 0
+    },
+    "9": {
+      "total": 907,
+      "entries": 907,
+      "exits": 0
+    },
+    "10": {
+      "total": 845,
+      "entries": 845,
+      "exits": 0
+    },
+    "11": {
+      "total": 706,
+      "entries": 706,
+      "exits": 0
+    },
+    "12": {
+      "total": 662,
+      "entries": 662,
+      "exits": 0
+    },
+    "13": {
+      "total": 750,
+      "entries": 750,
+      "exits": 0
+    },
+    "14": {
+      "total": 800,
+      "entries": 800,
+      "exits": 0
+    },
+    "15": {
+      "total": 856,
+      "entries": 856,
+      "exits": 0
+    },
+    "16": {
+      "total": 1073,
+      "entries": 1073,
+      "exits": 0
+    },
+    "17": {
+      "total": 1498,
+      "entries": 1498,
+      "exits": 0
+    },
+    "18": {
+      "total": 1894,
+      "entries": 1894,
+      "exits": 0
+    },
+    "19": {
+      "total": 2120,
+      "entries": 2120,
+      "exits": 0
+    },
+    "20": {
+      "total": 1339,
+      "entries": 1339,
+      "exits": 0
+    },
+    "21": {
+      "total": 938,
+      "entries": 938,
+      "exits": 0
+    },
+    "22": {
+      "total": 604,
+      "entries": 604,
+      "exits": 0
+    },
+    "23": {
+      "total": 252,
+      "entries": 252,
+      "exits": 0
+    }
+  },
+  "LAGH": {
+    "0": {
+      "total": 3,
+      "entries": 0,
+      "exits": 3
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 1,
+      "entries": 0,
+      "exits": 1
+    },
+    "5": {
+      "total": 30,
+      "entries": 23,
+      "exits": 7
+    },
+    "6": {
+      "total": 79,
+      "entries": 54,
+      "exits": 25
+    },
+    "7": {
+      "total": 272,
+      "entries": 200,
+      "exits": 72
+    },
+    "8": {
+      "total": 644,
+      "entries": 466,
+      "exits": 178
+    },
+    "9": {
+      "total": 1150,
+      "entries": 903,
+      "exits": 247
+    },
+    "10": {
+      "total": 1074,
+      "entries": 841,
+      "exits": 233
+    },
+    "11": {
+      "total": 879,
+      "entries": 650,
+      "exits": 229
+    },
+    "12": {
+      "total": 943,
+      "entries": 642,
+      "exits": 301
+    },
+    "13": {
+      "total": 1134,
+      "entries": 717,
+      "exits": 417
+    },
+    "14": {
+      "total": 1113,
+      "entries": 595,
+      "exits": 518
+    },
+    "15": {
+      "total": 1182,
+      "entries": 609,
+      "exits": 573
+    },
+    "16": {
+      "total": 1257,
+      "entries": 564,
+      "exits": 693
+    },
+    "17": {
+      "total": 1282,
+      "entries": 449,
+      "exits": 833
+    },
+    "18": {
+      "total": 1425,
+      "entries": 403,
+      "exits": 1022
+    },
+    "19": {
+      "total": 1438,
+      "entries": 370,
+      "exits": 1068
+    },
+    "20": {
+      "total": 806,
+      "entries": 224,
+      "exits": 582
+    },
+    "21": {
+      "total": 404,
+      "entries": 179,
+      "exits": 225
+    },
+    "22": {
+      "total": 202,
+      "entries": 98,
+      "exits": 104
+    },
+    "23": {
+      "total": 94,
+      "entries": 53,
+      "exits": 41
+    }
+  },
+  "YPI": {
+    "0": {
+      "total": 14,
+      "entries": 5,
+      "exits": 9
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 4,
+      "entries": 1,
+      "exits": 3
+    },
+    "5": {
+      "total": 53,
+      "entries": 26,
+      "exits": 27
+    },
+    "6": {
+      "total": 179,
+      "entries": 75,
+      "exits": 104
+    },
+    "7": {
+      "total": 435,
+      "entries": 219,
+      "exits": 216
+    },
+    "8": {
+      "total": 970,
+      "entries": 550,
+      "exits": 420
+    },
+    "9": {
+      "total": 1291,
+      "entries": 733,
+      "exits": 558
+    },
+    "10": {
+      "total": 955,
+      "entries": 481,
+      "exits": 474
+    },
+    "11": {
+      "total": 675,
+      "entries": 291,
+      "exits": 384
+    },
+    "12": {
+      "total": 638,
+      "entries": 267,
+      "exits": 371
+    },
+    "13": {
+      "total": 641,
+      "entries": 300,
+      "exits": 341
+    },
+    "14": {
+      "total": 641,
+      "entries": 298,
+      "exits": 343
+    },
+    "15": {
+      "total": 626,
+      "entries": 303,
+      "exits": 323
+    },
+    "16": {
+      "total": 700,
+      "entries": 345,
+      "exits": 355
+    },
+    "17": {
+      "total": 864,
+      "entries": 435,
+      "exits": 429
+    },
+    "18": {
+      "total": 1175,
+      "entries": 507,
+      "exits": 668
+    },
+    "19": {
+      "total": 1302,
+      "entries": 573,
+      "exits": 729
+    },
+    "20": {
+      "total": 901,
+      "entries": 438,
+      "exits": 463
+    },
+    "21": {
+      "total": 594,
+      "entries": 300,
+      "exits": 294
+    },
+    "22": {
+      "total": 425,
+      "entries": 219,
+      "exits": 206
+    },
+    "23": {
+      "total": 164,
+      "entries": 65,
+      "exits": 99
+    }
+  },
+  "RVRD": {
+    "0": {
+      "total": 11,
+      "entries": 3,
+      "exits": 8
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 2,
+      "entries": 2,
+      "exits": 0
+    },
+    "5": {
+      "total": 44,
+      "entries": 36,
+      "exits": 8
+    },
+    "6": {
+      "total": 110,
+      "entries": 70,
+      "exits": 40
+    },
+    "7": {
+      "total": 401,
+      "entries": 295,
+      "exits": 106
+    },
+    "8": {
+      "total": 897,
+      "entries": 567,
+      "exits": 330
+    },
+    "9": {
+      "total": 1582,
+      "entries": 1040,
+      "exits": 542
+    },
+    "10": {
+      "total": 1274,
+      "entries": 777,
+      "exits": 497
+    },
+    "11": {
+      "total": 886,
+      "entries": 478,
+      "exits": 408
+    },
+    "12": {
+      "total": 837,
+      "entries": 437,
+      "exits": 400
+    },
+    "13": {
+      "total": 883,
+      "entries": 441,
+      "exits": 442
+    },
+    "14": {
+      "total": 902,
+      "entries": 421,
+      "exits": 481
+    },
+    "15": {
+      "total": 894,
+      "entries": 423,
+      "exits": 471
+    },
+    "16": {
+      "total": 993,
+      "entries": 479,
+      "exits": 514
+    },
+    "17": {
+      "total": 1233,
+      "entries": 634,
+      "exits": 599
+    },
+    "18": {
+      "total": 1451,
+      "entries": 712,
+      "exits": 739
+    },
+    "19": {
+      "total": 1595,
+      "entries": 753,
+      "exits": 842
+    },
+    "20": {
+      "total": 1104,
+      "entries": 508,
+      "exits": 596
+    },
+    "21": {
+      "total": 754,
+      "entries": 369,
+      "exits": 385
+    },
+    "22": {
+      "total": 435,
+      "entries": 216,
+      "exits": 219
+    },
+    "23": {
+      "total": 182,
+      "entries": 98,
+      "exits": 84
+    }
+  },
+  "CLG": {
+    "0": {
+      "total": 10,
+      "entries": 10,
+      "exits": 0
+    },
+    "1": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "2": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "3": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "4": {
+      "total": 0,
+      "entries": 0,
+      "exits": 0
+    },
+    "5": {
+      "total": 19,
+      "entries": 19,
+      "exits": 0
+    },
+    "6": {
+      "total": 61,
+      "entries": 61,
+      "exits": 0
+    },
+    "7": {
+      "total": 198,
+      "entries": 198,
+      "exits": 0
+    },
+    "8": {
+      "total": 617,
+      "entries": 617,
+      "exits": 0
+    },
+    "9": {
+      "total": 425,
+      "entries": 425,
+      "exits": 0
+    },
+    "10": {
+      "total": 337,
+      "entries": 337,
+      "exits": 0
+    },
+    "11": {
+      "total": 261,
+      "entries": 261,
+      "exits": 0
+    },
+    "12": {
+      "total": 240,
+      "entries": 240,
+      "exits": 0
+    },
+    "13": {
+      "total": 226,
+      "entries": 226,
+      "exits": 0
+    },
+    "14": {
+      "total": 236,
+      "entries": 236,
+      "exits": 0
+    },
+    "15": {
+      "total": 241,
+      "entries": 241,
+      "exits": 0
+    },
+    "16": {
+      "total": 259,
+      "entries": 259,
+      "exits": 0
+    },
+    "17": {
+      "total": 351,
+      "entries": 351,
+      "exits": 0
+    },
+    "18": {
+      "total": 410,
+      "entries": 410,
+      "exits": 0
+    },
+    "19": {
+      "total": 458,
+      "entries": 458,
+      "exits": 0
+    },
+    "20": {
+      "total": 390,
+      "entries": 390,
+      "exits": 0
+    },
+    "21": {
+      "total": 284,
+      "entries": 284,
+      "exits": 0
+    },
+    "22": {
+      "total": 179,
+      "entries": 179,
+      "exits": 0
+    },
+    "23": {
+      "total": 87,
+      "entries": 87,
+      "exits": 0
+    }
+  }
+}
