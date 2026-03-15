@@ -75,13 +75,12 @@ function buildNarrative(odFlows, hour) {
 
 export default function OdFlowHeadline({ odFlows, topN, isActive, hour = 8 }) {
   const isMobile = useIsMobile()
-  if (!isActive || !odFlows?.length) return null
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { headline, sub } = useMemo(
     () => buildNarrative(odFlows, hour),
     [odFlows, hour]
   )
+
+  if (!isActive || !odFlows?.length) return null
 
   return (
     <div
