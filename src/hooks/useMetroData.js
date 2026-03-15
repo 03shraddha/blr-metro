@@ -30,7 +30,17 @@ export function useMetroData() {
         // Enrich stations with an empty hourly stub so the map can render right away
         const stationsPartial = enrichStations(stationsGeo, [])
 
-        setData({ stations: stationsPartial, stationsGeo, metroLines })
+        setData({
+          stations: stationsPartial,
+          stationsGeo,
+          metroLines,
+          // Safe empty defaults so components don't crash before tier-2 loads
+          hourly: {},
+          weekday: {},
+          weekend: {},
+          odFlows: [],
+          populationGrid: [],
+        })
         setLoading(false) // map is renderable; tier-2 still loading
 
         // --- Tier 2: deferred analytics data ---
