@@ -15,9 +15,8 @@ export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState(null)
 
-  if (!isOpen) return null
-
   // All stations ranked by busyness for the current hour
+  // Must be called before any early return (Rules of Hooks)
   const ranked = useMemo(() => {
     return [...stations]
       .map(s => ({ station: s, result: getStationBusyness(s, hour) }))
@@ -28,6 +27,8 @@ export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
         return b.result.current - a.result.current
       })
   }, [stations, hour])
+
+  if (!isOpen) return null
 
   const filtered = query.trim()
     ? ranked.filter(({ station }) =>
@@ -128,7 +129,9 @@ export default function BusynessLookup({ stations, hour, isOpen, onClose }) {
         {/* Station list — scrollable */}
         <div style={{ overflowY: 'auto', flex: 1 }}>
           {filtered.length === 0 ? (
-            <div style={{ padding: '24px 16px', textAlign: 'center', fontSize: 13, color: 'var(--text-muted)' }}>No stations found</div>
+            <div style={{ padding: '24px 16px', textAlign: 'center', fontSize: 13, color: 'var(--text-muted)' }}>
+              {ranked.length === 0 ? 'Loading ridership data…' : 'No stations found'}
+            </div>
           ) : (
             filtered.map(({ station, result: r }) => {
               const lineColor = LINE_COLOR[station.properties.line] || '#888'
