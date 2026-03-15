@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/BLR-METRO/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bengaluru Metro Intelligence Map</title>
+    <style>
+      html, body { margin: 0; padding: 0; background: #0a0a0f; overflow: hidden; }
+      #loading-screen {
+        position: fixed; inset: 0; background: #0a0a0f;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        z-index: 9999; transition: opacity 0.5s ease;
+      }
+      #loading-screen.fade-out { opacity: 0; pointer-events: none; }
+      .spinner {
+        width: 32px; height: 32px;
+        border: 2px solid rgba(255,140,0,0.2);
+        border-top-color: rgba(255,140,0,0.9);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      .loading-label {
+        margin-top: 16px; font-family: system-ui, sans-serif;
+        font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+        color: rgba(255,255,255,0.3);
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+    <script type="module" crossorigin src="/BLR-METRO/assets/index-KQfrEzK-.js"></script>
+    <link rel="modulepreload" crossorigin href="/BLR-METRO/assets/rolldown-runtime-Dw2cE7zH.js">
+    <link rel="modulepreload" crossorigin href="/BLR-METRO/assets/deckgl-CRI35Fbj.js">
+    <link rel="modulepreload" crossorigin href="/BLR-METRO/assets/maplibre-CmuzIvPm.js">
+    <link rel="stylesheet" crossorigin href="/BLR-METRO/assets/index-DJrz4nFe.css">
+  </head>
+  <body>
+    <div id="loading-screen">
+      <div class="spinner"></div>
+      <div class="loading-label">Bengaluru Metro</div>
+    </div>
+    <div id="root"></div>
+  </body>
+</html>
