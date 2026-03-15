@@ -4,9 +4,9 @@ An interactive data visualization of BMRCL metro ridership patterns across Benga
 
 ## Live Demo
 
-**[View the map →](https://03shraddha.github.io/BLR-METRO/)**
+### [Try it live → 03shraddha.github.io/BLR-METRO](https://03shraddha.github.io/BLR-METRO/)
 
-> If the link isn't live yet, run `npm run deploy` to publish to GitHub Pages.
+Works on desktop and mobile. On mobile, panels slide up as drawers and controls sit in the thumb zone. Tap any station for ridership detail.
 
 ## What It Shows
 
