@@ -27,28 +27,43 @@ def ways_to_path(ways):
     """Chain way segments into a single coordinate list."""
     if not ways:
         return []
-    
-    # Build adjacency: each way has a geometry list
+
+    # Deduplicate parallel tracks: drop ways whose midpoint is within ~30m of
+    # another way's midpoint (OSM stores both the up-track and down-track).
+    def midpoint(seg):
+        n = len(seg)
+        return seg[n // 2]
+
     segments = []
+    seen_mids = []
     for w in ways:
         geom = w.get("geometry", [])
-        if geom:
-            seg = [[g["lon"], g["lat"]] for g in geom]
+        if not geom:
+            continue
+        seg = [[g["lon"], g["lat"]] for g in geom]
+        mid = midpoint(seg)
+        # ~0.0003 deg ≈ 30 m — skip if a near-identical track already present
+        duplicate = any(
+            (mid[0]-m[0])**2 + (mid[1]-m[1])**2 < 0.0003**2
+            for m in seen_mids
+        )
+        if not duplicate:
             segments.append(seg)
-    
+            seen_mids.append(mid)
+
     if not segments:
         return []
-    
+
     # Chain segments: try to connect end-to-end
     path = segments[0][:]
     remaining = segments[1:]
-    
+
     for _ in range(len(remaining)):
         best_seg = None
         best_dist = float("inf")
         best_reversed = False
         best_idx = -1
-        
+
         tail = path[-1]
         for i, seg in enumerate(remaining):
             # Distance from path tail to seg start
@@ -59,14 +74,30 @@ def ways_to_path(ways):
                 best_dist, best_seg, best_reversed, best_idx = d1, seg, False, i
             if d2 < best_dist:
                 best_dist, best_seg, best_reversed, best_idx = d2, seg, True, i
-        
+
         if best_seg is None:
             break
         seg_to_add = list(reversed(best_seg)) if best_reversed else best_seg
         # Skip first point to avoid duplicates
         path.extend(seg_to_add[1:])
         remaining.pop(best_idx)
-    
+
+    # Fix "there and back" paths caused by residual parallel track segments.
+    # Find the largest gap; if it's > 500 m, the path doubled back — reverse
+    # the first half so we get a clean terminus-to-terminus line.
+    max_gap, max_idx = 0.0, 0
+    for i in range(1, len(path)):
+        dx, dy = path[i][0]-path[i-1][0], path[i][1]-path[i-1][1]
+        g = dx*dx + dy*dy
+        if g > max_gap:
+            max_gap, max_idx = g, i
+
+    # 0.005 deg ≈ ~500 m
+    if max_gap > 0.005**2:
+        seg1, seg2 = path[:max_idx], path[max_idx:]
+        path = list(reversed(seg1)) + seg2
+        print(f"  (fixed doubled-track gap at index {max_idx})")
+
     return path
 
 def simplify(path, max_points=200):

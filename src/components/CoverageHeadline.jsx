@@ -24,29 +24,29 @@ function buildCoverageNarrative(coveredPct, uncoveredPct, catchmentRadius) {
 
   if (coveredPct >= 70) {
     return {
-      headline: `Only ${uncoveredPct}% of dense Bengaluru lacks metro access.`,
-      sub: `The network is surprisingly comprehensive within ${radiusLabel}, but the remaining gaps are in the densest neighbourhoods where the need is highest.`,
+      headline: `only ${uncoveredPct}% of dense Bengaluru lacks metro access.`,
+      sub: `the network is surprisingly comprehensive within ${radiusLabel}, but the remaining gaps are in the densest neighbourhoods where the need is highest.`,
     }
   }
 
   if (coveredPct < 50) {
     return {
-      headline: `More than half of dense Bengaluru is beyond metro reach.`,
-      sub: `At a ${radiusLabel} catchment, ${uncoveredPct}% of where people actually live falls outside the network's promise. Geography outpaces ambition.`,
+      headline: `more than half of dense Bengaluru is beyond metro reach.`,
+      sub: `at a ${radiusLabel} catchment, ${uncoveredPct}% of where people actually live falls outside the network's promise. geography outpaces ambition.`,
     }
   }
 
   // 50–69%
   if (catchmentRadius > 500) {
     return {
-      headline: `The metro reaches ${coveredPct}% of where dense Bengaluru lives, at a price.`,
-      sub: `Stretching the catchment to ${radiusLabel} adds ~${extraKm}km of walking. In a city where auto-rickshaws charge ₹20/km, that's ₹${extraCost} before you board.`,
+      headline: `the metro reaches ${coveredPct}% of where dense Bengaluru lives, at a price.`,
+      sub: `stretching the catchment to ${radiusLabel} adds ~${extraKm}km of walking. in a city where auto-rickshaws charge ₹20/km, that's ₹${extraCost} before you board.`,
     }
   }
 
   return {
-    headline: `The metro reaches ${coveredPct}% of where dense Bengaluru lives.`,
-    sub: `A city within the city: ${uncoveredPct}% of dense population is more than ${radiusLabel} from any station. Last-mile connectivity determines whether the network truly serves them.`,
+    headline: `the metro reaches ${coveredPct}% of where dense Bengaluru lives.`,
+    sub: `a city within the city: ${uncoveredPct}% of dense population is more than ${radiusLabel} from any station. last-mile connectivity determines whether the network truly serves them.`,
   }
 }
 

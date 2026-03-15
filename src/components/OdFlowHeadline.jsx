@@ -25,44 +25,43 @@ function buildNarrative(odFlows, hour) {
 
   if (phase.label === 'Morning Rush') {
     return {
-      headline: `Bengaluru's suburbs are draining into the centre.`,
+      headline: `bengaluru's suburbs are draining into the centre.`,
       sub: `${topStation} is the busiest origin right now, ${topVolumeK}k riders. ${top3Pct}% of all flow is concentrated in just 3 corridors.`,
     }
   }
 
   if (phase.label === 'Evening Rush') {
     return {
-      headline: `The tide reverses. Workers are flowing outbound in waves.`,
-      sub: `${topStation} is the busiest corridor, ${topVolumeK}k riders heading out. The same arteries that filled the city are now emptying it.`,
+      headline: `the tide reverses. workers are flowing outbound.`,
+      sub: `${topStation} is the busiest corridor, ${topVolumeK}k riders heading out. the same arteries that filled the city are now emptying it.`,
     }
   }
 
   if (phase.label === 'Midday') {
-    // Find how much volume dropped vs a rough morning-peak proxy: just note relative concentration
     return {
-      headline: `The rush subsides. The network finds its breath.`,
-      sub: `${topStation} is still the top corridor but volume is spread thinner. Only ${top3Pct}% of flow in the top 3 routes. Errands and meetings, not commutes.`,
+      headline: `the rush subsides. the network finds its breath.`,
+      sub: `${topStation} is still the top corridor but volume is spread thinner. only ${top3Pct}% of flow in the top 3 routes. errands and meetings, not commutes.`,
     }
   }
 
   if (phase.label === 'Afternoon Lull') {
     return {
-      headline: `The city is between rhythms.`,
+      headline: `the city is between rhythms.`,
       sub: `${activeCorridors} corridors carry meaningful volume. ${topStation} leads at ${topVolumeK}k, a quieter version of the morning pattern.`,
     }
   }
 
   if (phase.label === 'Night Wind-down' || phase.label === 'Late Night') {
     return {
-      headline: `Only ${activeCorridors} corridors move significant volume.`,
-      sub: `The skeleton network serves shift workers and late commuters. ${topStation} anchors ${top3Pct}% of remaining flow.`,
+      headline: `only ${activeCorridors} corridors move significant volume.`,
+      sub: `the skeleton network serves shift workers and late commuters. ${topStation} anchors ${top3Pct}% of remaining flow.`,
     }
   }
 
   if (phase.label === 'Early Morning') {
     return {
-      headline: `The first wave is building.`,
-      sub: `Early risers and shift workers: ${activeCorridors} corridors active. ${topStation} leads with ${topVolumeK}k. The city hasn't hit its stride yet.`,
+      headline: `the first wave is building.`,
+      sub: `early risers and shift workers: ${activeCorridors} corridors active. ${topStation} leads with ${topVolumeK}k. the city hasn't hit its stride yet.`,
     }
   }
 

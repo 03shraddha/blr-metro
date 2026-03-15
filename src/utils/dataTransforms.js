@@ -114,13 +114,13 @@ export function peakHour(station) {
 
 // Classify time of day into named phases with human-readable descriptions
 export function timePhase(hour) {
-  if (hour >= 5 && hour <= 7) return { label: 'Early Morning', desc: 'First wave — early risers and shift workers' }
-  if (hour >= 8 && hour <= 10) return { label: 'Morning Rush', desc: 'Peak inbound — suburbs draining toward the centre' }
-  if (hour >= 11 && hour <= 13) return { label: 'Midday', desc: 'Office rhythm — lighter load, errands and meetings' }
-  if (hour >= 14 && hour <= 16) return { label: 'Afternoon Lull', desc: 'The city catches its breath' }
-  if (hour >= 17 && hour <= 19) return { label: 'Evening Rush', desc: 'Reverse tide — the city returns to where it woke up' }
-  if (hour >= 20 && hour <= 22) return { label: 'Night Wind-down', desc: 'Leisure trips, late workers, last trains filling up' }
-  return { label: 'Late Night', desc: 'Skeleton service — essential workers and shift ends' }
+  if (hour >= 5 && hour <= 7) return { label: 'Early Morning', desc: 'first wave, early risers and shift workers' }
+  if (hour >= 8 && hour <= 10) return { label: 'Morning Rush', desc: 'peak inbound, suburbs draining toward the centre' }
+  if (hour >= 11 && hour <= 13) return { label: 'Midday', desc: 'office rhythm, lighter load, errands and meetings' }
+  if (hour >= 14 && hour <= 16) return { label: 'Afternoon Lull', desc: 'the city catches its breath' }
+  if (hour >= 17 && hour <= 19) return { label: 'Evening Rush', desc: 'reverse tide, the city returns to where it woke up' }
+  if (hour >= 20 && hour <= 22) return { label: 'Night Wind-down', desc: 'leisure trips, late workers, last trains filling up' }
+  return { label: 'Late Night', desc: 'skeleton service, essential workers and shift ends' }
 }
 
 // Find top anomalous stations: highest ratio of exits-to-entries at a given hour

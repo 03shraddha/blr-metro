@@ -145,7 +145,7 @@ export default function MapContainer({
     const { stations, weekday, weekend, odFlows, populationGrid, metroLines } = data
     const isDataActive = true // a data layer is always shown
 
-    const metroLinesLayer = buildMetroLinesLayer(metroLines, isDataActive, isMobile, lineStats)
+    const metroLinesLayers = [].concat(buildMetroLinesLayer(metroLines, isDataActive, isMobile, lineStats))
 
     const volumeLayers    = buildVolumeLayers(stations, hour, activeLayer === 'volume', maxRidership, isMobile)
     const entryExitLayer  = buildEntryExitLayer(stations, hour, activeLayer === 'entryExit', maxRidership)
@@ -155,7 +155,7 @@ export default function MapContainer({
     const coverageLayers  = buildCoverageGapLayers(stations, populationGrid, activeLayer === 'coverageGap', catchmentRadius, isMobile)
 
     const allLayers = [
-      metroLinesLayer,
+      ...metroLinesLayers,
       ...volumeLayers,
       entryExitLayer,
       ...odLayers,

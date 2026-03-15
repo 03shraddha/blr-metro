@@ -160,7 +160,7 @@ export default function DataTable({ data, activeLayer, hour, weekdayWeekendMode,
   if (!data) return null
 
   const { stations, weekday, weekend, odFlows } = data
-  const config = buildConfig(activeLayer, weekdayWeekendMode, stations, weekday, weekend, odFlows, hour, odTopN, catchmentRadius, partialLoad)
+  const config = buildConfig(activeLayer, weekdayWeekendMode, stations, weekday, weekend, odFlows, hour, odTopN, catchmentRadius, partialLoad, search.trim())
   if (!config) return null
 
   const { title, insight, rows, accentColor } = config
@@ -507,7 +507,8 @@ function haverDist([lon1, lat1], [lon2, lat2]) {
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 }
 
-function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hour, odTopN, catchmentRadius = 500, partialLoad = false) {
+function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hour, odTopN, catchmentRadius = 500, partialLoad = false, searchTerm = '') {
+  const rowLimit = searchTerm ? Infinity : 15
 
   // ── Volume ──────────────────────────────────────────────────────────────────
   if (activeLayer === 'volume') {
@@ -519,7 +520,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
         return { id: s.properties.id, s, name: s.properties.name, line: s.properties.line, entries, exits, total, type, peak }
       })
       .sort((a, b) => b.total - a.total)
-      .slice(0, 15)
+      .slice(0, rowLimit)
 
     const max         = sorted[0]?.total || 1
     const top         = sorted[0]
@@ -531,11 +532,11 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       accentColor: '#ff8c00',
       insight: top?.total > 0
         ? (hour >= 7 && hour <= 10
-          ? `${top.name} absorbs ${fmtN(top.total)} riders right now, ${topShare}% of the top-15 load at one stop. that concentration tells you the metro serves a handful of corridors, not the whole city.`
+          ? `${top.name} absorbs ${fmtN(top.total)} riders right now. at ${topShare}% of the busiest stations' combined load, one stop is shouldering the network. the metro still serves corridors, not a city.`
           : hour >= 17 && hour <= 20
-          ? `${top.name} leads the evening surge at ${fmtN(top.total)} riders. the same stations that fill in the morning empty at night, the network is a commuter shuttle, not an all-day system.`
+          ? `${top.name} leads the evening surge at ${fmtN(top.total)} riders. the stations that fill in the morning empty at night. across all lines, it runs as a commuter shuttle, not an all-day system.`
           : hour >= 21 || hour <= 5
-          ? `${top.name} has ${fmtN(top.total)} riders right now. almost nobody. this is what ₹15,000 crore of infrastructure looks like at 2 AM.`
+          ? `${top.name} has ${fmtN(top.total)} riders right now. almost nobody. this is what a 91-station network looks like at ${fmtHour(hour)}.`
           : hour >= 11 && hour <= 14
           ? `${top.name} at ${fmtN(top.total)} riders, well below peak. off-peak ridership this low means the metro isn't yet a lifestyle choice, only a rush-hour one.`
           : `${top.name} at ${fmtN(top.total)} riders. shoulder hours reveal which stations have genuine all-day demand versus which only spike for commutes.`)
@@ -563,7 +564,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       })
       .filter(r => r.entries + r.exits > 10)
       .sort((a, b) => b.ratio - a.ratio)
-      .slice(0, 15)
+      .slice(0, rowLimit)
 
     const top    = sorted[0]
     const bottom = sorted[sorted.length - 1]
@@ -628,7 +629,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
           return { id: s.properties.id, name: s.properties.name, wd: wd.total, we: we.total, delta }
         })
         .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))
-        .slice(0, 15)
+        .slice(0, rowLimit)
 
       const top      = sorted[0]
       const maxAbs   = Math.abs(sorted[0]?.delta) || 1
@@ -638,7 +639,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
         title:       'Weekday vs Weekend Δ',
         accentColor: '#60a5fa',
         insight:     top
-          ? `${top.name} loses ${fmtN(Math.abs(top.delta))} riders the moment the weekend hits. that's not a transit hub, that's an office lobby with a platform. ${commuter} of the top 15 stations follow the same pattern.`
+          ? `${top.name} loses ${fmtN(Math.abs(top.delta))} riders the moment the weekend hits. that's not a transit hub, that's an office lobby with a platform. ${commuter} of the top stations follow the same pattern.`
           : '',
         rows: sorted.map(r => ({
           stationId:  r.id,
@@ -659,7 +660,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
           return { id: s.properties.id, name: s.properties.name, wd: wd.total, we: we.total }
         })
         .sort((a, b) => b.wd - a.wd)
-        .slice(0, 15)
+        .slice(0, rowLimit)
 
       const max      = sorted[0]?.wd || 1
       const top      = sorted[0]
@@ -692,7 +693,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
         return { id: s.properties.id, name: s.properties.name, dot, total, type }
       })
       .sort((a, b) => b.total - a.total)
-      .slice(0, 15)
+      .slice(0, rowLimit)
 
     const max  = sorted[0]?.total || 1
     const top  = sorted[0]
@@ -704,7 +705,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       insight:     top
         ? isWeekday
           ? hubs > 0
-            ? `${hubs} of the top 15 are pure job destinations. the metro is essentially an office-delivery system. ${top.name} leads at ${fmtN(top.total)}, ask where those people live and you'll understand Bengaluru's traffic.`
+            ? `${hubs} of the top stations are pure job destinations. the metro is essentially an office-delivery system. ${top.name} leads at ${fmtN(top.total)}, ask where those people live and you'll understand Bengaluru's traffic.`
             : `${top.name} leads at ${fmtN(top.total)}. these are interchange hubs where people transfer lines, not just office drops. the network's real spine is connective, not just commuter.`
           : `${top.name} leads on weekends at ${fmtN(top.total)}. compare this list to the weekday one, the stations that climb tell you exactly where Bengaluru goes when it isn't working.`
         : '',
@@ -729,7 +730,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       })
       .filter(r => r.total > 0)  // exclude stations with no ridership data
       .sort((a, b) => a.total - b.total)
-      .slice(0, 15)
+      .slice(0, rowLimit)
 
     // Count station pairs whose catchment circles overlap (dist < 2 * radius)
     const allCoords = stations.map(s => s.geometry.coordinates)
