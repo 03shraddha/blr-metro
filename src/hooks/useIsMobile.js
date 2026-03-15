@@ -1,13 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useBreakpoint } from './useBreakpoint'
 
+// Backward-compatible hook — returns a single boolean.
+// Internally delegates to useBreakpoint so the breakpoint threshold is
+// defined in one place (< 768 px = mobile).
 export function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 640)
-
-  useEffect(() => {
-    const fn = () => setIsMobile(window.innerWidth < 640)
-    window.addEventListener('resize', fn)
-    return () => window.removeEventListener('resize', fn)
-  }, [])
-
-  return isMobile
+  return useBreakpoint().isMobile
 }
+
+export default useIsMobile
