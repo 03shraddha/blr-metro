@@ -1,9 +1,11 @@
 import { buildSparkline, formatHour } from '../utils/dataTransforms'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 const IOS_FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
 
 export default function StationPanel({ station, onClose }) {
   const visible = !!station
+  const isMobile = useIsMobile()
   if (!station && !visible) return null
 
   const props    = station?.properties || {}
@@ -21,18 +23,49 @@ export default function StationPanel({ station, onClose }) {
 
   const peakHour = sparkline.indexOf(Math.max(...sparkline))
 
-  return (
-    <div
-      className={`absolute top-0 right-0 h-full z-20 flex flex-col ${visible ? '' : 'hidden'}`}
-      style={{
+  // Mobile: slide up from bottom as a sheet. Desktop: slide in from right.
+  const panelStyle = isMobile
+    ? {
+        bottom: 0,
+        left: 0,
+        right: 0,
+        top: 'auto',
+        height: '75vh',
+        transform: visible ? 'translateY(0)' : 'translateY(100%)',
+        transition: 'transform 300ms ease',
+        borderRadius: '16px 16px 0 0',
+        backdropFilter: 'blur(28px) saturate(1.6)',
+        WebkitBackdropFilter: 'blur(28px) saturate(1.6)',
+        background: 'var(--station-panel-bg)',
+        boxShadow: '0 -1px 0 0 var(--station-panel-border)',
+        fontFamily: IOS_FONT,
+      }
+    : {
+        top: 0,
+        right: 0,
+        height: '100%',
         width: 288,
+        transform: visible ? 'translateX(0)' : 'translateX(100%)',
+        transition: 'transform 300ms ease',
         backdropFilter: 'blur(28px) saturate(1.6)',
         WebkitBackdropFilter: 'blur(28px) saturate(1.6)',
         background: 'var(--station-panel-bg)',
         boxShadow: '-1px 0 0 0 var(--station-panel-border)',
         fontFamily: IOS_FONT,
-      }}
+      }
+
+  return (
+    <div
+      className="absolute z-30 flex flex-col"
+      style={panelStyle}
     >
+      {/* Drag handle — decorative, mobile only */}
+      {isMobile && (
+        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 10, paddingBottom: 4, flexShrink: 0 }}>
+          <div style={{ width: 40, height: 4, borderRadius: 2, background: 'var(--text-muted)', opacity: 0.4 }} />
+        </div>
+      )}
+
       {/* Header */}
       <div style={{ padding: '24px 20px 16px', borderBottom: '0.5px solid var(--border)' }}>
         <div className="flex items-start justify-between">
@@ -70,6 +103,9 @@ export default function StationPanel({ station, onClose }) {
           </button>
         </div>
       </div>
+
+      {/* Scrollable content */}
+      <div style={{ overflowY: 'auto', flex: 1, minHeight: 0 }}>
 
       {/* Sparkline */}
       <div style={{ padding: '18px 20px 0' }}>
@@ -136,9 +172,11 @@ export default function StationPanel({ station, onClose }) {
       )}
 
       {/* Footer */}
-      <div style={{ marginTop: 'auto', padding: '16px 20px', borderTop: '0.5px solid var(--station-panel-border)' }}>
+      <div style={{ padding: '16px 20px', borderTop: '0.5px solid var(--station-panel-border)', marginTop: 16 }}>
         <p style={{ fontSize: 11, color: 'var(--text-micro)', margin: 0 }}>Data: BMRCL August 2025 (RTI)</p>
       </div>
+
+      </div>{/* end scrollable content */}
     </div>
   )
 }

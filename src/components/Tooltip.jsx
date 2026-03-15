@@ -8,14 +8,20 @@ export default function Tooltip({ info, hour }) {
   const { x, y, object } = info
   const props = object.properties || {}
 
+  // Clamp tooltip to viewport so it never overflows edges
+  const tooltipWidth  = 240
+  const tooltipHeight = 80
+  const clampedLeft = Math.min(x + 14, window.innerWidth  - tooltipWidth  - 8)
+  const clampedTop  = Math.max(8, Math.min(y - 12, window.innerHeight - tooltipHeight - 8))
+
   const hr      = object.ridership?.[String(hour)]
   const entries = hr?.entries ?? null
   const exits   = hr?.exits   ?? null
 
   return (
     <div
-      className="absolute z-20 pointer-events-none"
-      style={{ left: x + 14, top: y - 12 }}
+      className="absolute z-40 pointer-events-none"
+      style={{ left: clampedLeft, top: clampedTop }}
     >
       <div
         style={{

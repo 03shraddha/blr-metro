@@ -177,9 +177,17 @@ export default function App() {
 
 
 
-      {/* Title watermark — hidden behind weekday toggle */}
+      {/* Title watermark — safe area aware, hidden on weekdayWeekend layer */}
       {activeLayer !== 'weekdayWeekend' && (
-        <div className="absolute top-4 right-4 z-10 text-right pointer-events-none">
+        <div
+          className="text-right pointer-events-none"
+          style={{
+            position: 'absolute',
+            top: 'max(16px, env(safe-area-inset-top))',
+            right: 'max(16px, env(safe-area-inset-right))',
+            zIndex: 10,
+          }}
+        >
           <div style={{ fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--watermark-title)' }}>
             Bengaluru Metro
           </div>
@@ -187,8 +195,16 @@ export default function App() {
         </div>
       )}
 
-      {/* Data attribution — bottom left */}
-      <div className="absolute bottom-2 left-2 z-10 pointer-events-none">
+      {/* Data attribution — safe area aware, bottom left */}
+      <div
+        className="pointer-events-none"
+        style={{
+          position: 'absolute',
+          bottom: 'max(8px, env(safe-area-inset-bottom))',
+          left: 'max(8px, env(safe-area-inset-left))',
+          zIndex: 10,
+        }}
+      >
         <div style={{ fontSize: 10, color: 'var(--watermark-sub)', letterSpacing: '0.03em' }}>
           Source: BMRCL · Data period: Aug 2025 (RTI)
         </div>

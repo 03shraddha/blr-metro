@@ -10,7 +10,7 @@ export default function TimeSlider({ hour, playing, togglePlay, setHourManual, a
 
   return (
     <div
-      className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center gap-6"
+      className="absolute left-1/2 -translate-x-1/2 z-20 flex items-center gap-6"
       style={{
         bottom: isMobile ? 16 : 32,
         width: isMobile ? 'calc(100vw - 32px)' : 'auto',
@@ -68,11 +68,13 @@ export default function TimeSlider({ hour, playing, togglePlay, setHourManual, a
         style={{ flex: 1, minWidth: 0, height: 44, width: isMobile ? undefined : 300 }}
       />
 
-      {/* Min / Max labels */}
-      <div className="flex gap-3 flex-shrink-0">
-        <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>12am</span>
-        <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>11pm</span>
-      </div>
+      {/* Min / Max labels — hidden on mobile to give slider more room */}
+      {!isMobile && (
+        <div className="flex gap-3 flex-shrink-0">
+          <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>12am</span>
+          <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>11pm</span>
+        </div>
+      )}
     </div>
   )
 }

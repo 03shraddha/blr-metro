@@ -17,7 +17,7 @@ export default function OdFlowControls({ topN, setTopN, activeLayer, odFlows }) 
 
   return (
     <div
-      className="absolute left-1/2 -translate-x-1/2 z-10"
+      className="absolute left-1/2 -translate-x-1/2 z-20"
       style={{
         bottom: isMobile ? 16 : 32,
         width: isMobile ? 'calc(100vw - 32px)' : 'auto',
@@ -55,29 +55,56 @@ export default function OdFlowControls({ topN, setTopN, activeLayer, odFlows }) 
         </div>
       )}
 
-      {/* Slider row */}
-      <div className="flex items-center gap-5">
-        <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', color: 'var(--text-label)', textTransform: 'uppercase', flexShrink: 0 }}>
-          Flows shown
-        </span>
-        <span style={{ fontSize: 26, fontWeight: 700, letterSpacing: '-0.03em', color: 'rgba(251,191,36,0.95)', width: 44, textAlign: 'right', flexShrink: 0 }}>
-          {topN}
-        </span>
-        <input
-          type="range"
-          min={5}
-          max={50}
-          step={5}
-          value={topN}
-          onChange={e => setTopN(Number(e.target.value))}
-          className="accent-amber-400 cursor-pointer flex-1"
-          style={{ minWidth: 0, height: 44 }}
-        />
-        <div className="flex gap-2 flex-shrink-0">
-          <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>5</span>
-          <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>50</span>
+      {/* Slider row — on mobile: stack label above slider to avoid crush */}
+      {isMobile ? (
+        <>
+          {/* Row 1: label + value */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+            <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', color: 'var(--text-label)', textTransform: 'uppercase', flexShrink: 0 }}>
+              Flows shown
+            </span>
+            <span style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.03em', color: 'rgba(251,191,36,0.95)', flexShrink: 0 }}>
+              {topN}
+            </span>
+          </div>
+          {/* Row 2: slider only, no min/max labels */}
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <input
+              type="range"
+              min={5}
+              max={50}
+              step={5}
+              value={topN}
+              onChange={e => setTopN(Number(e.target.value))}
+              className="accent-amber-400 cursor-pointer"
+              style={{ flex: 1, minWidth: 0, height: 44 }}
+            />
+          </div>
+        </>
+      ) : (
+        <div className="flex items-center gap-5">
+          <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', color: 'var(--text-label)', textTransform: 'uppercase', flexShrink: 0 }}>
+            Flows shown
+          </span>
+          <span style={{ fontSize: 26, fontWeight: 700, letterSpacing: '-0.03em', color: 'rgba(251,191,36,0.95)', width: 44, textAlign: 'right', flexShrink: 0 }}>
+            {topN}
+          </span>
+          <input
+            type="range"
+            min={5}
+            max={50}
+            step={5}
+            value={topN}
+            onChange={e => setTopN(Number(e.target.value))}
+            className="accent-amber-400 cursor-pointer flex-1"
+            style={{ minWidth: 0, height: 44 }}
+          />
+          <div className="flex gap-2 flex-shrink-0">
+            <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>5</span>
+            <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>50</span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

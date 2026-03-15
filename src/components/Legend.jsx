@@ -1,4 +1,5 @@
 import { LAYER_LEGENDS } from '../utils/colorScales'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 const IOS_FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
 
@@ -11,14 +12,18 @@ const PANEL_STYLE = {
 }
 
 export default function Legend({ activeLayer, weekdayWeekendMode, catchmentRadius = 500 }) {
+  const isMobile = useIsMobile()
   const config = LAYER_LEGENDS[activeLayer]
   if (!config) return null
+
+  // Push legend up on mobile so it clears the bottom control panels (~80px tall + spacing)
+  const bottomOffset = isMobile ? 100 : 24
 
   if (activeLayer === 'weekdayWeekend' && weekdayWeekendMode === 'compare') {
     return (
       <div
-        className="absolute bottom-6 right-4 z-10"
-        style={{ ...PANEL_STYLE, borderRadius: 18, padding: '16px 20px', minWidth: 200 }}
+        className="absolute right-4 z-10"
+        style={{ ...PANEL_STYLE, bottom: bottomOffset, borderRadius: 18, padding: '16px 20px', minWidth: 200 }}
       >
         <p style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.07em', color: 'var(--text-label)', textTransform: 'uppercase', marginBottom: 12 }}>
           Ridership intensity
@@ -53,8 +58,8 @@ export default function Legend({ activeLayer, weekdayWeekendMode, catchmentRadiu
 
   return (
     <div
-      className="absolute bottom-6 right-4 z-10"
-      style={{ ...PANEL_STYLE, borderRadius: 18, padding: '16px 20px', minWidth: 190 }}
+      className="absolute right-4 z-10"
+      style={{ ...PANEL_STYLE, bottom: bottomOffset, borderRadius: 18, padding: '16px 20px', minWidth: 190 }}
     >
       <p style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.07em', color: 'var(--text-label)', textTransform: 'uppercase', marginBottom: 12 }}>
         {title}

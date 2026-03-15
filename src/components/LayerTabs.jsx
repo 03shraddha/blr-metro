@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { useTheme } from '../context/ThemeContext'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 const LAYERS = [
   { id: 'volume',         label: 'Where people move',      sub: 'Hourly ridership by station' },
@@ -12,6 +14,43 @@ const IOS_FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica N
 
 export default function LayerTabs({ activeLayer, setActiveLayer }) {
   const { theme, toggleTheme } = useTheme()
+  const isMobile = useIsMobile()
+
+  // Default collapsed on mobile, expanded on desktop
+  const [isExpanded, setIsExpanded] = useState(!isMobile)
+
+  // On mobile, show a hamburger button when collapsed
+  if (isMobile && !isExpanded) {
+    return (
+      <button
+        onClick={() => setIsExpanded(true)}
+        aria-label="Open layer menu"
+        style={{
+          position: 'absolute',
+          top: 16,
+          left: 16,
+          zIndex: 10,
+          width: 40,
+          height: 40,
+          borderRadius: 12,
+          border: 'none',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: 20,
+          backdropFilter: 'blur(28px) saturate(1.6)',
+          WebkitBackdropFilter: 'blur(28px) saturate(1.6)',
+          background: 'var(--panel-bg)',
+          boxShadow: 'var(--panel-shadow-sm)',
+          fontFamily: IOS_FONT,
+          color: 'var(--tab-active-text)',
+        }}
+      >
+        ☰
+      </button>
+    )
+  }
 
   return (
     <div
@@ -22,13 +61,41 @@ export default function LayerTabs({ activeLayer, setActiveLayer }) {
         background: 'var(--panel-bg)',
         boxShadow: 'var(--panel-shadow-sm)',
         fontFamily: IOS_FONT,
-        minWidth: 240,
+        // On mobile: stretch to near full width; on desktop: fixed min width
+        minWidth: isMobile ? undefined : 240,
+        width: isMobile ? 'calc(100vw - 32px)' : undefined,
+        maxWidth: isMobile ? 280 : undefined,
       }}
     >
+      {/* Close button — only shown on mobile */}
+      {isMobile && (
+        <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '8px 12px 0' }}>
+          <button
+            onClick={() => setIsExpanded(false)}
+            aria-label="Close layer menu"
+            style={{
+              border: 'none',
+              background: 'transparent',
+              cursor: 'pointer',
+              fontSize: 18,
+              color: 'var(--text-muted)',
+              lineHeight: 1,
+              padding: '4px 6px',
+            }}
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
       {LAYERS.map(({ id, label, sub }, idx) => (
         <button
           key={id}
-          onClick={() => setActiveLayer(id)}
+          onClick={() => {
+            setActiveLayer(id)
+            // Collapse panel after selection on mobile
+            if (isMobile) setIsExpanded(false)
+          }}
           className="relative w-full text-left transition-all duration-150 cursor-pointer flex items-center gap-3"
           style={{
             padding: '13px 20px',

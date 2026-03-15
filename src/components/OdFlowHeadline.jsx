@@ -1,6 +1,9 @@
+import { useIsMobile } from '../hooks/useIsMobile'
+
 const IOS_FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
 
 export default function OdFlowHeadline({ odFlows, topN, isActive }) {
+  const isMobile = useIsMobile()
   if (!isActive || !odFlows?.length) return null
 
   const sorted = [...odFlows].sort((a, b) => b.volume - a.volume)
@@ -12,13 +15,13 @@ export default function OdFlowHeadline({ odFlows, topN, isActive }) {
     <div
       className="absolute pointer-events-none"
       style={{
-        bottom: 110,
+        bottom: isMobile ? 90 : 110,
         left: '50%',
         transform: 'translateX(-50%)',
-        zIndex: 15,
+        zIndex: 25,
         fontFamily: IOS_FONT,
         textAlign: 'center',
-        whiteSpace: 'nowrap',
+        maxWidth: 'calc(100vw - 32px)',
       }}
     >
       <div

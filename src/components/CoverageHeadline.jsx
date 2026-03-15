@@ -41,7 +41,7 @@ export default function CoverageHeadline({ stations, populationGrid, catchmentRa
         bottom: 90,
         left: '50%',
         transform: 'translateX(-50%)',
-        zIndex: 15,
+        zIndex: 25,
         fontFamily: IOS_FONT,
         textAlign: 'center',
       }}

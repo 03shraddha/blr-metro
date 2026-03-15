@@ -192,8 +192,9 @@ export default function DataTable({ data, activeLayer, hour, weekdayWeekendMode,
         boxShadow: 'var(--panel-shadow-sm)',
         borderRadius: 20,
         top: topOffset,
-        width: 370,
-        maxHeight: 'calc(100vh - 240px)',
+        width: 'calc(100vw - 32px)',
+        maxWidth: 370,
+        maxHeight: 'calc(100vh - 180px)',
         fontFamily: IOS_FONT,
       }}
     >

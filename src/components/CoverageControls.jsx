@@ -14,7 +14,7 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
 
   return (
     <div
-      className="absolute left-1/2 -translate-x-1/2 z-10"
+      className="absolute left-1/2 -translate-x-1/2 z-20"
       style={{
         bottom: isMobile ? 16 : 32,
         width: isMobile ? 'calc(100vw - 32px)' : 'auto',
@@ -40,10 +40,10 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
         </div>
       )}
 
-      {/* Scenario preset buttons — stack vertically on mobile */}
+      {/* Scenario preset buttons — side-by-side on mobile to reduce vertical height */}
       <div style={{
         display: 'flex',
-        flexDirection: isMobile ? 'column' : 'row',
+        flexDirection: 'row',
         gap: 8,
         justifyContent: 'center',
         marginBottom: 14,
@@ -53,19 +53,19 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
             key={p.value}
             onClick={() => setRadius(p.value)}
             style={{
-              padding: '10px 16px', // increased vertical padding for 44px touch target
+              padding: isMobile ? '6px 8px' : '10px 16px',
               borderRadius: 20,
               background: radius === p.value ? 'rgba(0,200,100,0.15)' : 'var(--stat-bg)',
               border: `1px solid ${radius === p.value ? 'rgba(0,200,100,0.55)' : 'var(--border)'}`,
               color: radius === p.value ? 'rgba(0,210,100,1)' : 'var(--text-secondary)',
-              fontSize: 14,
+              fontSize: isMobile ? 12 : 14,
               fontWeight: radius === p.value ? 700 : 400,
               cursor: 'pointer',
               transition: 'all 150ms ease',
               fontFamily: IOS_FONT,
-              // full width on mobile
-              width: isMobile ? '100%' : 'auto',
-              minHeight: 44,
+              // equal-width on mobile; auto on desktop
+              flex: isMobile ? 1 : undefined,
+              minHeight: isMobile ? 40 : 44,
             }}
           >
             {p.value}m · {p.label}
@@ -75,9 +75,12 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
 
       {/* Slider row */}
       <div className="flex items-center gap-4">
-        <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.07em', color: 'var(--text-label)', textTransform: 'uppercase', flexShrink: 0 }}>
-          Walking distance
-        </span>
+        {/* "Walking distance" label — hidden on mobile to give slider more room */}
+        {!isMobile && (
+          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.07em', color: 'var(--text-label)', textTransform: 'uppercase', flexShrink: 0 }}>
+            Walking distance
+          </span>
+        )}
         <input
           type="range"
           min={200}
