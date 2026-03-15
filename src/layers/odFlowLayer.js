@@ -17,10 +17,10 @@ export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, to
 
   const maxVol = Math.max(...validFlows.map(f => f.volume), 1)
 
-  // Dramatic width contrast: smallest flow 2px, biggest 28px
-  const widthScale = scalePow().exponent(1.8).domain([0, maxVol]).range([2, 28]).clamp(true)
-  // Nearly flat arcs — stays on map surface, looks like a real transit path
-  const heightScale = scalePow().exponent(0.5).domain([0, maxVol]).range([0.005, 0.025]).clamp(true)
+  // Width: quiet flows stay thin, top corridors are clearly dominant
+  const widthScale = scalePow().exponent(1.8).domain([0, maxVol]).range([1.5, 16]).clamp(true)
+  // Arc height: visible curve so flows look like arcs, not metro tracks
+  const heightScale = scalePow().exponent(0.5).domain([0, maxVol]).range([0.03, 0.08]).clamp(true)
   const opacityScale = scalePow().exponent(0.6).domain([0, maxVol]).range([40, 200]).clamp(true)
 
   // Top 3 corridors by volume
@@ -83,7 +83,7 @@ export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, to
     getHeight: d => heightScale(d.volume),
     widthUnits: 'pixels',
     widthMinPixels: 4,
-    widthMaxPixels: 28,
+    widthMaxPixels: 16,
     greatCircle: false,
     pickable: true,
     updateTriggers: { getSourceColor: [flowOffset], getTargetColor: [flowOffset] },
@@ -93,17 +93,17 @@ export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, to
   const regularArcLayer = new ArcLayer({
     id: 'od-flows-rest',
     data: regularFlows,
-    opacity: isActive ? 0.75 : 0,
+    opacity: isActive ? 0.45 : 0,
     transitions: { opacity: { duration: 600 } },
     getSourcePosition: d => posMap[d.from],
     getTargetPosition: d => posMap[d.to],
-    getSourceColor: d => [180, 80, 10, Math.round(opacityScale(d.volume) * 0.4)],
-    getTargetColor: d => [255, 180, 60, Math.round(opacityScale(d.volume))],
+    getSourceColor: d => [180, 80, 10, Math.round(opacityScale(d.volume) * 0.35)],
+    getTargetColor: d => [255, 160, 40, Math.round(opacityScale(d.volume) * 0.7)],
     getWidth: d => widthScale(d.volume),
-    getHeight: d => heightScale(d.volume),
+    getHeight: d => heightScale(d.volume) * 0.6,
     widthUnits: 'pixels',
-    widthMinPixels: 1.5,
-    widthMaxPixels: 12,
+    widthMinPixels: 1,
+    widthMaxPixels: 6,
     greatCircle: false,
     pickable: true,
     updateTriggers: { getSourceColor: [flowOffset], getTargetColor: [flowOffset] },

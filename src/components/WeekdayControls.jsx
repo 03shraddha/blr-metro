@@ -1,12 +1,17 @@
+import { useIsMobile } from '../hooks/useIsMobile'
+
 const IOS_FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
 
 export default function WeekdayControls({ topN, setTopN, activeLayer }) {
+  const isMobile = useIsMobile()
   if (activeLayer !== 'weekdayWeekend') return null
 
   return (
     <div
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-6"
+      className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center gap-6"
       style={{
+        bottom: isMobile ? 16 : 32,
+        width: isMobile ? 'calc(100vw - 32px)' : 'auto',
         padding: '16px 28px',
         borderRadius: 32,
         backdropFilter: 'blur(28px) saturate(1.6)',
@@ -26,7 +31,7 @@ export default function WeekdayControls({ topN, setTopN, activeLayer }) {
         {topN}
       </span>
 
-      {/* Slider */}
+      {/* Slider — flex:1 on mobile so it fills available space */}
       <input
         type="range"
         min={5}
@@ -35,7 +40,7 @@ export default function WeekdayControls({ topN, setTopN, activeLayer }) {
         value={topN}
         onChange={e => setTopN(Number(e.target.value))}
         className="cursor-pointer"
-        style={{ width: 300, accentColor: 'rgba(80,140,255,0.9)' }}
+        style={{ flex: 1, minWidth: 0, height: 44, width: isMobile ? undefined : 300, accentColor: 'rgba(80,140,255,0.9)' }}
       />
 
       {/* Min / Max labels */}

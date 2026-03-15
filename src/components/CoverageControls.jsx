@@ -1,3 +1,5 @@
+import { useIsMobile } from '../hooks/useIsMobile'
+
 const IOS_FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
 
 const PRESETS = [
@@ -7,12 +9,16 @@ const PRESETS = [
 ]
 
 export default function CoverageControls({ radius, setRadius, activeLayer, coveragePct }) {
+  const isMobile = useIsMobile()
   if (activeLayer !== 'coverageGap') return null
 
   return (
     <div
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      className="absolute left-1/2 -translate-x-1/2 z-10"
       style={{
+        bottom: isMobile ? 16 : 32,
+        width: isMobile ? 'calc(100vw - 32px)' : 'auto',
+        minWidth: isMobile ? undefined : 480,
         padding: '18px 28px 16px',
         borderRadius: 24,
         backdropFilter: 'blur(28px) saturate(1.6)',
@@ -20,7 +26,6 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
         background: 'var(--panel-bg)',
         boxShadow: 'var(--panel-shadow)',
         fontFamily: IOS_FONT,
-        minWidth: 480,
       }}
     >
       {/* Live coverage stat */}
@@ -35,23 +40,32 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
         </div>
       )}
 
-      {/* Scenario preset buttons */}
-      <div style={{ display: 'flex', gap: 8, justifyContent: 'center', marginBottom: 14 }}>
+      {/* Scenario preset buttons — stack vertically on mobile */}
+      <div style={{
+        display: 'flex',
+        flexDirection: isMobile ? 'column' : 'row',
+        gap: 8,
+        justifyContent: 'center',
+        marginBottom: 14,
+      }}>
         {PRESETS.map(p => (
           <button
             key={p.value}
             onClick={() => setRadius(p.value)}
             style={{
-              padding: '6px 16px',
+              padding: '10px 16px', // increased vertical padding for 44px touch target
               borderRadius: 20,
               background: radius === p.value ? 'rgba(0,200,100,0.15)' : 'var(--stat-bg)',
               border: `1px solid ${radius === p.value ? 'rgba(0,200,100,0.55)' : 'var(--border)'}`,
               color: radius === p.value ? 'rgba(0,210,100,1)' : 'var(--text-secondary)',
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: radius === p.value ? 700 : 400,
               cursor: 'pointer',
               transition: 'all 150ms ease',
               fontFamily: IOS_FONT,
+              // full width on mobile
+              width: isMobile ? '100%' : 'auto',
+              minHeight: 44,
             }}
           >
             {p.value}m · {p.label}
@@ -72,7 +86,7 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
           value={radius}
           onChange={e => setRadius(Number(e.target.value))}
           className="cursor-pointer"
-          style={{ flex: 1, accentColor: 'rgba(0,200,100,0.9)' }}
+          style={{ flex: 1, minWidth: 0, height: 44, accentColor: 'rgba(0,200,100,0.9)' }}
         />
         <span style={{ fontSize: 13, color: 'var(--text-muted)', flexShrink: 0 }}>200m</span>
         <span style={{ fontSize: 13, color: 'var(--text-muted)', flexShrink: 0 }}>1km</span>

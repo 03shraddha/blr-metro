@@ -134,11 +134,12 @@ export default function App() {
         onStationClick={handleStationClick}
       />
 
-      {/* OD flow top-N slider */}
+      {/* OD flow top-N slider + headline stat */}
       <OdFlowControls
         topN={odTopN}
         setTopN={setOdTopN}
         activeLayer={activeLayer}
+        odFlows={data?.odFlows}
       />
 
       {/* Weekday/weekend top-N stations slider */}
@@ -174,12 +175,6 @@ export default function App() {
       {/* Station detail panel */}
       <StationPanel station={selectedStation} onClose={handleClosePanel} />
 
-      {/* OD flow headline stat */}
-      <OdFlowHeadline
-        odFlows={data?.odFlows}
-        topN={odTopN}
-        isActive={activeLayer === 'odFlow'}
-      />
 
 
       {/* Title watermark — hidden behind weekday toggle */}
@@ -191,6 +186,13 @@ export default function App() {
           <div style={{ fontSize: 9, color: 'var(--watermark-sub)' }}>Intelligence Map</div>
         </div>
       )}
+
+      {/* Data attribution — bottom left */}
+      <div className="absolute bottom-2 left-2 z-10 pointer-events-none">
+        <div style={{ fontSize: 10, color: 'var(--watermark-sub)', letterSpacing: '0.03em' }}>
+          Source: BMRCL · Data period: Aug 2025 (RTI)
+        </div>
+      </div>
     </div>
   )
 }

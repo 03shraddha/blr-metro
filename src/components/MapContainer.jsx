@@ -138,7 +138,7 @@ export default function MapContainer({
   }, [data, activeLayer, hour, weekdayWeekendMode, maxRidership, effectiveTopN, wdwTopN, catchmentRadius, onHover, onStationClick])
 
   return (
-    <div className="absolute inset-0" style={{ position: 'relative' }}>
+    <div className="absolute inset-0">
       <div ref={mapContainerRef} className="absolute inset-0" />
       {/* Light mode: subtle white veil to push basemap further into background */}
       {theme === 'light' && (

@@ -1,15 +1,19 @@
 import { formatHour } from '../utils/dataTransforms'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 const IOS_FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
 
 export default function TimeSlider({ hour, playing, togglePlay, setHourManual, activeLayer }) {
+  const isMobile = useIsMobile()
   const hourlyLayers = ['volume', 'entryExit']
   if (!hourlyLayers.includes(activeLayer)) return null
 
   return (
     <div
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-6"
+      className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center gap-6"
       style={{
+        bottom: isMobile ? 16 : 32,
+        width: isMobile ? 'calc(100vw - 32px)' : 'auto',
         padding: '16px 28px',
         borderRadius: 32,
         backdropFilter: 'blur(28px) saturate(1.6)',
@@ -19,7 +23,7 @@ export default function TimeSlider({ hour, playing, togglePlay, setHourManual, a
         fontFamily: IOS_FONT,
       }}
     >
-      {/* Play / Pause */}
+      {/* Play / Pause — always visible, 44px touch target */}
       <button
         onClick={togglePlay}
         className="transition-colors cursor-pointer flex items-center justify-center flex-shrink-0"
@@ -38,10 +42,12 @@ export default function TimeSlider({ hour, playing, togglePlay, setHourManual, a
         )}
       </button>
 
-      {/* Label */}
-      <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.06em', color: 'var(--text-label)', textTransform: 'uppercase', flexShrink: 0 }}>
-        Time
-      </span>
+      {/* Label — hidden on mobile to save space */}
+      {!isMobile && (
+        <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.06em', color: 'var(--text-label)', textTransform: 'uppercase', flexShrink: 0 }}>
+          Time
+        </span>
+      )}
 
       {/* Hour value */}
       <span
@@ -51,7 +57,7 @@ export default function TimeSlider({ hour, playing, togglePlay, setHourManual, a
         {formatHour(hour)}
       </span>
 
-      {/* Slider */}
+      {/* Slider — flex:1 on mobile so it fills available space */}
       <input
         type="range"
         min={0}
@@ -59,7 +65,7 @@ export default function TimeSlider({ hour, playing, togglePlay, setHourManual, a
         value={hour}
         onChange={e => setHourManual(e.target.value)}
         className="accent-orange-400 cursor-pointer"
-        style={{ width: 300 }}
+        style={{ flex: 1, minWidth: 0, height: 44, width: isMobile ? undefined : 300 }}
       />
 
       {/* Min / Max labels */}

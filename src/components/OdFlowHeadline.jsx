@@ -12,34 +12,48 @@ export default function OdFlowHeadline({ odFlows, topN, isActive }) {
     <div
       className="absolute pointer-events-none"
       style={{
-        bottom: 90,
+        bottom: 110,
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 15,
         fontFamily: IOS_FONT,
         textAlign: 'center',
+        whiteSpace: 'nowrap',
       }}
     >
       <div
         style={{
           background: 'var(--panel-bg)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          boxShadow: 'var(--panel-shadow-sm)',
-          borderRadius: 14,
-          padding: '10px 20px',
+          backdropFilter: 'blur(24px) saturate(1.6)',
+          WebkitBackdropFilter: 'blur(24px) saturate(1.6)',
+          boxShadow: 'var(--panel-shadow)',
+          borderRadius: 18,
+          padding: '14px 28px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 10,
         }}
       >
-        <span style={{ fontSize: 13, fontWeight: 700, color: '#fbbf24', letterSpacing: '-0.01em' }}>
-          Top 3 corridors
-        </span>
-        <span style={{ fontSize: 13, color: 'var(--text-secondary)', margin: '0 6px' }}>carry</span>
-        <span style={{ fontSize: 15, fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
+        {/* Big % number */}
+        <span style={{
+          fontSize: 44,
+          fontWeight: 800,
+          color: '#f59e0b',
+          letterSpacing: '-0.04em',
+          lineHeight: 1,
+        }}>
           {pct}%
         </span>
-        <span style={{ fontSize: 13, color: 'var(--text-secondary)', marginLeft: 6 }}>
-          of all passenger flow
-        </span>
+
+        {/* Label block */}
+        <div style={{ textAlign: 'left' }}>
+          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
+            of all passenger flow
+          </div>
+          <div style={{ fontSize: 13, color: 'var(--text-muted)', marginTop: 3, lineHeight: 1.2 }}>
+            carried by just the top 3 corridors
+          </div>
+        </div>
       </div>
     </div>
   )

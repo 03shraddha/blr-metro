@@ -1,1 +1,367 @@
-{"BYPH": {"entries": 2955, "exits": 2956, "total": 5911}, "BSRD": {"entries": 2633, "exits": 2634, "total": 5267}, "IDN": {"entries": 8058, "exits": 8059, "total": 16117}, "HLRU": {"entries": 3383, "exits": 3384, "total": 6767}, "TTY": {"entries": 2656, "exits": 2657, "total": 5313}, "MIRD": {"entries": 6369, "exits": 6370, "total": 12739}, "CBPK": {"entries": 4756, "exits": 4756, "total": 9512}, "VDSA": {"entries": 3440, "exits": 3440, "total": 6880}, "VSWA": {"entries": 3332, "exits": 3333, "total": 6665}, "KGWA": {"entries": 18404, "exits": 18405, "total": 36809}, "BRCS": {"entries": 5754, "exits": 5754, "total": 11508}, "DSH": {"entries": 4210, "exits": 4210, "total": 8420}, "VJNR": {"entries": 4217, "exits": 4217, "total": 8434}, "AGPP": {"entries": 2953, "exits": 2954, "total": 5907}, "DJNR": {"entries": 1843, "exits": 1844, "total": 3687}, "MYRD": {"entries": 2584, "exits": 2584, "total": 5168}, "RRRN": {"entries": 2309, "exits": 2309, "total": 4618}, "BGUC": {"entries": 1533, "exits": 1534, "total": 3067}, "PATG": {"entries": 1558, "exits": 1559, "total": 3117}, "MLSD": {"entries": 3410, "exits": 3411, "total": 6821}, "KGIT": {"entries": 2709, "exits": 2710, "total": 5419}, "CLGT": {"entries": 3251, "exits": 3251, "total": 6502}, "JTPM": {"entries": 10953, "exits": 10954, "total": 21907}, "KRPM": {"entries": 7081, "exits": 7081, "total": 14162}, "MDVP": {"entries": 3817, "exits": 3818, "total": 7635}, "GDCP": {"entries": 2306, "exits": 2307, "total": 4613}, "DKIA": {"entries": 2974, "exits": 2975, "total": 5949}, "VWIA": {"entries": 2551, "exits": 2552, "total": 5103}, "KDNH": {"entries": 2954, "exits": 2954, "total": 5908}, "VDHP": {"entries": 2155, "exits": 2156, "total": 4311}, "SSHP": {"entries": 884, "exits": 884, "total": 1768}, "ITPL": {"entries": 1629, "exits": 1629, "total": 3258}, "KDGD": {"entries": 4385, "exits": 4386, "total": 8771}, "UWVL": {"entries": 932, "exits": 932, "total": 1864}, "WHTM": {"entries": 3347, "exits": 3348, "total": 6695}, "NGSA": {"entries": 5385, "exits": 5386, "total": 10771}, "JLHL": {"entries": 3923, "exits": 3923, "total": 7846}, "PYID": {"entries": 731, "exits": 731, "total": 1462}, "PEYA": {"entries": 1441, "exits": 1441, "total": 2882}, "YPM": {"entries": 5304, "exits": 5304, "total": 10608}, "SSFY": {"entries": 6564, "exits": 6565, "total": 13129}, "MHLI": {"entries": 6432, "exits": 6433, "total": 12865}, "RJNR": {"entries": 4443, "exits": 4444, "total": 8887}, "KVPR": {"entries": 2215, "exits": 2216, "total": 4431}, "SPRU": {"entries": 2397, "exits": 2398, "total": 4795}, "SPGD": {"entries": 8443, "exits": 8443, "total": 16886}, "CKPE": {"entries": 9864, "exits": 9864, "total": 19728}, "KRMT": {"entries": 3960, "exits": 3960, "total": 7920}, "NLC": {"entries": 4721, "exits": 4722, "total": 9443}, "LBGH": {"entries": 3990, "exits": 3991, "total": 7981}, "SECE": {"entries": 2907, "exits": 2908, "total": 5815}, "JYN": {"entries": 5106, "exits": 5106, "total": 10212}, "BSNK": {"entries": 5825, "exits": 5826, "total": 11651}, "APRC": {"entries": 6500, "exits": 6500, "total": 13000}, "KLPK": {"entries": 2223, "exits": 2223, "total": 4446}, "VJRH": {"entries": 2202, "exits": 2202, "total": 4404}, "TGTP": {"entries": 1206, "exits": 1206, "total": 2412}, "APTS": {"entries": 3277, "exits": 3277, "total": 6554}, "MNJN": {"entries": 597, "exits": 598, "total": 1195}, "JIDL": {"entries": 1763, "exits": 1763, "total": 3526}, "BIET": {"entries": 3864, "exits": 3865, "total": 7729}, "JDHP": {"entries": 883, "exits": 883, "total": 1766}, "RGDT": {"entries": 623, "exits": 623, "total": 1246}, "OFDC": {"entries": 1324, "exits": 1324, "total": 2648}, "ECTN": {"entries": 2010, "exits": 2011, "total": 4021}, "MSRN": {"entries": 1761, "exits": 1761, "total": 3522}, "HSKR": {"entries": 914, "exits": 914, "total": 1828}, "BTML": {"entries": 1968, "exits": 1968, "total": 3936}, "SBJT": {"entries": 2205, "exits": 2206, "total": 4411}, "HSRL": {"entries": 2181, "exits": 2181, "total": 4362}, "CKBR": {"entries": 792, "exits": 792, "total": 1584}, "HOSR": {"entries": 334, "exits": 334, "total": 668}, "ETCT": {"entries": 1848, "exits": 1849, "total": 3697}, "HBGI": {"entries": 877, "exits": 877, "total": 1754}, "BMSD": {"entries": 3816, "exits": 3817, "total": 7633}, "JPN": {"entries": 0, "exits": 0, "total": 0}, "MGRD": {"entries": 0, "exits": 0, "total": 0}, "JAYN": {"entries": 0, "exits": 0, "total": 0}, "NYHM": {"entries": 0, "exits": 0, "total": 0}, "CHPK": {"entries": 0, "exits": 0, "total": 0}, "PUTH": {"entries": 0, "exits": 0, "total": 0}, "SVRD": {"entries": 0, "exits": 0, "total": 0}, "JHLI": {"entries": 0, "exits": 0, "total": 0}, "BNSK": {"entries": 0, "exits": 0, "total": 0}, "KRMA": {"entries": 0, "exits": 0, "total": 0}, "LAGH": {"entries": 0, "exits": 0, "total": 0}, "YPI": {"entries": 0, "exits": 0, "total": 0}, "RVRD": {"entries": 0, "exits": 0, "total": 0}, "CLG": {"entries": 0, "exits": 0, "total": 0}, "PATC": {"entries": 0, "exits": 0, "total": 0}}
+{
+  "BYPH": {
+    "entries": 2955,
+    "exits": 2956,
+    "total": 5911
+  },
+  "BSRD": {
+    "entries": 2633,
+    "exits": 2634,
+    "total": 5267
+  },
+  "IDN": {
+    "entries": 8058,
+    "exits": 8059,
+    "total": 16117
+  },
+  "HLRU": {
+    "entries": 3383,
+    "exits": 3384,
+    "total": 6767
+  },
+  "TTY": {
+    "entries": 2656,
+    "exits": 2657,
+    "total": 5313
+  },
+  "MIRD": {
+    "entries": 6369,
+    "exits": 6370,
+    "total": 12739
+  },
+  "CBPK": {
+    "entries": 4756,
+    "exits": 4756,
+    "total": 9512
+  },
+  "VDSA": {
+    "entries": 3440,
+    "exits": 3440,
+    "total": 6880
+  },
+  "VSWA": {
+    "entries": 3332,
+    "exits": 3333,
+    "total": 6665
+  },
+  "KGWA": {
+    "entries": 18404,
+    "exits": 18405,
+    "total": 36809
+  },
+  "BRCS": {
+    "entries": 5754,
+    "exits": 5754,
+    "total": 11508
+  },
+  "DSH": {
+    "entries": 4210,
+    "exits": 4210,
+    "total": 8420
+  },
+  "VJNR": {
+    "entries": 4217,
+    "exits": 4217,
+    "total": 8434
+  },
+  "AGPP": {
+    "entries": 2953,
+    "exits": 2954,
+    "total": 5907
+  },
+  "DJNR": {
+    "entries": 1843,
+    "exits": 1844,
+    "total": 3687
+  },
+  "MYRD": {
+    "entries": 2584,
+    "exits": 2584,
+    "total": 5168
+  },
+  "MLSD": {
+    "entries": 3410,
+    "exits": 3411,
+    "total": 6821
+  },
+  "KGIT": {
+    "entries": 2709,
+    "exits": 2710,
+    "total": 5419
+  },
+  "CLGT": {
+    "entries": 3251,
+    "exits": 3251,
+    "total": 6502
+  },
+  "JTPM": {
+    "entries": 10953,
+    "exits": 10954,
+    "total": 21907
+  },
+  "KRPM": {
+    "entries": 7081,
+    "exits": 7081,
+    "total": 14162
+  },
+  "MDVP": {
+    "entries": 3817,
+    "exits": 3818,
+    "total": 7635
+  },
+  "GDCP": {
+    "entries": 2306,
+    "exits": 2307,
+    "total": 4613
+  },
+  "DKIA": {
+    "entries": 2974,
+    "exits": 2975,
+    "total": 5949
+  },
+  "VWIA": {
+    "entries": 2551,
+    "exits": 2552,
+    "total": 5103
+  },
+  "KDNH": {
+    "entries": 2954,
+    "exits": 2954,
+    "total": 5908
+  },
+  "VDHP": {
+    "entries": 2155,
+    "exits": 2156,
+    "total": 4311
+  },
+  "SSHP": {
+    "entries": 884,
+    "exits": 884,
+    "total": 1768
+  },
+  "ITPL": {
+    "entries": 1629,
+    "exits": 1629,
+    "total": 3258
+  },
+  "KDGD": {
+    "entries": 4385,
+    "exits": 4386,
+    "total": 8771
+  },
+  "UWVL": {
+    "entries": 932,
+    "exits": 932,
+    "total": 1864
+  },
+  "WHTM": {
+    "entries": 3347,
+    "exits": 3348,
+    "total": 6695
+  },
+  "NGSA": {
+    "entries": 5385,
+    "exits": 5386,
+    "total": 10771
+  },
+  "JLHL": {
+    "entries": 3923,
+    "exits": 3923,
+    "total": 7846
+  },
+  "PYID": {
+    "entries": 731,
+    "exits": 731,
+    "total": 1462
+  },
+  "PEYA": {
+    "entries": 1441,
+    "exits": 1441,
+    "total": 2882
+  },
+  "YPM": {
+    "entries": 5304,
+    "exits": 5304,
+    "total": 10608
+  },
+  "SSFY": {
+    "entries": 6564,
+    "exits": 6565,
+    "total": 13129
+  },
+  "MHLI": {
+    "entries": 6432,
+    "exits": 6433,
+    "total": 12865
+  },
+  "RJNR": {
+    "entries": 4443,
+    "exits": 4444,
+    "total": 8887
+  },
+  "KVPR": {
+    "entries": 2215,
+    "exits": 2216,
+    "total": 4431
+  },
+  "SPRU": {
+    "entries": 2397,
+    "exits": 2398,
+    "total": 4795
+  },
+  "SPGD": {
+    "entries": 8443,
+    "exits": 8443,
+    "total": 16886
+  },
+  "CKPE": {
+    "entries": 9864,
+    "exits": 9864,
+    "total": 19728
+  },
+  "NLC": {
+    "entries": 4721,
+    "exits": 4722,
+    "total": 9443
+  },
+  "LBGH": {
+    "entries": 3990,
+    "exits": 3991,
+    "total": 7981
+  },
+  "SECE": {
+    "entries": 2907,
+    "exits": 2908,
+    "total": 5815
+  },
+  "JYN": {
+    "entries": 5106,
+    "exits": 5106,
+    "total": 10212
+  },
+  "BSNK": {
+    "entries": 5825,
+    "exits": 5826,
+    "total": 11651
+  },
+  "APRC": {
+    "entries": 6500,
+    "exits": 6500,
+    "total": 13000
+  },
+  "KLPK": {
+    "entries": 2223,
+    "exits": 2223,
+    "total": 4446
+  },
+  "VJRH": {
+    "entries": 2202,
+    "exits": 2202,
+    "total": 4404
+  },
+  "TGTP": {
+    "entries": 1206,
+    "exits": 1206,
+    "total": 2412
+  },
+  "APTS": {
+    "entries": 3277,
+    "exits": 3277,
+    "total": 6554
+  },
+  "ECTN": {
+    "entries": 2010,
+    "exits": 2011,
+    "total": 4021
+  },
+  "HSKR": {
+    "entries": 914,
+    "exits": 914,
+    "total": 1828
+  },
+  "HOSR": {
+    "entries": 334,
+    "exits": 334,
+    "total": 668
+  },
+  "ETCT": {
+    "entries": 1848,
+    "exits": 1849,
+    "total": 3697
+  },
+  "HBGI": {
+    "entries": 877,
+    "exits": 877,
+    "total": 1754
+  },
+  "BMSD": {
+    "entries": 3816,
+    "exits": 3817,
+    "total": 7633
+  },
+  "JPN": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "MGRD": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "JAYN": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "NYHM": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "PUTH": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "SVRD": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "JHLI": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "BNSK": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "KRMA": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "LAGH": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "YPI": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "RVRD": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  },
+  "CLG": {
+    "entries": 0,
+    "exits": 0,
+    "total": 0
+  }
+}
