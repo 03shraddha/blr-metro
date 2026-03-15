@@ -206,14 +206,6 @@ export default function App() {
             hour={hour}
           />
 
-          {/* Dynamic coverage gap narrative headline */}
-          <CoverageHeadline
-            stations={data?.stations}
-            populationGrid={data?.populationGrid}
-            catchmentRadius={catchmentRadius}
-            isActive={activeLayer === 'coverageGap'}
-          />
-
           {/* Weekday/weekend top-N stations slider */}
           <WeekdayControls
             topN={wdwTopN}

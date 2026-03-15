@@ -8,9 +8,20 @@ const PRESETS = [
   { label: 'extended access',   value: 800 },
 ]
 
+function getHeadline(coveredPct, radius) {
+  const uncoveredPct = 100 - coveredPct
+  const r = radius >= 1000 ? `${(radius / 1000).toFixed(1)}km` : `${radius}m`
+  if (coveredPct >= 70) return { headline: `Only ${uncoveredPct}% of dense Bengaluru lacks metro access.`, sub: `Surprisingly comprehensive within ${r}, but the remaining gaps are in the densest neighbourhoods.` }
+  if (coveredPct < 50)  return { headline: `More than half of dense Bengaluru is beyond metro reach.`, sub: `At a ${r} catchment, ${uncoveredPct}% of where people actually live falls outside the network's promise.` }
+  return { headline: `The metro reaches ${coveredPct}% of where dense Bengaluru lives.`, sub: `${uncoveredPct}% of dense population is more than ${r} from any station.` }
+}
+
 export default function CoverageControls({ radius, setRadius, activeLayer, coveragePct }) {
   const isMobile = useIsMobile()
   if (activeLayer !== 'coverageGap') return null
+
+  const radiusLabel = radius >= 1000 ? `${(radius / 1000).toFixed(1)}km` : `${radius}m`
+  const { headline, sub } = coveragePct != null ? getHeadline(coveragePct, radius) : { headline: null, sub: null }
 
   return (
     <div
@@ -19,7 +30,7 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
         bottom: isMobile ? 'calc(72px + env(safe-area-inset-bottom, 0px))' : 20,
         width: isMobile ? 'calc(100vw - 32px)' : 'auto',
         minWidth: isMobile ? undefined : 480,
-        padding: '18px 28px 16px',
+        padding: '16px 24px',
         borderRadius: 24,
         backdropFilter: 'blur(28px) saturate(1.6)',
         WebkitBackdropFilter: 'blur(28px) saturate(1.6)',
@@ -28,15 +39,21 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
         fontFamily: IOS_FONT,
       }}
     >
-      {/* Live coverage stat */}
-      {coveragePct != null && (
-        <div style={{ textAlign: 'center', marginBottom: 14 }}>
-          <span style={{ fontSize: 26, fontWeight: 800, letterSpacing: '-0.04em', color: 'rgba(0,210,100,1)' }}>
-            {coveragePct}%
-          </span>
-          <span style={{ fontSize: 12, color: 'var(--text-secondary)', marginLeft: 10 }}>
-            of Bengaluru's residents live within a {radius}m walk of a metro station
-          </span>
+      {/* Headline narrative — merged from CoverageHeadline */}
+      {headline && (
+        <div style={{ marginBottom: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 4 }}>
+            {coveragePct != null && (
+              <span style={{ fontSize: 22, fontWeight: 800, letterSpacing: '-0.04em', color: 'rgba(0,210,100,1)', flexShrink: 0 }}>
+                {coveragePct}%
+              </span>
+            )}
+            <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.01em', lineHeight: 1.3 }}>
+              {headline}
+            </span>
+          </div>
+          <div style={{ fontSize: 11, color: 'var(--text-muted)', lineHeight: 1.4, marginBottom: 4 }}>{sub}</div>
+          <div style={{ fontSize: 10, color: 'var(--text-label)', letterSpacing: '0.02em' }}>catchment radius: {radiusLabel}</div>
         </div>
       )}
 

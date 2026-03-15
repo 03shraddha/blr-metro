@@ -19,8 +19,10 @@ export default function Legend({ activeLayer, weekdayWeekendMode, catchmentRadiu
   // Always fixed to the viewport — never relative to a parent, never drifts.
   // Mobile: top-right below the watermark, compact strip.
   // Desktop: bottom-right corner.
+  // On weekdayWeekend layer, WeekdayToggle sits at top:68 — push legend below it
+  const mobileTop = activeLayer === 'weekdayWeekend' ? 120 : 68
   const positionStyle = isMobile
-    ? { position: 'fixed', right: 12, top: 68, zIndex: 20 }
+    ? { position: 'fixed', right: 12, top: mobileTop, zIndex: 20 }
     : { position: 'fixed', right: 16, bottom: 24, zIndex: 20 }
 
   if (activeLayer === 'weekdayWeekend' && weekdayWeekendMode === 'compare') {

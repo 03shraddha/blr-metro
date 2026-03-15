@@ -14,10 +14,10 @@ export default function WeekdayToggle({ mode, setMode, activeLayer }) {
   if (activeLayer !== 'weekdayWeekend') return null
 
   const buttons = [
-    { id: 'weekday',  label: 'Weekday'  },
-    { id: 'weekend',  label: 'Weekend'  },
-    { id: 'delta',    label: 'Delta'    },
-    { id: 'compare',  label: 'Compare'  },
+    { id: 'weekday',  label: 'Weekday',  short: 'Wd'  },
+    { id: 'weekend',  label: 'Weekend',  short: 'We'  },
+    { id: 'delta',    label: 'Delta',    short: 'Δ'   },
+    { id: 'compare',  label: 'Compare',  short: '≈'   },
   ]
 
   return (
@@ -59,7 +59,7 @@ export default function WeekdayToggle({ mode, setMode, activeLayer }) {
               border: 'none',
             }}
           >
-            {b.label}
+            {isMobile ? b.short : b.label}
           </button>
         )
       })}
