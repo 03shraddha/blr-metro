@@ -38,6 +38,9 @@ export default function WeekdayToggle({ mode, setMode, activeLayer }) {
             className="transition-all duration-200 cursor-pointer rounded-xl"
             style={{
               padding: '9px 18px',
+              minHeight: 44,
+              display: 'flex',
+              alignItems: 'center',
               background: isActive ? style.bg : 'transparent',
               color: isActive ? style.text : 'var(--segment-inactive)',
               fontSize: 16,

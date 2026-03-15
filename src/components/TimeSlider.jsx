@@ -12,8 +12,9 @@ export default function TimeSlider({ hour, playing, togglePlay, setHourManual, a
     <div
       className="absolute left-1/2 -translate-x-1/2 z-20 flex items-center gap-6"
       style={{
-        bottom: isMobile ? 16 : 32,
+        bottom: isMobile ? 'calc(16px + env(safe-area-inset-bottom, 0px))' : 32,
         width: isMobile ? 'calc(100vw - 32px)' : 'auto',
+        minHeight: isMobile ? 56 : undefined,
         padding: '16px 28px',
         borderRadius: 32,
         backdropFilter: 'blur(28px) saturate(1.6)',

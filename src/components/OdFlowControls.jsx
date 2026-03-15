@@ -19,7 +19,7 @@ export default function OdFlowControls({ topN, setTopN, activeLayer, odFlows }) 
     <div
       className="absolute left-1/2 -translate-x-1/2 z-20"
       style={{
-        bottom: isMobile ? 16 : 32,
+        bottom: isMobile ? 'calc(16px + env(safe-area-inset-bottom, 0px))' : 32,
         width: isMobile ? 'calc(100vw - 32px)' : 'auto',
         minWidth: isMobile ? undefined : 420,
         padding: '16px 28px',
@@ -59,7 +59,7 @@ export default function OdFlowControls({ topN, setTopN, activeLayer, odFlows }) 
       {isMobile ? (
         <>
           {/* Row 1: label + value */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6, minHeight: 44 }}>
             <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', color: 'var(--text-label)', textTransform: 'uppercase', flexShrink: 0 }}>
               Flows shown
             </span>

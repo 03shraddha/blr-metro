@@ -17,7 +17,8 @@ export default function Legend({ activeLayer, weekdayWeekendMode, catchmentRadiu
   if (!config) return null
 
   // Push legend up on mobile so it clears the bottom control panels (~80px tall + spacing)
-  const bottomOffset = isMobile ? 100 : 24
+  // The safe-area inset ensures it also clears notch/home-indicator on iOS devices
+  const bottomOffset = isMobile ? 'calc(100px + env(safe-area-inset-bottom, 0px))' : 24
 
   if (activeLayer === 'weekdayWeekend' && weekdayWeekendMode === 'compare') {
     return (

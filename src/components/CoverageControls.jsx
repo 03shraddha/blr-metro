@@ -16,7 +16,7 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
     <div
       className="absolute left-1/2 -translate-x-1/2 z-20"
       style={{
-        bottom: isMobile ? 16 : 32,
+        bottom: isMobile ? 'calc(16px + env(safe-area-inset-bottom, 0px))' : 32,
         width: isMobile ? 'calc(100vw - 32px)' : 'auto',
         minWidth: isMobile ? undefined : 480,
         padding: '18px 28px 16px',
@@ -65,7 +65,7 @@ export default function CoverageControls({ radius, setRadius, activeLayer, cover
               fontFamily: IOS_FONT,
               // equal-width on mobile; auto on desktop
               flex: isMobile ? 1 : undefined,
-              minHeight: isMobile ? 40 : 44,
+              minHeight: 44,
             }}
           >
             {p.value}m · {p.label}
