@@ -531,15 +531,15 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       accentColor: '#ff8c00',
       insight: top?.total > 0
         ? (hour >= 7 && hour <= 10
-          ? `${top.name} absorbs ${fmtN(top.total)} riders right now — ${topShare}% of the top-15 load at one stop. That concentration tells you the metro serves a handful of corridors, not the whole city.`
+          ? `${top.name} absorbs ${fmtN(top.total)} riders right now, ${topShare}% of the top-15 load at one stop. that concentration tells you the metro serves a handful of corridors, not the whole city.`
           : hour >= 17 && hour <= 20
-          ? `${top.name} leads the evening surge at ${fmtN(top.total)} riders. The same stations that fill in the morning empty at night — the network is a commuter shuttle, not an all-day system.`
+          ? `${top.name} leads the evening surge at ${fmtN(top.total)} riders. the same stations that fill in the morning empty at night, the network is a commuter shuttle, not an all-day system.`
           : hour >= 21 || hour <= 5
-          ? `${top.name} has ${fmtN(top.total)} riders right now. Almost nobody. This is what ₹15,000 crore of infrastructure looks like at 2 AM.`
+          ? `${top.name} has ${fmtN(top.total)} riders right now. almost nobody. this is what ₹15,000 crore of infrastructure looks like at 2 AM.`
           : hour >= 11 && hour <= 14
-          ? `${top.name} at ${fmtN(top.total)} riders — well below peak. Off-peak ridership this low means the metro isn't yet a lifestyle choice, only a rush-hour one.`
-          : `${top.name} at ${fmtN(top.total)} riders. Shoulder hours reveal which stations have genuine all-day demand versus which only spike for commutes.`)
-        : `Nothing moving at ${fmtHour(hour)}. The metro is a scheduled ghost train.`,
+          ? `${top.name} at ${fmtN(top.total)} riders, well below peak. off-peak ridership this low means the metro isn't yet a lifestyle choice, only a rush-hour one.`
+          : `${top.name} at ${fmtN(top.total)} riders. shoulder hours reveal which stations have genuine all-day demand versus which only spike for commutes.`)
+        : `nothing moving at ${fmtHour(hour)}. the metro is a scheduled ghost train.`,
       rows: sorted.map(r => ({
         stationId: r.id,
         label:  r.name,
@@ -573,8 +573,8 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       title:       `Entry / Exit · ${fmtHour(hour)}`,
       accentColor: '#f87171',
       insight:     top && bottom
-        ? `${top.name} pulls ${top.ratio.toFixed(1)}x more exits than entries — a pure job destination. ${bottom.name} is the opposite: a bedroom suburb that exports workers every morning. This split reveals how the metro functions as a one-way commuter pipe, not a two-way urban network.`
-        : `Not enough movement at ${fmtHour(hour)} to read the pattern yet.`,
+        ? `${top.name} pulls ${top.ratio.toFixed(1)}x more exits than entries, a pure job destination. ${bottom.name} is the opposite: a bedroom suburb that exports workers every morning. this split reveals how the metro functions as a one-way commuter pipe, not a two-way urban network.`
+        : `not enough movement at ${fmtHour(hour)} to read the pattern yet.`,
       rows: sorted.map(r => ({
         stationId:  r.id,
         label:      r.name,
@@ -605,7 +605,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       title:       `Top ${topN} flows`,
       accentColor: '#fde047',
       insight:     top
-        ? `${shorten(nameMap[top.from])} → ${shorten(nameMap[top.to])} is the busiest corridor: ${fmtN(top.volume)} daily trips. The top 3 routes carry ${top3share}% of everything shown here. Strip those out and the rest of the map barely moves.`
+        ? `${shorten(nameMap[top.from])} → ${shorten(nameMap[top.to])} is the busiest corridor: ${fmtN(top.volume)} daily trips. the top 3 routes carry ${top3share}% of everything shown here. strip those out and the rest of the map barely moves.`
         : 'No flow data.',
       rows: flows.map((f, i) => ({
         label:      `${shorten(nameMap[f.from] || f.from)} → ${shorten(nameMap[f.to] || f.to)}`,
@@ -638,7 +638,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
         title:       'Weekday vs Weekend Δ',
         accentColor: '#60a5fa',
         insight:     top
-          ? `${top.name} loses ${fmtN(Math.abs(top.delta))} riders the moment the weekend hits. That's not a transit hub — that's an office lobby with a platform. ${commuter} of the top 15 stations follow the same pattern.`
+          ? `${top.name} loses ${fmtN(Math.abs(top.delta))} riders the moment the weekend hits. that's not a transit hub, that's an office lobby with a platform. ${commuter} of the top 15 stations follow the same pattern.`
           : '',
         rows: sorted.map(r => ({
           stationId:  r.id,
@@ -669,7 +669,7 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
         title:       'Weekday vs Weekend',
         accentColor: '#60a5fa',
         insight:     top
-          ? `${top.name} drops ${shrinkBy}% when Friday ends. Side-by-side, you can see which stations have genuine city demand — and which are just office drops the weekend ignores.`
+          ? `${top.name} drops ${shrinkBy}% when Friday ends. side-by-side, you can see which stations have genuine city demand, and which are just office drops the weekend ignores.`
           : '',
         rows: sorted.map(r => ({
           stationId: r.id,
@@ -704,9 +704,9 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
       insight:     top
         ? isWeekday
           ? hubs > 0
-            ? `${hubs} of the top 15 are pure job destinations. The metro is essentially an office-delivery system. ${top.name} leads at ${fmtN(top.total)} — ask where those people live and you'll understand Bengaluru's traffic.`
-            : `${top.name} leads at ${fmtN(top.total)}. These are interchange hubs where people transfer lines, not just office drops. The network's real spine is connective, not just commuter.`
-          : `${top.name} leads on weekends at ${fmtN(top.total)}. Compare this list to the weekday one — the stations that climb tell you exactly where Bengaluru goes when it isn't working.`
+            ? `${hubs} of the top 15 are pure job destinations. the metro is essentially an office-delivery system. ${top.name} leads at ${fmtN(top.total)}, ask where those people live and you'll understand Bengaluru's traffic.`
+            : `${top.name} leads at ${fmtN(top.total)}. these are interchange hubs where people transfer lines, not just office drops. the network's real spine is connective, not just commuter.`
+          : `${top.name} leads on weekends at ${fmtN(top.total)}. compare this list to the weekday one, the stations that climb tell you exactly where Bengaluru goes when it isn't working.`
         : '',
       rows: sorted.map(r => ({
         stationId: r.id,
@@ -744,17 +744,17 @@ function buildConfig(activeLayer, mode, stations, weekday, weekend, odFlows, hou
     const coverageKm2 = Math.round(stations.length * Math.PI * (catchmentRadius / 1000) ** 2)
 
     const mood =
-      catchmentRadius <= 350 ? 'A 3-minute walk. Only useful if you live next door.' :
-      catchmentRadius <= 550 ? 'The standard 5-minute walk. What most cities plan around.' :
-      catchmentRadius <= 800 ? 'A 10-minute walk, or a 2-minute auto ride.' :
-                               "A full kilometre. Generous by any city's standard."
+      catchmentRadius <= 350 ? 'a 3-minute walk. only useful if you live next door.' :
+      catchmentRadius <= 550 ? 'the standard 5-minute walk. what most cities plan around.' :
+      catchmentRadius <= 800 ? 'a 10-minute walk, or a 2-minute auto ride.' :
+                               "a full kilometre. generous by any city's standard."
 
     const bottom = sorted[0]
 
     return {
       title:       'Least-served stations',
       accentColor: '#34d399',
-      insight:     bottom ? `${mood} These stations exist on the map but barely in people's lives. Low ridership here isn't random — it points to exactly where the network promised coverage but didn't deliver access.` : '',
+      insight:     bottom ? `${mood} these stations exist on the map but barely in people's lives. low ridership here isn't random, it points to exactly where the network promised coverage but didn't deliver access.` : '',
       rows: sorted.map(r => ({
         stationId:  r.id,
         label:      r.name,

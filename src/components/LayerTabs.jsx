@@ -3,11 +3,11 @@ import { useTheme } from '../context/ThemeContext'
 import { useIsMobile } from '../hooks/useIsMobile'
 
 const LAYERS = [
-  { id: 'volume',         label: 'The rush',      sub: 'drag the clock. watch the city move.' },
-  { id: 'entryExit',      label: 'Home vs work',  sub: 'which stations absorb workers, which release them?' },
-  { id: 'odFlow',         label: 'Top routes',    sub: 'the corridors carrying half the city' },
-  { id: 'weekdayWeekend', label: 'Work vs play',  sub: 'the metro has two personalities' },
-  { id: 'coverageGap',    label: 'Left behind',   sub: 'who can\'t reach a station on foot?' },
+  { id: 'volume',         label: 'Station traffic',    sub: 'how many people use each station, hour by hour' },
+  { id: 'entryExit',      label: 'Job vs home',        sub: 'is this station where people arrive or leave from?' },
+  { id: 'odFlow',         label: 'Busiest routes',     sub: 'which station pairs have the most trips between them' },
+  { id: 'weekdayWeekend', label: 'Weekday vs weekend', sub: 'does ridership change when the work week ends?' },
+  { id: 'coverageGap',    label: 'Coverage gaps',      sub: 'how much of the city is actually within walking distance?' },
 ]
 
 const IOS_FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
@@ -155,7 +155,7 @@ export default function LayerTabs({ activeLayer, setActiveLayer }) {
   function renderLayerList() {
     const allItems = [
       ...LAYERS.slice(0, 4),
-      { id: '__busy__', label: 'Right now', sub: 'which stations are packed this hour?' },
+      { id: '__busy__', label: 'Live crowding', sub: 'which stations are busy right now?' },
       ...LAYERS.slice(4),
     ]
 
