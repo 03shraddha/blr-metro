@@ -1,9 +1,19 @@
 import { ArcLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers'
 import { scalePow } from 'd3-scale'
 
-export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, topN = 15, isMobile = false) {
+export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, topN = 15, isMobile = false, hour = 0, enrichedFlows = null) {
   // Scale factor: make arcs and labels more legible on small high-DPI screens
   const mobileScale = isMobile ? 1.5 : 1
+
+  // Tie arc animation drift to actual time of day so the color shift is meaningful,
+  // not just an abstract counter. hourProgress is in [0, 0.5] added on top of the
+  // raw rAF-driven offset.
+  const hourProgress = (hour / 24) * 0.5
+  const syncedOffset = flowOffset + hourProgress
+
+  // Use pre-enriched flows when available, otherwise fall back to raw data.
+  // Enriched flows carry bidirectional pair metadata (isPrimary, returnRatio, netFlow).
+  const flowSource = enrichedFlows || odFlows
   const posMap = {}
   const stationMap = {}
   for (const s of stations) {
@@ -11,7 +21,7 @@ export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, to
     stationMap[s.properties.id] = s
   }
 
-  const validFlows = odFlows
+  const validFlows = flowSource
     .filter(f => posMap[f.from] && posMap[f.to])
     .slice(0, topN)
 
@@ -59,7 +69,8 @@ export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, to
     opacity: isActive ? 1.0 : 0,
     transitions: { opacity: { duration: 600 } },
     getPosition: d => d.geometry.coordinates,
-    getRadius: d => 100 + (flowCount[d.properties.id] || 1) * 55,
+    // Cap at 400m so dots don't overpower the map on mobile/high-DPI screens
+    getRadius: d => Math.min(100 + (flowCount[d.properties.id] || 1) * 55, 400),
     getFillColor: [255, 255, 255, 230],
     stroked: true,
     getLineColor: [255, 190, 50, 180],
@@ -88,19 +99,54 @@ export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, to
     widthMaxPixels: 16 * mobileScale,
     greatCircle: false,
     pickable: true,
-    updateTriggers: { getSourceColor: [flowOffset], getTargetColor: [flowOffset] },
+    updateTriggers: { getSourceColor: [syncedOffset], getTargetColor: [syncedOffset] },
+  })
+
+  // Flows with significant return traffic (returnRatio > 0.3) — render a ghost arc
+  // to visualise the balance: lower opacity, narrower, cooler tint.
+  const balancedFlows = validFlows.filter(f => (f.returnRatio ?? 0) > 0.3)
+
+  // Ghost arcs for balanced bidirectional pairs — subordinate "return" visual layer
+  const ghostArcLayer = new ArcLayer({
+    id: 'od-flows-ghost',
+    data: balancedFlows,
+    opacity: isActive ? 0.25 : 0,
+    transitions: { opacity: { duration: 600 } },
+    getSourcePosition: d => posMap[d.from],
+    getTargetPosition: d => posMap[d.to],
+    // Cooler blue-grey tint distinguishes ghost arcs from the warm primary arcs
+    getSourceColor: d => [80, 140, 200, Math.round(opacityScale(d.volume) * 0.3)],
+    getTargetColor: d => [120, 180, 230, Math.round(opacityScale(d.volume) * 0.5)],
+    getWidth: d => widthScale(d.volume) * 0.5,
+    getHeight: d => heightScale(d.volume) * 0.5,
+    widthUnits: 'pixels',
+    widthMinPixels: 0.5,   // dashed-like — very thin
+    widthMaxPixels: 4 * mobileScale,
+    greatCircle: false,
+    pickable: false,       // ghost layer shouldn't steal hover/click events
+    updateTriggers: { getSourceColor: [syncedOffset], getTargetColor: [syncedOffset] },
   })
 
   // Regular arcs — muted amber, clearly subordinate to corridors
+  // Opacity raised from 0.45 → 0.6 so they read as information, not noise.
   const regularArcLayer = new ArcLayer({
     id: 'od-flows-rest',
     data: regularFlows,
-    opacity: isActive ? 0.45 : 0,
+    opacity: isActive ? 0.6 : 0,
     transitions: { opacity: { duration: 600 } },
     getSourcePosition: d => posMap[d.from],
     getTargetPosition: d => posMap[d.to],
     getSourceColor: d => [180, 80, 10, Math.round(opacityScale(d.volume) * 0.35)],
-    getTargetColor: d => [255, 160, 40, Math.round(opacityScale(d.volume) * 0.7)],
+    // Slightly brighten target for mostly-one-way flows (returnRatio < 0.15)
+    getTargetColor: d => {
+      const brightBoost = (d.returnRatio ?? 0) < 0.15 ? 1.25 : 1
+      return [
+        Math.min(255, Math.round(255 * brightBoost)),
+        Math.min(255, Math.round(160 * brightBoost)),
+        40,
+        Math.round(opacityScale(d.volume) * 0.7),
+      ]
+    },
     getWidth: d => widthScale(d.volume),
     getHeight: d => heightScale(d.volume) * 0.6,
     widthUnits: 'pixels',
@@ -108,7 +154,7 @@ export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, to
     widthMaxPixels: 6 * mobileScale,
     greatCircle: false,
     pickable: true,
-    updateTriggers: { getSourceColor: [flowOffset], getTargetColor: [flowOffset] },
+    updateTriggers: { getSourceColor: [syncedOffset], getTargetColor: [syncedOffset] },
   })
 
   // Inline labels for top 3 corridors — placed at arc midpoint
@@ -144,5 +190,6 @@ export function buildOdFlowLayer(stations, odFlows, isActive, flowOffset = 0, to
     parameters: { depthTest: false },
   })
 
-  return [anchorLayer, regularArcLayer, corridorArcLayer, labelLayer]
+  // ghostArcLayer sits beneath regular arcs; corridors are topmost for visual hierarchy
+  return [anchorLayer, ghostArcLayer, regularArcLayer, corridorArcLayer, labelLayer]
 }
