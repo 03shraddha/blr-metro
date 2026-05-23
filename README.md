@@ -67,7 +67,6 @@ Interactive web map of Namma Metro with real station ridership, passenger corrid
 - **Silent station drops** - stations whose names cannot be matched to codes are quietly excluded from the map with no warning
 - **50/50 entry/exit assumption** - propagates into job-hub classification; terminus stations may appear balanced when they are not
 - **Yellow Line geometry is unverified** - may be absent or partially mapped in OSM
-- **Nearby gaps merged** - the algorithm that labels coverage gap zones will collapse two neighboring unserved areas into one label if they are within 1km of each other
 
 ---
 
