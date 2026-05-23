@@ -46,9 +46,9 @@ Interactive web map of Namma Metro with real station ridership, passenger corrid
 - Who traveled from which station to which - from the same RTI, Aug 1-18 only (18 days)
 - Narrowed to the top 200 station pairs; only the top 15 are shown on the map at any time
 - 18 days is not enough to establish reliable weekly or seasonal patterns
-- Where the data only recorded total passengers (not how many got on vs. how many got off), the map assumes half the passengers got on and half got off at every station
-  - In reality, stations near the ends of lines are heavily one-directional - most people are getting off in the morning (arriving at work) and getting on in the evening (heading home)
-  - The map uses the on/off ratio to decide whether a station is a "job hub" or a "residential area", so stations like these can end up misclassified
+- The data sometimes only gives a total passenger count per station, not separate entry and exit numbers. The map fills this gap by assuming half the count entered and half exited
+  - This breaks down at stations at the ends of a line: in the morning rush, almost everyone is arriving - exits dominate. In the evening, almost everyone is leaving - entries dominate. A 50/50 assumption misses this entirely
+  - The map uses the entry vs. exit ratio to decide if a station is a "job hub" or a "residential area" - so a station at the end of a line, where the ratio is forced to 50/50, can end up with the wrong label
 
 ### Population Grid (Coverage Gap Analysis)
 
@@ -56,17 +56,6 @@ Interactive web map of Namma Metro with real station ridership, passenger corrid
 - Each cluster spreads outward as a smooth gradient, which is a reasonable rough approximation - these are genuinely dense areas and the gradient captures the idea that density fades as you move away from a center
 - Where it breaks down: it cannot capture the actual shape of that density - a neighborhood that is dense only along one corridor, or one that has a sharp edge (a lake, a highway), will look smoother and more uniform than it really is
 - Replacing this with real WorldPop 100m satellite data (free, openly licensed) would sharpen the analysis - though WorldPop also underestimates population in dense informal settlements in Indian cities
-
----
-
-## Known Limitations
-
-- **Population density is approximate** - the coverage gap layer uses manually chosen cluster centers that capture where the dense areas are, but not the exact shape or boundary of that density
-- **Atypical reference window** - Yellow Line Week 1, Independence Day, and a flower show are all inside the only available data period
-- **Interchange undercounting** - Majestic and RV Road transfers are structurally missing from both ridership and corridor data
-- **Silent station drops** - stations whose names cannot be matched to codes are quietly excluded from the map with no warning
-- **50/50 entry/exit assumption** - propagates into job-hub classification; terminus stations may appear balanced when they are not
-- **Yellow Line geometry is unverified** - may be absent or partially mapped in OSM
 
 ---
 
