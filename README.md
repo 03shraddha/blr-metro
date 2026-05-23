@@ -1,38 +1,223 @@
 # Bengaluru Metro Intelligence Map
 
-An interactive data visualization of BMRCL metro ridership patterns across Bengaluru. Built with real August 2025 ridership data acquired via RTI from BMRCL.
+Interactive web map of the Namma Metro network with real station-level ridership, origin-destination flows, and coverage gap analysis.
 
-## Live Demo
+- Stack: React 19, deck.gl 9.2 (WebGL layers), MapLibre GL 5.20, D3 scales, Vite 8
+- All data is static JSON/GeoJSON served as public assets - no server, no API key needed
+- Two-tier loading: station geometry and line paths load first (map interactive within ~1s), ridership data loads in background
 
-### [Try it live → 03shraddha.github.io/blr-metro](https://03shraddha.github.io/blr-metro/)
-
-Works on desktop and mobile. On mobile, panels slide up as drawers and controls sit in the thumb zone. Tap any station for ridership detail.
-
-## What It Shows
-
-The map has five story chapters, selectable from the top-left panel:
-
-| Layer | What you see |
-|---|---|
-| **Where people move** | Station circles sized and colored by ridership volume at each hour — play the time slider to watch the city breathe through the day |
-| **Job hubs vs home zones** | Diverging color scale (blue = residential origin, red = job destination) showing which stations are net sources vs. sinks of passengers |
-| **Passenger flows** | Top 15 origin-destination corridors as arcs — thickness and brightness encode passenger volume |
-| **Weekday vs weekend** | Toggle between Mon–Fri and Sat–Sun patterns to see how the city moves differently |
-| **Coverage gaps** | Population density heatmap overlaid with station catchment rings — red showing through = underserved area |
+---
 
 ## Data Sources
 
-| Dataset | Source | Notes |
-|---|---|---|
-| **Station ridership (hourly)** | [BMRCL Station-Wise Ridership — OpenCity India](https://data.opencity.in/dataset/bmrcl-station-wise-ridership-data) | RTI response, Aug 2025 |
-| **Station ridership (weekday/weekend)** | Same RTI filing via OpenCity India | Aggregated from daily sheets |
-| **Origin-destination flows** | Derived from BMRCL hourly entry/exit data | Estimated using trip-chain heuristics |
-| **Station locations** | [OpenStreetMap](https://www.openstreetmap.org/) | Manually verified against BMRCL map |
-| **Metro line geometry** | Built from station coordinates | Purple, Green, Yellow lines |
-| **Population density grid** | [WorldPop 2020 (100m)](https://www.worldpop.org/) via OpenStreetMap admin boundaries | Resampled to 500m cells |
-| **Base map tiles** | [OpenFreeMap](https://openfreemap.org/) | No API key required |
+### BMRCL Station-Level Ridership
 
-Raw ridership files (`hourly_ridership.xlsx`, `hourly_entry_exit.xlsx`) are processed by `scripts/process_bmrcl_data.py` into the JSON files under `public/data/`.
+- Obtained via RTI request filed by the opencity.in team
+  - BMRCL does not proactively publish station-level data
+  - RTI response took approximately one month
+  - Hosted at data.opencity.in/dataset/bmrcl-station-wise-ridership-data
+  - License: CC Non-Commercial
+- Three files from the RTI release:
+  - `hourly_ridership.xlsx` - one row per station per hour per day (Aug-Sep 2025), 1.2+ million rows
+  - `hourly_entry_exit.xlsx` - full origin-destination matrix, one row per station pair per hour (Aug 1-18 only)
+  - `station_codes.csv` - internal BMRCL code-to-name mapping (ground truth for normalization)
+- The daily total on BMRCL's website is the only other public ridership figure; it is not archived by BMRCL - a community project (thecont1/namma-metro-ridership-tracker) scrapes and archives it via Selenium
+
+**Accuracy issues:**
+
+- Single atypical reference window:
+  - Yellow Line (RV Road-Bommasandra, 16 stations) opened August 10, 2025 - its first operational weeks are inside this dataset
+  - Independence Day (Aug 15) and Lalbagh Flower Show fall within the window
+  - No pre-2025 station-level data exists in the public domain - this RTI release is the entire historical record
+- Interchange undercounting:
+  - Passengers transferring at Majestic (KSR Bengaluru) or RV Road without tapping out are not recorded as cross-line OD pairs
+  - Their trip either splits into two single-line segments (if they tap out and back in) or is invisible entirely (if they stay in the paid area)
+  - This structurally deflates ridership at interchange hubs and inflates apparent ridership at terminus stations
+- Station naming:
+  - Multiple Phase 2 stations were renamed before this RTI release (e.g. Bommanahalli was HSR Layout; Hongasandra was Oxford College; Kudlu Gate was Muneshwara Nagar)
+  - The station codes CSV is the only reconciliation table; any join on station name strings will silently fail on old names
+  - BMRCL requires a new RTI request for each new data period - there is no routine publication schedule
+
+### Metro Line Geometry (OpenStreetMap / Overpass API)
+
+- Fetched via `fetch_metro_lines.py` using hardcoded OSM relation IDs:
+  - Purple (East-West, Challaghatta-Whitefield): relation 1798771
+  - Green (North-South, Nagasandra-Thalaghattapura): relation 1798772
+  - Yellow (RV Road-Bommasandra): relation 19421927
+- The script deduplicates parallel dual tracks (drops ways whose midpoint is within ~30m of another), chains segments end-to-end greedily, and simplifies to a maximum of 200 points
+
+**Accuracy issues:**
+
+- Yellow Line is likely incomplete or absent in OSM:
+  - The OSM PTNA documentation for Bengaluru lists only Purple and Green lines
+  - The Yellow Line opened August 10, 2025 - OSM contributor mapping typically lags weeks to months after a new line opens
+  - The hardcoded relation ID for Yellow may return empty or partial geometry, silently
+- Station names in OSM lag official BMRCL renaming:
+  - OSM is crowdsourced and renaming takes time to propagate
+  - The OpenCity Bengaluru Metro Stations KML is itself sourced from OSM - datasets downstream of OpenCity inherit the same lag
+- Parallel track deduplication uses a flat degree threshold (~30m):
+  - Calibrated for standard dual-track spacing on straight track
+  - Will incorrectly merge or exclude track segments where tracks diverge before platform areas or at junctions
+- Path simplification to 200 points is aggressive on the Purple Line (42km end-to-end)
+
+### Origin-Destination Flows
+
+- Comes from `hourly_entry_exit.xlsx` in the same RTI release
+- The XLSX is a full station-pair OD matrix for August 1-18, 2025 only (18 days)
+- Processed to top 200 directional pairs by volume; only top 15 are rendered on the map at any time
+
+**Accuracy issues:**
+
+- 18-day window is too short to establish weekly or seasonal patterns
+- Interchange transfer gap applies here too - cross-line OD pairs are split or invisible (see above)
+- Yellow Line Week 1 passenger behavior is in this window and will not reflect steady-state demand
+- Where the XLSX lacks separate entry/exit columns, the pipeline estimates entries as `total // 2` and exits as `total - entries` (hardcoded 50/50 split) - this assumption propagates directly into the job-hub vs. residential classification
+
+### Population Grid (Coverage Gap Analysis)
+
+- **This data is synthetic** - the existing README incorrectly states it is WorldPop 2020 (100m)
+- Generated by `generate_placeholder_data.py` and `process_bmrcl_data.py` using 10 manually chosen density cluster centers
+- Each cluster: 150 Gaussian-distributed points, max weight 0.7-1.0, spread (sigma) ~3-4km, clamped to [0.05, 1.3]
+- Cluster centers are hand-picked based on local knowledge:
+  1. Whitefield IT hub [77.748, 12.970]
+  2. BTM/Koramangala [77.610, 12.915]
+  3. Electronic City [77.669, 12.839]
+  4. Hebbal/Nagawara [77.610, 13.035]
+  5. Rajajinagar [77.555, 12.998]
+  6-10. JP Nagar, Marathahalli, Kalyan Nagar, Jayanagar, Shivajinagar
+
+**Why this matters:**
+
+- The coverage gap heatmap is a function of synthetic data - it reflects what the author expects population density to look like, not what census or satellite data says
+- The three hardcoded gap annotations (Whitefield, South Bengaluru, Electronic City) are baked in as label fallbacks - they do not update if the underlying density model changes
+- Swapping in real WorldPop constrained 100m (CC-BY 4.0, available via hub.worldpop.org) would be the single highest-impact data quality improvement
+- For reference: the IIHS benchmark study found WorldPop R²=0.77 vs. Indian Census and GHSL (pre-2023 release) at R²=0.53 - neither is accurate in dense informal settlements, but both are better than Gaussian blobs
+
+---
+
+## Data Pipeline
+
+Two parallel pipelines:
+
+| Pipeline | Script | Input | Status |
+|---|---|---|---|
+| Real BMRCL data | `process_bmrcl_data.py` | RTI XLSX files + station codes CSV | Active (Aug-Sep 2025 data) |
+| Synthetic fallback | `generate_placeholder_data.py` | None (hardcoded parameters) | Dev/testing |
+| Legacy | `process_data.py` | Any XLSX + codes CSV | Replaced by above |
+| Line geometry | `fetch_metro_lines.py` | Overpass API (3 relation IDs) | Active |
+
+### Normalization Challenges
+
+- **Station code fuzzy matching** (`process_bmrcl_data.py`):
+  - BMRCL XLSX uses names like "11-Baiyappanahalli" - the pipeline strips leading numbers before matching
+  - Fuzzy match uses `difflib.SequenceMatcher` with cutoff=0.55
+  - 0.55 is a low threshold - similarly named stations (e.g. two stations with "Nagar" in the name) can produce wrong joins
+  - Hardcoded overrides exist for four known-ambiguous codes: VDSA, VSWA, KGWA, BRCS
+  - Unmatched stations are silently dropped from output
+- **Weekday/weekend split**:
+  - Determined by Python `weekday() >= 5` (Saturday/Sunday = weekend)
+  - Public holidays that fall on weekdays (Independence Day on Aug 15) are classified as weekdays
+  - Data is averaged across all matching days in the window - a single atypical day (e.g. Flower Show) shifts the weekday average
+- **Hour column parsing**:
+  - BMRCL XLSX uses inconsistent header formats: `2025-08-01-05Hrs-6hrs`
+  - Parsed via regex: `r'(\d{4}-\d{2}-\d{2})-(\d+)Hrs'`
+  - Format mismatches silently drop that hour's data with no warning
+- **Entry/exit split**:
+  - 50/50 split assumption when only totals are available
+  - Stations near termini have structurally asymmetric morning (exits dominant) and evening (entries dominant) patterns
+  - The 50/50 assumption will misclassify terminus stations' land-use type when hour-level directional data is unavailable
+- **OD flow directionality**:
+  - `enrichOdFlows()` in `dataTransforms.js` identifies A-to-B and B-to-A as a matched pair using sorted key comparison
+  - Flows where the return ratio exceeds 0.3 are classified as balanced commutes and rendered as ghost arcs
+  - Flows where the return ratio is below 0.15 are treated as one-way and get a brightness boost on the destination arc
+
+---
+
+## What It Does Well
+
+- **Job-hub classification via entry/exit ratio**:
+  - Using exits/entries ratio per hour to identify residential vs. employment stations is well-established in AFC data analysis
+  - Low-volume stations (total < 200 passengers) are dimmed to suppress noise from small samples
+  - The diverging color scale correctly centers on 1.0 (balanced) with separate visual treatment for net-source and net-sink stations
+- **OD arc visual hierarchy**:
+  - Top 3 corridors by volume render at full opacity in gold
+  - Balanced bidirectional pairs (return ratio > 0.3) get blue-grey ghost arcs to visually distinguish commute loops from one-way demand
+  - Width uses an exponent of 1.8 (steeper than linear), which correctly makes dominant corridors visually dominant without making minor flows invisible
+- **Catchment distance model**:
+  - Coverage score uses Haversine (not Euclidean) for accuracy at sub-kilometer scale
+  - Decay formula: `1 - (dist / catchmentRadius)^1.5` - faster than linear fall-off, reasonable for pedestrian access where willingness drops sharply past 400-500m
+- **Tiered data loading**:
+  - Station geometry and line paths load first and block rendering; ridership data loads in background without blocking interaction
+  - Map is usable within ~1s even if ridership data is slow
+- **Bidirectionality detection in OD flows**:
+  - `enrichOdFlows()` correctly matches A-to-B and B-to-A as a pair before rendering, preventing duplicate arc rendering for reciprocal flows
+
+---
+
+## Known Limitations
+
+### Data Completeness
+
+- No station-level data before August 2025 exists in the public domain
+- The 18-day OD window (Aug 1-18) is too short to establish stable corridor rankings
+- Yellow Line stations may be geometrically incomplete in OSM and underrepresent first-week ridership patterns
+- Top 15 OD pairs rendered - the other 185 pairs in `od_flows.json` are loaded but never shown
+- Weekend data in the placeholder pipeline is always 0.65x weekday (fixed ratio with no empirical basis in the RTI data)
+
+### Data Accuracy
+
+- Population grid is synthetic - coverage gap analysis reflects manually chosen density centers, not measured population
+- Gap annotations (Whitefield, South Bengaluru, Electronic City) are hardcoded label fallbacks that do not reflect dynamic cluster results
+- Entry/exit 50/50 split propagates into job-hub classification and will misclassify terminus stations
+- Fuzzy name matching at cutoff=0.55 can produce incorrect station joins; unmatched stations are silently dropped
+- Interchange ridership (Majestic, RV Road) is structurally undercounted in the upstream BMRCL data
+- The reference window (Aug-Sep 2025) is atypical: Yellow Line Week 1, Independence Day, Lalbagh Flower Show
+
+### Code Limitations
+
+- Silent data failure: if ridership, OD, or population data fails to fetch, layers go inactive with no user-visible warning
+- Coverage gap annotation labels fall back to three hardcoded locations - gaps outside these areas get a generic label
+- Gap cluster detection is a greedy centroid algorithm with a 1km merge radius - two adjacent unserved neighborhoods within 1km are collapsed into one annotation
+- OD layer renders `topN=15` pairs regardless of dataset size; this is not configurable from the UI
+
+### OSM-Specific
+
+- Yellow Line geometry quality is unverified - it may be absent, partial, or incorrectly tagged
+- Station names in OSM may lag BMRCL renaming by weeks to months after an official change
+- Parallel track deduplication (~30m threshold) is not validated against junction or platform track geometry
+
+---
+
+## Tech Stack
+
+| Library | Version | Role |
+|---|---|---|
+| deck.gl | 9.2.11 | GPU-accelerated overlay layers (ScatterplotLayer, ArcLayer, HeatmapLayer, PathLayer, TextLayer) |
+| MapLibre GL | 5.20.0 | Basemap rendering |
+| React | 19.2.4 | UI framework |
+| D3 scale + ease | 4.x / 3.x | Color scales, radius power/sqrt scaling, animation easing |
+| Tailwind CSS | 4.2.1 | Utility styling |
+| Vite | 8.0.0 | Build tool, code-split into app/deckgl/maplibre chunks |
+
+- Build base is `/blr-metro/` for GitHub Pages deployment
+- All five data files live in `public/data/` and are fetched at runtime
+- Tier-1 (stations.geojson, metro_lines.json) fetched with `Promise.all`, blocking render
+- Tier-2 (ridership_hourly.json, ridership_weekday.json, ridership_weekend.json, od_flows.json, population_grid.json) fetched in background
+
+---
+
+## Scripts
+
+| Script | Input | Output | Key logic |
+|---|---|---|---|
+| `fetch_metro_lines.py` | Overpass API (3 relation IDs) | `metro_lines.json` | Dedup parallel tracks (~30m), greedy segment chaining, simplify to 200pts |
+| `process_bmrcl_data.py` | `data/raw/*.xlsx` + `station_codes.csv` | 5 JSON files in `public/data/` | Fuzzy name matching (cutoff 0.55), 50/50 entry/exit split, weekday >= 5 weekend rule |
+| `process_data.py` | Any XLSX + codes CSV | 5 JSON files | Legacy; auto-detects column names via regex, 50k-row chunk streaming |
+| `generate_placeholder_data.py` | None | 5 JSON files | Synthetic station profiles, Gaussian population grid, 0.65x weekend scaling |
+
+Python dependencies: `pandas`, `openpyxl`, `requests`, `difflib` (stdlib)
+
+---
 
 ## Running Locally
 
@@ -41,17 +226,11 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173/blr-metro/](http://localhost:5173/blr-metro/)
+Open http://localhost:5173/blr-metro/
 
-## Deploying
-
-Push to `master` — GitHub Actions builds and deploys to the `gh-pages` branch automatically. The live site updates within ~2 minutes.
-
-## Tech Stack
-
-- **React + Vite** — UI and build
-- **Deck.gl v9** — WebGL map layers with smooth transitions
-- **MapLibre GL** — Dark base map tiles (OpenFreeMap, no API key needed)
-- **Tailwind CSS v4** — Glassmorphism floating controls
-- **d3-scale / d3-ease** — Data scaling and animation easing
-- **Python + pandas** — Data pipeline from XLSX to JSON
+To regenerate data files from raw BMRCL XLSX:
+```bash
+pip install -r scripts/requirements.txt
+python scripts/process_bmrcl_data.py
+python scripts/fetch_metro_lines.py
+```
