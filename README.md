@@ -70,6 +70,28 @@ Interactive web map of Namma Metro with real station ridership, passenger corrid
 
 ---
 
+## What Would Make This More Accurate
+
+Three specific data sources that exist and are publicly accessible, in order of impact:
+
+- **BBMP 2023 ward boundaries + Census 2011 ward population**
+  - The 2023 BBMP delimitation produced 225 ward polygons (KML, at data.opencity.in/dataset/bbmp-ward-information); the Census 2011 ward-wise population CSV for Bangalore is at the same portal
+  - Joining these two replaces the synthetic population blobs with actual counted population per ward - the same denominator BBMP and DULT use internally, so the numbers are defensible in a professional setting
+  - With this, you can calculate what share of each ward's population falls within walking distance of a metro station, and flag wards above a population threshold with zero metro coverage - the most politically legible way to show gaps
+  - Caveat: the census is from 2011; there are no publicly available ward-level projections for 2023 or 2025. But that is what every Bangalore planning document uses too
+
+- **BMTC GTFS - bus stop locations and route alignments**
+  - ~9,600 BMTC stop locations with coordinates and ~2,000+ bus routes are available as an unofficial but validated GTFS dataset at github.com/Vonter/bmtc-gtfs; an official version was published by DULT through the TUMI Datahub (hub.tumidata.org/dataset/gtfs-bengaluru, June 2024 vintage)
+  - First and last mile is the biggest driver of ridership variation between metro stations in Bangalore - but this map currently has no bus layer at all
+  - Adding BMTC stops would let you show which stations have dense bus feeder coverage and which are effectively bus-deserts, and identify high-density areas that lack both metro access and connecting bus service - the real coverage gaps
+
+- **DULT Comprehensive Mobility Plan - Traffic Analysis Zones**
+  - DULT's 2020 CMP divides Bangalore into Traffic Analysis Zones (TAZs) - planning areas designed specifically for transport modeling, not administrative units - with trip generation rates, mode shares, and employment estimates per zone (data.opencity.in/dataset/bengaluru-mobility-indicators)
+  - TAZs tell you not just where people live but how many trips originate there and what share currently use public transport
+  - Overlaying metro catchment areas against TAZs with low public transport mode share but high trip generation would show where the metro is failing to capture latent demand - a much sharper question than population density alone
+
+---
+
 ## Running Locally
 
 ```bash
