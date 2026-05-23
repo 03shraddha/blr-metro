@@ -73,9 +73,9 @@ Three specific data sources that exist and are publicly accessible, in order of 
   - Adding BMTC stops would let you show which stations have dense bus feeder coverage and which are effectively bus-deserts, and identify high-density areas that lack both metro access and connecting bus service - the real coverage gaps
 
 - **DULT Comprehensive Mobility Plan - Traffic Analysis Zones**
-  - DULT's 2020 CMP divides Bangalore into Traffic Analysis Zones (TAZs) - planning areas designed specifically for transport modeling, not administrative units - with trip generation rates, mode shares, and employment estimates per zone (data.opencity.in/dataset/bengaluru-mobility-indicators)
-  - TAZs tell you not just where people live but how many trips originate there and what share currently use public transport
-  - Overlaying metro catchment areas against TAZs with low public transport mode share but high trip generation would show where the metro is failing to capture latent demand - a much sharper question than population density alone
+  - DULT's 2020 plan divided Bangalore into planning zones, each with data on how many trips start there and what share of those trips currently use public transport (data.opencity.in/dataset/bengaluru-mobility-indicators)
+  - Each zone tells you: how many people travel, and how many of them are already using buses or metro vs. driving
+  - Comparing these zones against metro station catchment areas would show where lots of people travel but few use public transport - areas where demand exists but the network is not reaching them
 
 ---
 
