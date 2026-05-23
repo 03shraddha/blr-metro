@@ -55,7 +55,6 @@ Interactive web map of Namma Metro with real station ridership, passenger corrid
 - The density layer is built from 10 manually chosen cluster centers based on local knowledge of where Bengaluru's population is concentrated: Whitefield, BTM/Koramangala, Electronic City, Hebbal, Rajajinagar, JP Nagar, Marathahalli, Kalyan Nagar, Jayanagar, Shivajinagar
 - Each cluster spreads outward as a smooth gradient, which is a reasonable rough approximation - these are genuinely dense areas and the gradient captures the idea that density fades as you move away from a center
 - Where it breaks down: it cannot capture the actual shape of that density - a neighborhood that is dense only along one corridor, or one that has a sharp edge (a lake, a highway), will look smoother and more uniform than it really is
-- The three gap labels on the map (Whitefield, South Bengaluru, Electronic City) are hardcoded and do not update
 - Replacing this with real WorldPop 100m satellite data (free, openly licensed) would sharpen the analysis - though WorldPop also underestimates population in dense informal settlements in Indian cities
 
 ---
