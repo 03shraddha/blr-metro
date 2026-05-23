@@ -65,8 +65,6 @@ Three specific data sources that exist and are publicly accessible, in order of 
 
 - **BBMP 2023 ward boundaries + Census 2011 ward population**
   - The 2023 BBMP delimitation produced 225 ward polygons (KML, at data.opencity.in/dataset/bbmp-ward-information); the Census 2011 ward-wise population CSV for Bangalore is at the same portal
-  - Joining these two replaces the synthetic population blobs with actual counted population per ward - the same denominator BBMP and DULT use internally, so the numbers are defensible in a professional setting
-  - With this, you can calculate what share of each ward's population falls within walking distance of a metro station, and flag wards above a population threshold with zero metro coverage - the most politically legible way to show gaps
   - Caveat: the census is from 2011; there are no publicly available ward-level projections for 2023 or 2025. But that is what every Bangalore planning document uses too
 
 - **BMTC GTFS - bus stop locations and route alignments**
