@@ -46,9 +46,9 @@ Interactive web map of Namma Metro with real station ridership, passenger corrid
 - Who traveled from which station to which - from the same RTI, Aug 1-18 only (18 days)
 - Narrowed to the top 200 station pairs; only the top 15 are shown on the map at any time
 - 18 days is not enough to establish reliable weekly or seasonal patterns
-- Where the data did not separately record entries vs. exits, the pipeline assumes a 50/50 split at every station and hour
-  - In reality, stations at the ends of lines see mostly exits in the morning and mostly entries in the evening
-  - This assumption directly feeds the "job hub vs. residential" classification on the map, so terminus stations can be misclassified
+- Where the data only recorded total passengers (not how many got on vs. how many got off), the map assumes half the passengers got on and half got off at every station
+  - In reality, stations near the ends of lines are heavily one-directional - most people are getting off in the morning (arriving at work) and getting on in the evening (heading home)
+  - The map uses the on/off ratio to decide whether a station is a "job hub" or a "residential area", so stations like these can end up misclassified
 
 ### Population Grid (Coverage Gap Analysis)
 
